@@ -8,17 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666B82AADEBC5004BA49E /* StockApp.swift */; };
-		12F666BB2AADEBC5004BA49E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666BA2AADEBC5004BA49E /* ContentView.swift */; };
 		12F666BD2AADEBC7004BA49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BC2AADEBC7004BA49E /* Assets.xcassets */; };
 		12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */; };
+		12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F666C62AADEC93004BA49E /* GoogleService-Info.plist */; };
+		12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666CE2AADED67004BA49E /* RealmRepository.swift */; };
+		12F666D12AADED96004BA49E /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D02AADED96004BA49E /* ExColor.swift */; };
+		12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */; };
+		12F666D52AADEDED004BA49E /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D42AADEDED004BA49E /* Stock.swift */; };
+		12F666D72AADEE26004BA49E /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D62AADEE26004BA49E /* StockItem.swift */; };
+		12F666D92AADEE64004BA49E /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D82AADEE64004BA49E /* StockListView.swift */; };
+		12F666DD2AADEEB9004BA49E /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */; };
+		12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666DE2AADEF1D004BA49E /* StockRowView.swift */; };
+		12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666E02AADEF43004BA49E /* StockItemListView.swift */; };
+		12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */; };
+		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12F666B52AADEBC5004BA49E /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F666B82AADEBC5004BA49E /* StockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockApp.swift; sourceTree = "<group>"; };
-		12F666BA2AADEBC5004BA49E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		12F666BC2AADEBC7004BA49E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12F666C62AADEC93004BA49E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		12F666C82AADECDC004BA49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		12F666CE2AADED67004BA49E /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		12F666D02AADED96004BA49E /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
+		12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNavigationStack.swift; sourceTree = "<group>"; };
+		12F666D42AADEDED004BA49E /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		12F666D62AADEE26004BA49E /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
+		12F666D82AADEE64004BA49E /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
+		12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
+		12F666DE2AADEF1D004BA49E /* StockRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRowView.swift; sourceTree = "<group>"; };
+		12F666E02AADEF43004BA49E /* StockItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListView.swift; sourceTree = "<group>"; };
+		12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListViewModel.swift; sourceTree = "<group>"; };
+		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
+		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
+		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +63,8 @@
 			children = (
 				12F666B72AADEBC5004BA49E /* Stock */,
 				12F666B62AADEBC5004BA49E /* Products */,
+				D21FBA19D5D7EB9E665EDB59 /* Pods */,
+				6B5A92AB7F14FD83981853A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +79,14 @@
 		12F666B72AADEBC5004BA49E /* Stock */ = {
 			isa = PBXGroup;
 			children = (
+				12F666C82AADECDC004BA49E /* Info.plist */,
+				12F666C62AADEC93004BA49E /* GoogleService-Info.plist */,
 				12F666B82AADEBC5004BA49E /* StockApp.swift */,
-				12F666BA2AADEBC5004BA49E /* ContentView.swift */,
+				12F666CC2AADED4C004BA49E /* Extension */,
+				12F666CA2AADED34004BA49E /* Model */,
+				12F666C92AADED2E004BA49E /* View */,
+				12F666CB2AADED39004BA49E /* ViewModel */,
+				12F666CD2AADED53004BA49E /* Repository */,
 				12F666BC2AADEBC7004BA49E /* Assets.xcassets */,
 				12F666BE2AADEBC7004BA49E /* Preview Content */,
 			);
@@ -67,6 +101,68 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		12F666C92AADED2E004BA49E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12F666D82AADEE64004BA49E /* StockListView.swift */,
+				12F666DE2AADEF1D004BA49E /* StockRowView.swift */,
+				12F666E02AADEF43004BA49E /* StockItemListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12F666CA2AADED34004BA49E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12F666D42AADEDED004BA49E /* Stock.swift */,
+				12F666D62AADEE26004BA49E /* StockItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12F666CB2AADED39004BA49E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */,
+				12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12F666CC2AADED4C004BA49E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				12F666D02AADED96004BA49E /* ExColor.swift */,
+				12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		12F666CD2AADED53004BA49E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				12F666CE2AADED67004BA49E /* RealmRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		6B5A92AB7F14FD83981853A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D21FBA19D5D7EB9E665EDB59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */,
+				D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12F666C32AADEBC7004BA49E /* Build configuration list for PBXNativeTarget "Stock" */;
 			buildPhases = (
+				85EB5F2CFB0ECD3BBD1FFE94 /* [CP] Check Pods Manifest.lock */,
 				12F666B12AADEBC5004BA49E /* Sources */,
 				12F666B22AADEBC5004BA49E /* Frameworks */,
 				12F666B32AADEBC5004BA49E /* Resources */,
+				4B9E5CE0BFF2220D0548EFDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +225,70 @@
 			files = (
 				12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */,
 				12F666BD2AADEBC7004BA49E /* Assets.xcassets in Resources */,
+				12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B9E5CE0BFF2220D0548EFDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stock/Pods-Stock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stock/Pods-Stock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stock/Pods-Stock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85EB5F2CFB0ECD3BBD1FFE94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12F666B12AADEBC5004BA49E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12F666BB2AADEBC5004BA49E /* ContentView.swift in Sources */,
+				12F666D72AADEE26004BA49E /* StockItem.swift in Sources */,
+				12F666DD2AADEEB9004BA49E /* StockListViewModel.swift in Sources */,
+				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
+				12F666D12AADED96004BA49E /* ExColor.swift in Sources */,
+				12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */,
+				12F666D52AADEDED004BA49E /* Stock.swift in Sources */,
+				12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */,
 				12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */,
+				12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */,
+				12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */,
+				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +411,7 @@
 		};
 		12F666C42AADEBC7004BA49E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -270,11 +421,14 @@
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Stock/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,6 +444,7 @@
 		};
 		12F666C52AADEBC7004BA49E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,11 +454,14 @@
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Stock/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

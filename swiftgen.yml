@@ -1,0 +1,10 @@
+# 画像やカラーコードなどのAssetsリソース
+xcassets:
+  # 画像やカラーなど
+  inputs:
+    - Stock/Resources/Images.xcassets
+    - Stock/Resources/Colors.xcassets
+  # テンプレート指定と保存先
+  outputs:
+    - templateName: swift5
+      output: Stock/Generated/Assets.swift
