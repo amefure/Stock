@@ -10,21 +10,10 @@ import SwiftUI
 struct StockRowView: View {
     let list:Stock
     var body: some View {
-        HStack{
+        HStack {
             Text("\(list.name)")
-        }
-            .padding()
+        }.padding()
             .cornerRadius(8)
-            .frame(width:80,height: 80)
-//            .background(Color(hexString: "#FFFFFF",alpha: 0.1))
-            .cornerRadius(10)
-            .overlay {
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(style: StrokeStyle(lineWidth: 2))
-                    .fill(Color(hexString: "#FFFFFF",alpha: 0.4))
-                    
-            }
-            
             
     }
 }

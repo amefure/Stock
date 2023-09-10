@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666B82AADEBC5004BA49E /* StockApp.swift */; };
-		12F666BD2AADEBC7004BA49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BC2AADEBC7004BA49E /* Assets.xcassets */; };
 		12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */; };
 		12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F666C62AADEC93004BA49E /* GoogleService-Info.plist */; };
 		12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666CE2AADED67004BA49E /* RealmRepository.swift */; };
@@ -21,13 +20,16 @@
 		12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666DE2AADEF1D004BA49E /* StockRowView.swift */; };
 		12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666E02AADEF43004BA49E /* StockItemListView.swift */; };
 		12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */; };
+		12F666E62AADF22B004BA49E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666E52AADF22B004BA49E /* Images.xcassets */; };
+		12F666E82AADF252004BA49E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666E72AADF252004BA49E /* Colors.xcassets */; };
+		12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666EA2AADF2C4004BA49E /* Assets.swift */; };
+		12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12F666B52AADEBC5004BA49E /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F666B82AADEBC5004BA49E /* StockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockApp.swift; sourceTree = "<group>"; };
-		12F666BC2AADEBC7004BA49E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12F666C62AADEC93004BA49E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		12F666C82AADECDC004BA49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +43,10 @@
 		12F666DE2AADEF1D004BA49E /* StockRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRowView.swift; sourceTree = "<group>"; };
 		12F666E02AADEF43004BA49E /* StockItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListView.swift; sourceTree = "<group>"; };
 		12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListViewModel.swift; sourceTree = "<group>"; };
+		12F666E52AADF22B004BA49E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		12F666E72AADF252004BA49E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		12F666EA2AADF2C4004BA49E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableListBackGroundStack.swift; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,12 +88,13 @@
 				12F666C82AADECDC004BA49E /* Info.plist */,
 				12F666C62AADEC93004BA49E /* GoogleService-Info.plist */,
 				12F666B82AADEBC5004BA49E /* StockApp.swift */,
+				12F666E92AADF27D004BA49E /* Generated */,
+				12F666E42AADF204004BA49E /* Resources */,
 				12F666CC2AADED4C004BA49E /* Extension */,
 				12F666CA2AADED34004BA49E /* Model */,
 				12F666C92AADED2E004BA49E /* View */,
 				12F666CB2AADED39004BA49E /* ViewModel */,
 				12F666CD2AADED53004BA49E /* Repository */,
-				12F666BC2AADEBC7004BA49E /* Assets.xcassets */,
 				12F666BE2AADEBC7004BA49E /* Preview Content */,
 			);
 			path = Stock;
@@ -134,6 +141,7 @@
 			children = (
 				12F666D02AADED96004BA49E /* ExColor.swift */,
 				12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */,
+				12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -144,6 +152,23 @@
 				12F666CE2AADED67004BA49E /* RealmRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		12F666E42AADF204004BA49E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				12F666E52AADF22B004BA49E /* Images.xcassets */,
+				12F666E72AADF252004BA49E /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		12F666E92AADF27D004BA49E /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				12F666EA2AADF2C4004BA49E /* Assets.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		6B5A92AB7F14FD83981853A4 /* Frameworks */ = {
@@ -224,7 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */,
-				12F666BD2AADEBC7004BA49E /* Assets.xcassets in Resources */,
+				12F666E82AADF252004BA49E /* Colors.xcassets in Resources */,
+				12F666E62AADF22B004BA49E /* Images.xcassets in Resources */,
 				12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +306,7 @@
 			files = (
 				12F666D72AADEE26004BA49E /* StockItem.swift in Sources */,
 				12F666DD2AADEEB9004BA49E /* StockListViewModel.swift in Sources */,
+				12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */,
 				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
 				12F666D12AADED96004BA49E /* ExColor.swift in Sources */,
 				12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */,
@@ -287,6 +314,7 @@
 				12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */,
 				12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */,
 				12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */,
+				12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */,
 				12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */,
 				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
 			);

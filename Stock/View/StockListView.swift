@@ -16,31 +16,37 @@ struct StockListView: View {
     
     @State private var name = ""
     
-    private let grids = Array(repeating: GridItem(.fixed(90)), count: 3)
     var body: some View {
-        VStack{
-            HStack {
-                TextField("", text: $name)
-                Button {
-                    if name.isEmpty { return }
-                    viewModel.createStock(name: name, order: allBringList.count)
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }.padding()
-                .frame(width: UIScreen.main.bounds.width / 1.2)
-                .background(Color(hexString: "#FFFFFF", alpha: 0.2))
-                .cornerRadius(20)
+        ZStack {
             
-            ScrollView() {
-                LazyVGrid(columns: grids) {
+            
+            VStack{
+                Asset.Images.stockLogo.swiftUIImage
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100)
+                HStack {
+                    TextField("", text: $name)
+                    Button {
+                        if name.isEmpty { return }
+                        viewModel.createStock(name: name, order: allBringList.count)
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                    }
+                }.padding()
+                    .frame(width: UIScreen.main.bounds.width / 1.2)
+                    .background(Color(hexString: "#222222"))
+                    .cornerRadius(20)
+                
+                AvailableListBackGroundStack {
                     ForEach(allBringList) { list in
                         NavigationLink {
                             StockItemListView(list: list)
                         } label: {
                             StockRowView(list: list)
-                        }.foregroundColor(.cyan)
-                    }
+                        }
+                    }.listRowBackground(Color.clear)
                 }
             }
             
@@ -79,7 +85,12 @@ struct StockListView: View {
                 .background(Color(hexString: "#222222"))
                 .cornerRadius(40)
                 .shadow(color: .gray,radius: 3, x: 1, y: 1)
-        }
+                .offset(y:UIScreen.main.bounds.height / 2.5)
+        }.background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
+                startPoint: .top, endPoint: .bottom
+            ))
     }
 }
 
