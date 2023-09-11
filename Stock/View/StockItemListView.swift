@@ -22,19 +22,14 @@ struct StockItemListView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.editMode) var editSortMode
     
-    func toggleEditSortMode() {
-        if editSortMode?.wrappedValue == .active {
-            editSortMode?.wrappedValue = .inactive
-        } else {
-            editSortMode?.wrappedValue = .active
-        }
-    }
-    
     var body: some View {
         ZStack {
             
             VStack{
-                HeaderView(leadingIcon: "chevron.backward", trailingIcon: "plus.square", leadingAction: {dismiss()}, trailingAction: {
+                HeaderView(leadingIcon: "chevron.backward",
+                           trailingIcon: "plus.square",
+                           leadingAction: { dismiss() },
+                           trailingAction: {
                     withAnimation() {          // 明示的なアニメーション指定
                         self.isAddMode.toggle()
                         editSortMode?.wrappedValue = .active
@@ -49,32 +44,13 @@ struct StockItemListView: View {
                         itemNames.append("")
                     }).transition(.scale)
                 }
-      
-                ZStack {
-                    VStack {
-                        Text(list.name)
-                        
-                        Rectangle()
-                          .stroke(Color.green, lineWidth: 2)
-                          .frame(width: 200, height: 2)
-                    }
-                    if isEditNameMode {
-                        Text("MODE：Edit")
-                            .font(.caption)
-                            .padding(5)
-                            .background(Color(hexString: "#F2A92E"))
-                            .cornerRadius(10)
-                            .offset(y:40)
-                            .transition(.slide)
-                    } else if isDeleteMode {
-                        Text("MODE：Delete")
-                            .font(.caption)
-                            .padding(5)
-                            .background(Color(hexString: "#C84311"))
-                            .cornerRadius(10)
-                            .offset(y:40)
-                            .transition(.slide)
-                    }
+                
+                VStack {
+                    Text(list.name)
+                    
+                    Rectangle()
+                        .stroke(Color.green, lineWidth: 2)
+                        .frame(width: 200, height: 2)
                 }
                 
                 if list.items.isEmpty {
@@ -82,7 +58,7 @@ struct StockItemListView: View {
                         .frame(width: UIScreen.main.bounds.width)
                 } else {
                     AvailableListBackGroundStack {
-                        ForEach(list.items.sorted(byKeyPath: "order")){ item in
+                        ForEach(list.items.sorted(byKeyPath: "order")) { item in
                             HStack{
                                 Button {
                                     viewModel.updateFlagStockItem(itemId: item.id, flag: !item.flag)
@@ -94,14 +70,18 @@ struct StockItemListView: View {
                                 
                                 
                                 if isEditNameMode {
-                                    TextField(item.name, text: $itemNames[item.order])
-                                        .onChange(of: itemNames[item.order]) { newValue in
-                                            viewModel.updateStockItem(itemId: item.id, name: newValue)
-                                        }
+                                    HStack {
+                                        TextField(item.name, text: $itemNames[item.order])
+                                            .onChange(of: itemNames[item.order]) { newValue in
+                                                viewModel.updateStockItem(itemId: item.id, name: newValue)
+                                            }
+                                        Image(systemName: "pencil.and.outline")
+                                            .foregroundColor(.gray)
+                                    }
                                 } else {
                                     Text(item.name)
                                 }
-                                Text("\(item.order)")
+                                
                                 Spacer()
                                 
                                 if isDeleteMode {
@@ -110,9 +90,9 @@ struct StockItemListView: View {
                                         Image(systemName: "arrow.left")
                                         Image(systemName: "hand.tap")
                                     }.font(.caption)
+                                        .foregroundColor(.gray)
                                 }
                             }
-                            
                         }.onMove { sourceSet, destination in
                             viewModel.changeOrder(list: list, sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
@@ -123,30 +103,35 @@ struct StockItemListView: View {
                     
                 }
             }
-            FooterView(firstAction: {}, secondAction: {
-                withAnimation() {
-                    itemNames.removeAll()
-                    for item in list.items.sorted(byKeyPath: "order") {
-                        itemNames.append(item.name)
-                    }
-                    if isEditNameMode {
-                        editSortMode?.wrappedValue = .active
-                    } else {
-                        isDeleteMode = false
-                        editSortMode?.wrappedValue = .inactive
-                    }
-                    isEditNameMode.toggle()
+            FooterView(sortAction:{
+                if editSortMode?.wrappedValue == .active {
+                    editSortMode?.wrappedValue = .inactive
+                } else {
+                    isDeleteMode = false
+                    isEditNameMode = false
+                    editSortMode?.wrappedValue = .active
                 }
+            },
+                       editAction: {
+                itemNames.removeAll()
+                for item in list.items.sorted(byKeyPath: "order") {
+                    itemNames.append(item.name)
+                }
+                if isEditNameMode {
+                    editSortMode?.wrappedValue = .active
+                } else {
+                    isDeleteMode = false
+                    editSortMode?.wrappedValue = .inactive
+                }
+                isEditNameMode.toggle()
             },trashAction: {
-                withAnimation() {
-                    if isDeleteMode {
-                        editSortMode?.wrappedValue = .active
-                    } else {
-                        isEditNameMode = false
-                        editSortMode?.wrappedValue = .inactive
-                    }
-                    isDeleteMode.toggle()
+                if isDeleteMode {
+                    editSortMode?.wrappedValue = .active
+                } else {
+                    isEditNameMode = false
+                    editSortMode?.wrappedValue = .inactive
                 }
+                isDeleteMode.toggle()
             })
         }.navigationBarBackButtonHidden()
             .background(
@@ -156,7 +141,6 @@ struct StockItemListView: View {
                 ))
             .onAppear {
                 itemNames = Array(repeating: "", count: list.items.count)
-                print(itemNames)
                 if list.items.isEmpty {
                     isAddMode = true
                 }

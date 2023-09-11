@@ -9,31 +9,24 @@ import SwiftUI
 
 struct FooterView: View {
     
-    public var firstAction: () -> Void
-    public var secondAction: () -> Void
+    public var sortAction: () -> Void
+    public var editAction: () -> Void
     public var trashAction: () -> Void
     
     var body: some View {
         HStack{
             Spacer()
             Button {
-                firstAction()
+                sortAction()
             } label: {
-                Image(systemName: "plus.bubble.fill")
+                Image(systemName: "arrow.2.squarepath")
                     .foregroundColor(.white)
             }
             Spacer()
             Button {
-                secondAction()
+                editAction()
             } label: {
-                Image(systemName: "plus.rectangle.on.folder.fill")
-                    .foregroundColor(.white)
-            }
-            Spacer()
-            Button {
-                
-            } label: {
-                Image(systemName: "gear")
+                Image(systemName: "pencil.and.outline")
                     .foregroundColor(.white)
             }
             Spacer()
@@ -44,6 +37,14 @@ struct FooterView: View {
                     .foregroundColor(.white)
             }
             Spacer()
+            Button {
+                
+            } label: {
+                Image(systemName: "gearshape")
+                    .foregroundColor(.white)
+            }
+            Spacer()
+
         }.frame(width: UIScreen.main.bounds.width / 2)
             .padding()
             .background(Color(hexString: "#222222"))
@@ -55,6 +56,6 @@ struct FooterView: View {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView(firstAction: {}, secondAction: {}, trashAction: {})
+        FooterView(sortAction: {}, editAction: {}, trashAction: {})
     }
 }

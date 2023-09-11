@@ -29,7 +29,10 @@ struct StockApp: App {
     var body: some Scene {
         WindowGroup {
             AvailableNavigationStack{
-                StockListView()
+                // EditModeを動作させるためにVStackが必要
+                VStack{
+                    StockListView()
+                }
             }
         }
     }
