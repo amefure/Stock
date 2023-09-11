@@ -18,11 +18,11 @@ struct AvailableNavigationStack<Content:View>:View{
         if #available(iOS 16.0, *) {
             NavigationStack{
                 content
-            }.accentColor(Color.orange)
+            }.accentColor(Color.green)
         }else{
             NavigationView {
                 content
-            }.accentColor(Color.orange)
+            }.accentColor(Color.green)
         }
     }
 }

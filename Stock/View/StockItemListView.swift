@@ -21,23 +21,24 @@ struct StockItemListView: View {
     var body: some View {
         VStack{
             HeaderView(leadingIcon: "chevron.backward", trailingIcon: "plus.square", leadingAction: {dismiss()}, trailingAction: {
-                addMode.toggle()
+                withAnimation() {          // 明示的なアニメーション指定
+                    self.addMode.toggle()
+                }
             })
             
             if list.items.isEmpty || addMode {
-                
                 InputView(name: $name, action: {
                     viewModel.createStockItem(listId: list.id, name: name, order: list.size)
                     
                     itemNames.append("")
-                })
-                
+                }).transition(.scale)
             }
+
+            Text(list.name)
             if list.items.isEmpty {
                 Spacer()
                     .frame(width: UIScreen.main.bounds.width)
             } else {
-                Text(list.name)
                 AvailableListBackGroundStack {
                     ForEach(list.items.sorted(byKeyPath: "order")){ item in
                         HStack{
@@ -55,7 +56,7 @@ struct StockItemListView: View {
                             //                            }
                             
                         }
-                        .swipeActions(edge: .trailing) {
+                        .swipeActions(edge: .leading) {
                             Button(role: .destructive) {
                                 viewModel.deleteStockItem(listId: list.id, itemId: item.id)
                             } label: {
@@ -84,7 +85,11 @@ struct StockItemListView: View {
                     gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
                     startPoint: .top, endPoint: .bottom
                 ))
-        
+            .onAppear {
+                if list.items.isEmpty {
+                    addMode = true
+                }
+            }
     }
 }
 
