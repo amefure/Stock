@@ -28,6 +28,8 @@
 		12F666F42AAE8FE6004BA49E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666F32AAE8FE6004BA49E /* InputView.swift */; };
 		12F666F62AAE983A004BA49E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666F52AAE983A004BA49E /* FooterView.swift */; };
 		12F666F82AAF3CA1004BA49E /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666F72AAF3CA1004BA49E /* AdMobView.swift */; };
+		12F666FA2AAF4311004BA49E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666F92AAF4311004BA49E /* SettingView.swift */; };
+		12F666FC2AAF459C004BA49E /* RewardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666FB2AAF459C004BA49E /* RewardButtonView.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		12F666F32AAE8FE6004BA49E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		12F666F52AAE983A004BA49E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		12F666F72AAF3CA1004BA49E /* AdMobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
+		12F666F92AAF4311004BA49E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		12F666FB2AAF459C004BA49E /* RewardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardButtonView.swift; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,7 @@
 				12F666D82AADEE64004BA49E /* StockListView.swift */,
 				12F666DE2AADEF1D004BA49E /* StockRowView.swift */,
 				12F666E02AADEF43004BA49E /* StockItemListView.swift */,
+				12F666F92AAF4311004BA49E /* SettingView.swift */,
 				12F666EE2AAE0944004BA49E /* Components */,
 			);
 			path = View;
@@ -186,6 +191,7 @@
 				12F666F12AAE8DF6004BA49E /* HeaderView.swift */,
 				12F666F72AAF3CA1004BA49E /* AdMobView.swift */,
 				12F666F52AAE983A004BA49E /* FooterView.swift */,
+				12F666FB2AAF459C004BA49E /* RewardButtonView.swift */,
 				12F666F32AAE8FE6004BA49E /* InputView.swift */,
 			);
 			path = Components;
@@ -327,6 +333,7 @@
 				12F666D72AADEE26004BA49E /* StockItem.swift in Sources */,
 				12F666DD2AADEEB9004BA49E /* StockListViewModel.swift in Sources */,
 				12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */,
+				12F666FA2AAF4311004BA49E /* SettingView.swift in Sources */,
 				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
 				12F666D12AADED96004BA49E /* ExColor.swift in Sources */,
 				12F666F62AAE983A004BA49E /* FooterView.swift in Sources */,
@@ -334,6 +341,7 @@
 				12F666D52AADEDED004BA49E /* Stock.swift in Sources */,
 				12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */,
 				12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */,
+				12F666FC2AAF459C004BA49E /* RewardButtonView.swift in Sources */,
 				12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */,
 				12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */,
 				12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */,

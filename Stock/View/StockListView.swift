@@ -22,13 +22,29 @@ struct StockListView: View {
     
     @Environment(\.editMode) var editSortMode
     
+    // Storage
+    @AppStorage("LimitCapacity") var limitCapacity = 5
+    
+    @State var isLimitAlert: Bool = false // 上限に達した場合のアラート
+    
+    private func checkLimitCapacity() -> Bool {
+          if allBringList.count >= limitCapacity {
+              isLimitAlert = true
+              return false
+          } else {
+              return true
+          }
+      }
+    
     var body: some View {
         ZStack {
             VStack{
                 HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
                 
                 InputView(name: $name, action: {
-                    viewModel.createStock(name: name, order: allBringList.count)
+                    if checkLimitCapacity() {
+                        viewModel.createStock(name: name, order: allBringList.count)
+                    }
                 })
                 
                 
@@ -109,7 +125,16 @@ struct StockListView: View {
         .onAppear {
             itemNames = Array(repeating: "", count: allBringList.count)
             editSortMode?.wrappedValue = .inactive
-        }
+        }.alert(Text("保存容量が上限に達しました..."),
+                isPresented: $isLimitAlert,
+                actions: {
+                    Button(action: {}, label: {
+                        Text("OK")
+                    })
+                }, message: {
+                    Text("設定から広告を視聴すると\n保存容量を増やすことができます。")
+                })
+     
     }
 }
 

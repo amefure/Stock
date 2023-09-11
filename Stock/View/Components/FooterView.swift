@@ -37,8 +37,8 @@ struct FooterView: View {
                     .foregroundColor(.white)
             }
             Spacer()
-            Button {
-                
+            NavigationLink {
+                SettingView()
             } label: {
                 Image(systemName: "gearshape")
                     .foregroundColor(.white)
