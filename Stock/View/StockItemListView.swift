@@ -60,13 +60,15 @@ struct StockItemListView: View {
                     AvailableListBackGroundStack {
                         ForEach(list.items.sorted(byKeyPath: "order")) { item in
                             HStack{
-                                Button {
-                                    viewModel.updateFlagStockItem(itemId: item.id, flag: !item.flag)
-                                } label: {
-                                    Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
-                                        .foregroundColor(.green)
-                                    
-                                }.buttonStyle(.plain)
+                                if item.name.prefix(1) != "-" {
+                                    Button {
+                                        viewModel.updateFlagStockItem(itemId: item.id, flag: !item.flag)
+                                    } label: {
+                                        Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
+                                            .foregroundColor(.green)
+                                        
+                                    }.buttonStyle(.plain)
+                                }
                                 
                                 
                                 if isEditNameMode {
@@ -75,11 +77,17 @@ struct StockItemListView: View {
                                             .onChange(of: itemNames[item.order]) { newValue in
                                                 viewModel.updateStockItem(itemId: item.id, name: newValue)
                                             }
-                                        Image(systemName: "pencil.and.outline")
+                                        Image(systemName: "pencil.tip.crop.circle")
                                             .foregroundColor(.gray)
                                     }
                                 } else {
-                                    Text(item.name)
+                                    if item.name.prefix(1) == "-" {
+                                        Text("■ \(String(item.name.dropFirst()))")
+                                            .fontWeight(.bold)
+                                    } else {
+                                        Text(item.name)
+                                    }
+                                    
                                 }
                                 
                                 Spacer()

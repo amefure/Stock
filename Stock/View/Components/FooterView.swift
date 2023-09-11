@@ -19,14 +19,15 @@ struct FooterView: View {
             Button {
                 sortAction()
             } label: {
-                Image(systemName: "arrow.2.squarepath")
+                Image(systemName: "arrow.up.arrow.down")
                     .foregroundColor(.white)
             }
             Spacer()
             Button {
                 editAction()
             } label: {
-                Image(systemName: "pencil.and.outline")
+                Image(systemName: "pencil.tip.crop.circle")
+                    .font(.title2)
                     .foregroundColor(.white)
             }
             Spacer()

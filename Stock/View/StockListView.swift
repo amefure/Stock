@@ -58,11 +58,11 @@ struct StockListView: View {
                             if isEditNameMode {
                                 HStack {
                                     TextField(list.name, text: $itemNames[list.order])
-                                        .padding(8)
+                                        .padding(7.5)
                                         .onChange(of: itemNames[list.order]) { newValue in
                                             viewModel.updateStock(id: list.id, name: newValue)
                                         }
-                                    Image(systemName: "pencil.and.outline")
+                                    Image(systemName: "pencil.tip.crop.circle")
                                         .foregroundColor(.gray)
                                 }
                                 
