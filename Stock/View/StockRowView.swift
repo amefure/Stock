@@ -12,9 +12,7 @@ struct StockRowView: View {
     var body: some View {
         HStack {
             Text("\(list.name)")
-        }.padding()
-            .cornerRadius(8)
-            
+        }.padding(8)
     }
 }
 

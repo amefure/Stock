@@ -18,35 +18,32 @@ struct StockListView: View {
     
     var body: some View {
         ZStack {
-            
-            
             VStack{
-                Asset.Images.stockLogo.swiftUIImage
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100)
-                HStack {
-                    TextField("", text: $name)
-                    Button {
-                        if name.isEmpty { return }
-                        viewModel.createStock(name: name, order: allBringList.count)
-                    } label: {
-                        Image(systemName: "plus")
-                            .foregroundColor(.white)
-                    }
-                }.padding()
-                    .frame(width: UIScreen.main.bounds.width / 1.2)
-                    .background(Color(hexString: "#222222"))
-                    .cornerRadius(20)
+                HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
                 
-                AvailableListBackGroundStack {
-                    ForEach(allBringList) { list in
-                        NavigationLink {
-                            StockItemListView(list: list)
-                        } label: {
-                            StockRowView(list: list)
-                        }
-                    }.listRowBackground(Color.clear)
+                InputView(name: $name, action: {
+                    viewModel.createStock(name: name, order: allBringList.count)
+                })
+                
+                if allBringList.isEmpty {
+                    Spacer()
+                        .frame(width: UIScreen.main.bounds.width)
+                } else {
+                    AvailableListBackGroundStack {
+                        ForEach(allBringList) { list in
+                            NavigationLink {
+                                StockItemListView(list: list)
+                            } label: {
+                                StockRowView(list: list)
+                            }.swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    viewModel.deleteStock(list)
+                                } label: {
+                                    Image(systemName: "trash")
+                                }
+                            }
+                        }.listRowBackground(Color.clear)
+                    }
                 }
             }
             
@@ -86,7 +83,8 @@ struct StockListView: View {
                 .cornerRadius(40)
                 .shadow(color: .gray,radius: 3, x: 1, y: 1)
                 .offset(y:UIScreen.main.bounds.height / 2.5)
-        }.background(
+        }
+        .background(
             LinearGradient(
                 gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
                 startPoint: .top, endPoint: .bottom

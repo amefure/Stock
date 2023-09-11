@@ -24,8 +24,8 @@ class StockListViewModel {
         return repository.readAllStock()
     }
     
-    public func deleteStock(_ list:Stock) {
-        repository.deleteStock(list)
+    public func deleteStock(_ stock:Stock) {
+        repository.deleteStock(stock)
     }
 
 }

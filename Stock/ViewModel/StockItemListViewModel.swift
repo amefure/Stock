@@ -14,7 +14,7 @@ class StockItemListViewModel {
     
     // MARK: - StockItem
     public func createStockItem(listId:ObjectId, name:String, order:Int) {
-        repository.createStockItem(listId: listId, name: name, order: order)
+        repository.createStockItem(stockId: listId, name: name, order: order)
     }
     
     public func updateStockItem(itemId:ObjectId,name:String) {
@@ -30,7 +30,7 @@ class StockItemListViewModel {
     }
     
     public func deleteStockItem(listId:ObjectId, itemId:ObjectId) {
-        repository.deleteStockItem(listId:listId, itemId:itemId)
+        repository.deleteStockItem(stockId:listId, itemId:itemId)
     }
     
     public func changeOrder(list:Stock, sourceSet:IndexSet, destination:Int) {

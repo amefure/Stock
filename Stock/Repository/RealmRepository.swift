@@ -13,15 +13,15 @@ protocol RepositoryProtocol {
     func createStock(name:String, order:Int)
     func updateStock(id:ObjectId, name:String)
     func readAllStock() -> Results<Stock>
-    func deleteStock(_ list:Stock)
+    func deleteStock(_ stock:Stock)
     
     // StockItem
-    func createStockItem(listId:ObjectId, name:String, order:Int)
+    func createStockItem(stockId:ObjectId, name:String, order:Int)
     func updateStockItem(itemId:ObjectId, name:String)
     func updateFlagStockItem(itemId:ObjectId, flag:Bool)
     func updateOrderStockItem(itemId:ObjectId, order:Int)
     func readStockItemList() -> Results<StockItem>
-    func deleteStockItem(listId:ObjectId, itemId:ObjectId)
+    func deleteStockItem(stockId:ObjectId, itemId:ObjectId)
 }
 
 class RealmRepository: RepositoryProtocol {
@@ -34,18 +34,18 @@ class RealmRepository: RepositoryProtocol {
     // MARK: - Stock
     public func createStock(name:String, order:Int) {
         try! realm.write {
-            let list = Stock()
-            list.name = name
-            list.order = order
-            realm.add(list)
+            let stock = Stock()
+            stock.name = name
+            stock.order = order
+            realm.add(stock)
         }
     }
     
     public func updateStock(id:ObjectId,name:String) {
         try! realm.write {
-            let lists = realm.objects(Stock.self)
-            if let list = lists.where({$0.id == id}).first {
-                list.name = name
+            let stocks = realm.objects(Stock.self)
+            if let stock = stocks.where({$0.id == id}).first {
+                stock.name = name
             }
         }
     }
@@ -57,26 +57,27 @@ class RealmRepository: RepositoryProtocol {
     
     public func readAllStock() -> Results<Stock> {
         try! realm.write {
-            let lists = realm.objects(Stock.self)
-            return lists.sorted(byKeyPath: "id",ascending: true)
+            let stocks = realm.objects(Stock.self)
+            return stocks.sorted(byKeyPath: "id",ascending: true)
         }
     }
     
-    public func deleteStock(_ list:Stock) {
+    public func deleteStock(_ stock:Stock) {
         try! self.realm.write{
-            self.realm.delete(list)
+            let result = readSingleStock(id: stock.id)
+            self.realm.delete(result)
         }
     }
     // MARK: - Stock
     
     // MARK: - StockItem
-    func createStockItem(listId:ObjectId, name:String, order:Int) {
+    func createStockItem(stockId:ObjectId, name:String, order:Int) {
         try! realm.write {
-            let list = realm.objects(Stock.self).filter{( $0.id == listId )}.first
+            let stock = realm.objects(Stock.self).filter{( $0.id == stockId )}.first
             let item = StockItem()
             item.name = name
             item.order = order
-            list?.items.append(item)
+            stock?.items.append(item)
         }
     }
     
@@ -114,10 +115,10 @@ class RealmRepository: RepositoryProtocol {
         }
     }
 
-    public func deleteStockItem(listId:ObjectId, itemId:ObjectId) {
+    public func deleteStockItem(stockId:ObjectId, itemId:ObjectId) {
         try! realm.write{
-            let record = readSingleStock(id:listId)
-            let result =  record.items.where({$0.id == itemId }).first!
+            let record = readSingleStock(id:stockId)
+            let result = record.items.where({$0.id == itemId }).first!
             realm.delete(result)
         }
     }

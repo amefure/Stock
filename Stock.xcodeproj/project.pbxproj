@@ -24,6 +24,8 @@
 		12F666E82AADF252004BA49E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666E72AADF252004BA49E /* Colors.xcassets */; };
 		12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666EA2AADF2C4004BA49E /* Assets.swift */; };
 		12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */; };
+		12F666F22AAE8DF6004BA49E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666F12AAE8DF6004BA49E /* HeaderView.swift */; };
+		12F666F42AAE8FE6004BA49E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666F32AAE8FE6004BA49E /* InputView.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		12F666E72AADF252004BA49E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		12F666EA2AADF2C4004BA49E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableListBackGroundStack.swift; sourceTree = "<group>"; };
+		12F666F12AAE8DF6004BA49E /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		12F666F32AAE8FE6004BA49E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +91,6 @@
 			children = (
 				12F666C82AADECDC004BA49E /* Info.plist */,
 				12F666C62AADEC93004BA49E /* GoogleService-Info.plist */,
-				12F666B82AADEBC5004BA49E /* StockApp.swift */,
 				12F666E92AADF27D004BA49E /* Generated */,
 				12F666E42AADF204004BA49E /* Resources */,
 				12F666CC2AADED4C004BA49E /* Extension */,
@@ -111,9 +114,11 @@
 		12F666C92AADED2E004BA49E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12F666B82AADEBC5004BA49E /* StockApp.swift */,
 				12F666D82AADEE64004BA49E /* StockListView.swift */,
 				12F666DE2AADEF1D004BA49E /* StockRowView.swift */,
 				12F666E02AADEF43004BA49E /* StockItemListView.swift */,
+				12F666EE2AAE0944004BA49E /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +174,15 @@
 				12F666EA2AADF2C4004BA49E /* Assets.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		12F666EE2AAE0944004BA49E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				12F666F12AAE8DF6004BA49E /* HeaderView.swift */,
+				12F666F32AAE8FE6004BA49E /* InputView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6B5A92AB7F14FD83981853A4 /* Frameworks */ = {
@@ -316,7 +330,9 @@
 				12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */,
 				12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */,
 				12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */,
+				12F666F42AAE8FE6004BA49E /* InputView.swift in Sources */,
 				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
+				12F666F22AAE8DF6004BA49E /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
