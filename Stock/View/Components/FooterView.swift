@@ -51,7 +51,7 @@ struct FooterView: View {
             .background(Color(hexString: "#222222"))
             .cornerRadius(40)
             .shadow(color: .gray,radius: 3, x: 1, y: 1)
-            .offset(y:UIScreen.main.bounds.height / 3)
+            .offset(y:UIScreen.main.bounds.height / 2.3)
     }
 }
 

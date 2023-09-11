@@ -28,9 +28,9 @@ struct StockApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            AvailableNavigationStack{
+            AvailableNavigationStack {
                 // EditModeを動作させるためにVStackが必要
-                VStack{
+                VStack {
                     StockListView()
                 }
             }

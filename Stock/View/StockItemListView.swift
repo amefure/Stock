@@ -24,8 +24,7 @@ struct StockItemListView: View {
     
     var body: some View {
         ZStack {
-            
-            VStack{
+            VStack {
                 HeaderView(leadingIcon: "chevron.backward",
                            trailingIcon: "plus.square",
                            leadingAction: { dismiss() },
@@ -107,10 +106,8 @@ struct StockItemListView: View {
                             viewModel.deleteStockItem(list: list, sourceSet: sourceSet, listId: list.id, itemId: list.items[sourceSet.first!].id)
                         }.deleteDisabled(!isDeleteMode)
                             .listRowBackground(Color.clear)
-                    }
-                    
+                    }.padding(.bottom, 20)
                 }
-                AdMobBannerView().frame(height: 60)
             }
             FooterView(sortAction:{
                 if editSortMode?.wrappedValue == .active {
@@ -142,6 +139,7 @@ struct StockItemListView: View {
                 isDeleteMode.toggle()
             })
         }.navigationBarBackButtonHidden()
+            .navigationBarHidden(true)
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),

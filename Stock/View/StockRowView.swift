@@ -13,6 +13,7 @@ struct StockRowView: View {
     var body: some View {
         HStack {
             Text("\(list.name)")
+                .foregroundColor(.white)
             Spacer()
             
             if isDeleteMode {
