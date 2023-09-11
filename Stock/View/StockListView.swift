@@ -69,35 +69,37 @@ struct StockListView: View {
                             .listRowBackground(Color.clear)
                     }
                 }
+                AdMobBannerView().frame(height: 60)
             }
-            
-            FooterView(sortAction: {
-                if editSortMode?.wrappedValue == .active {
-                    editSortMode?.wrappedValue = .inactive
-                } else {
-                    isDeleteMode = false
-                    isEditNameMode = false
-                    editSortMode?.wrappedValue = .active
-                }
-            },
-                       editAction: {
                 
-                itemNames.removeAll()
-                for item in allBringList.sorted(byKeyPath: "order") {
-                    itemNames.append(item.name)
-                }
-                if !isEditNameMode {
-                    isDeleteMode = false
-                    editSortMode?.wrappedValue = .inactive
-                }
-                isEditNameMode.toggle()
-            },trashAction: {
-                if !isDeleteMode {
-                    isEditNameMode = false
-                    editSortMode?.wrappedValue = .inactive
-                }
-                isDeleteMode.toggle()
-            })
+                FooterView(sortAction: {
+                    if editSortMode?.wrappedValue == .active {
+                        editSortMode?.wrappedValue = .inactive
+                    } else {
+                        isDeleteMode = false
+                        isEditNameMode = false
+                        editSortMode?.wrappedValue = .active
+                    }
+                },
+                           editAction: {
+                    
+                    itemNames.removeAll()
+                    for item in allBringList.sorted(byKeyPath: "order") {
+                        itemNames.append(item.name)
+                    }
+                    if !isEditNameMode {
+                        isDeleteMode = false
+                        editSortMode?.wrappedValue = .inactive
+                    }
+                    isEditNameMode.toggle()
+                },trashAction: {
+                    if !isDeleteMode {
+                        isEditNameMode = false
+                        editSortMode?.wrappedValue = .inactive
+                    }
+                    isDeleteMode.toggle()
+                })
+
         }
         .background(
             LinearGradient(

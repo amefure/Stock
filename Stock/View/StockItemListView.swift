@@ -102,6 +102,7 @@ struct StockItemListView: View {
                     }
                     
                 }
+                AdMobBannerView().frame(height: 60)
             }
             FooterView(sortAction:{
                 if editSortMode?.wrappedValue == .active {
