@@ -99,6 +99,7 @@ struct StockItemListView: View {
                                 } else {
                                     Text(item.name)
                                 }
+                                Text("\(item.order)")
                                 Spacer()
                                 
                                 if isDeleteMode {
@@ -113,7 +114,7 @@ struct StockItemListView: View {
                         }.onMove { sourceSet, destination in
                             viewModel.changeOrder(list: list, sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
-                            viewModel.deleteStockItem(listId: list.id, itemId: list.items[sourceSet.first!].id)
+                            viewModel.deleteStockItem(list: list, sourceSet: sourceSet, listId: list.id, itemId: list.items[sourceSet.first!].id)
                         }.deleteDisabled(!isDeleteMode)
                             .listRowBackground(Color.clear)
                     }

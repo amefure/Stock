@@ -29,7 +29,19 @@ class StockItemListViewModel {
         return repository.readStockItemList()
     }
     
-    public func deleteStockItem(listId:ObjectId, itemId:ObjectId) {
+    public func deleteStockItem(list:Stock, sourceSet:IndexSet, listId:ObjectId, itemId:ObjectId) {
+        guard let source = sourceSet.first else { return }
+        
+        let items = list.items.sorted(by: { $0.order < $1.order })
+        // 削除する行のIDを取得
+        let deleteId = items[source].id
+        // 削除する行の行番号を取得
+        let deleteOrder = items[source].order
+        
+        // 削除する行の行番号より大きい行番号を全て -1 する
+        for i in (deleteOrder + 1)..<items.count {
+            repository.updateOrderStockItem(itemId: items[i].id, order: items[i].order - 1)
+        }
         repository.deleteStockItem(stockId:listId, itemId:itemId)
     }
     
