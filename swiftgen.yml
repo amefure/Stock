@@ -1,3 +1,11 @@
+# ローカリゼーション(多言語対応)用Stringファイル
+strings:
+  inputs:
+      - Stock/Resources/ja.lproj/Localizable.strings
+  # テンプレート指定と保存先
+  outputs:
+    - templateName: structured-swift5
+      output: Stock/Generated/Strings.swift
 # 画像やカラーコードなどのAssetsリソース
 xcassets:
   # 画像やカラーなど

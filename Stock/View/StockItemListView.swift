@@ -120,8 +120,7 @@ struct StockItemListView: View {
                     isEditNameMode = false
                     editSortMode?.wrappedValue = .active
                 }
-            },
-                       editAction: {
+            }, editAction: {
                 itemNames.removeAll()
                 for item in list.items.sorted(byKeyPath: "order") {
                     itemNames.append(item.name)
@@ -133,7 +132,7 @@ struct StockItemListView: View {
                     editSortMode?.wrappedValue = .inactive
                 }
                 isEditNameMode.toggle()
-            },trashAction: {
+            }, trashAction: {
                 if isDeleteMode {
                     editSortMode?.wrappedValue = .active
                 } else {

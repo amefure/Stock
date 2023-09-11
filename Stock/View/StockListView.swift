@@ -15,17 +15,17 @@ struct StockListView: View {
     @ObservedResults(Stock.self) var allBringList
     
     @State private var name = ""
-    @State var itemNames:[String] = [""]
+    @State private var itemNames:[String] = [""]
     
-    @State var isEditNameMode = false
-    @State var isDeleteMode = false
+    @State private var isEditNameMode = false
+    @State private var isDeleteMode = false
     
     @Environment(\.editMode) var editSortMode
     
     // Storage
     @AppStorage("LimitCapacity") var limitCapacity = 5
     
-    @State var isLimitAlert: Bool = false // 上限に達した場合のアラート
+    @State private var isLimitAlert: Bool = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
           if allBringList.count >= limitCapacity {
@@ -96,8 +96,7 @@ struct StockListView: View {
                         isEditNameMode = false
                         editSortMode?.wrappedValue = .active
                     }
-                },
-                           editAction: {
+                }, editAction: {
                     
                     itemNames.removeAll()
                     for item in allBringList.sorted(byKeyPath: "order") {
@@ -108,7 +107,7 @@ struct StockListView: View {
                         editSortMode?.wrappedValue = .inactive
                     }
                     isEditNameMode.toggle()
-                },trashAction: {
+                }, trashAction: {
                     if !isDeleteMode {
                         isEditNameMode = false
                         editSortMode?.wrappedValue = .inactive
@@ -125,14 +124,14 @@ struct StockListView: View {
         .onAppear {
             itemNames = Array(repeating: "", count: allBringList.count)
             editSortMode?.wrappedValue = .inactive
-        }.alert(Text("保存容量が上限に達しました..."),
+        }.alert(Text(L10n.dialogAdmobTitle),
                 isPresented: $isLimitAlert,
                 actions: {
                     Button(action: {}, label: {
                         Text("OK")
                     })
                 }, message: {
-                    Text("設定から広告を視聴すると\n保存容量を増やすことができます。")
+                    Text(L10n.dialogAdmobText)
                 })
      
     }

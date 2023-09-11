@@ -9,30 +9,18 @@ import SwiftUI
 
 struct SettingView: View {
     
-    private func shareApp(shareText: String, shareLink: String) {
-        let items = [shareText, URL(string: shareLink)!] as [Any]
-        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            if let popPC = activityVC.popoverPresentationController {
-                popPC.sourceView = activityVC.view
-                popPC.barButtonItem = .none
-                popPC.sourceRect = activityVC.accessibilityFrame
-            }
-        }
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let rootVC = windowScene?.windows.first?.rootViewController
-        rootVC?.present(activityVC, animated: true, completion: {})
-    }
+
+    private let viewModel = SettingViewModel()
     
     @AppStorage("LimitCapacity") var limitCapacity = 6 // 初期値
     
     var body: some View {
         AvailableListBackGroundStack {
-            Section(header: Text("広告"), footer: Text("・追加される容量は3個です。\n・容量の追加は1日に1回までです。")) {
+            Section(header: Text(L10n.settingCapacitySectionTitle), footer: Text(L10n.settingCapacitySectionFooter)) {
                 RewardButtonView().foregroundColor(.white)
                 HStack {
                     Image(systemName: "bag")
-                    Text("現在の容量:\(limitCapacity)個")
+                    Text(L10n.settingCapacityText(limitCapacity))
                 }
             }//.listRowBackground(Color.clear)
             
@@ -40,28 +28,28 @@ struct SettingView: View {
             
             Section(header: Text("Link")) {
                 // 1:レビューページ
-                Link(destination: URL(string: "https://apps.apple.com/jp/app/%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5/id1673431227?action=write-review")!, label: {
+                Link(destination: URL(string: L10n.appUrl + L10n.settingReviewUrlQuery)!, label: {
                     HStack {
                         Image(systemName: "hand.thumbsup")
-                        Text("アプリをレビューする")
+                        Text(L10n.settingReviewTitle)
                     }.foregroundColor(.white)
                 })
                 
                 // 2:シェアボタン
                 Button(action: {
-                    shareApp(shareText: "", shareLink: "https://apps.apple.com/jp/app/%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5/id1673431227")
+                    viewModel.shareApp(shareText: "", shareLink: L10n.appUrl)
                 }) {
                     HStack {
                         Image(systemName: "star.bubble")
-                        Text("「Stock」をオススメする")
+                        Text(L10n.settingRecommendTitle)
                     }.foregroundColor(.white)
                 }
                 
                 // 3:利用規約とプライバシーポリシー
-                Link(destination: URL(string: "https://tech.amefure.com/app-terms-of-service")!, label: {
+                Link(destination: URL(string: L10n.settingTermsOfServiceUrl)!, label: {
                     HStack {
                         Image(systemName: "note.text")
-                        Text("利用規約とプライバシーポリシー")
+                        Text(L10n.settingTermsOfServiceTitle)
                         Image(systemName: "link").font(.caption)
                     }.foregroundColor(.white)
                 })

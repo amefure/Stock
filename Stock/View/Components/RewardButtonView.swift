@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RewardButtonView: View {
-    // MARK: - AdMob
 
+    // MARK: - AdMob
     @ObservedObject var reward = Reward()
 
     // MARK: - Storage
@@ -17,7 +17,6 @@ struct RewardButtonView: View {
     @AppStorage("LastAcquisitionDate") var lastAcquisitionDate = ""
 
     // MARK: - View
-
     @State var isAlertReward: Bool = false // リワード広告視聴回数制限アラート
 
     // MARK: - Method
@@ -46,21 +45,21 @@ struct RewardButtonView: View {
         }) {
             HStack {
                 Image(systemName: "bag.badge.plus")
-                Text("広告を視聴して容量を追加する")
+                Text(L10n.settingAdmobTitle)
             }
         }
         .onAppear {
             reward.loadReward()
         }
         .disabled(!reward.rewardLoaded)
-        .alert(Text("お知らせ"),
+        .alert(Text(L10n.dialogAdmobTitle),
                isPresented: $isAlertReward,
                actions: {
                    Button(action: {}, label: {
                        Text("OK")
                    })
                }, message: {
-                   Text("広告を視聴できるのは1日に1回までです。")
+                   Text(L10n.dialogAdmobText)
                })
     }
 }
