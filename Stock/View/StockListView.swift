@@ -47,42 +47,7 @@ struct StockListView: View {
                 }
             }
             
-            HStack{
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "plus.bubble.fill")
-                        .foregroundColor(.white)
-                }
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "plus.rectangle.on.folder.fill")
-                        .foregroundColor(.white)
-                }
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "gear")
-                        .foregroundColor(.white)
-                }
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "trash")
-                        .foregroundColor(.white)
-                }
-                Spacer()
-            }.frame(width: UIScreen.main.bounds.width / 2)
-                .padding()
-                .background(Color(hexString: "#222222"))
-                .cornerRadius(40)
-                .shadow(color: .gray,radius: 3, x: 1, y: 1)
-                .offset(y:UIScreen.main.bounds.height / 2.5)
+            FooterView(firstAction: {}, secondAction: {}, trashAction: {})
         }
         .background(
             LinearGradient(
