@@ -65,6 +65,7 @@ struct StockItemListView: View {
                             .background(Color(hexString: "#F2A92E"))
                             .cornerRadius(10)
                             .offset(y:40)
+                            .transition(.slide)
                     } else if isDeleteMode {
                         Text("MODE：Delete")
                             .font(.caption)
@@ -72,6 +73,7 @@ struct StockItemListView: View {
                             .background(Color(hexString: "#C84311"))
                             .cornerRadius(10)
                             .offset(y:40)
+                            .transition(.slide)
                     }
                 }
                 
@@ -122,25 +124,29 @@ struct StockItemListView: View {
                 }
             }
             FooterView(firstAction: {}, secondAction: {
-                itemNames.removeAll()
-                for item in list.items.sorted(byKeyPath: "order") {
-                    itemNames.append(item.name)
+                withAnimation() {
+                    itemNames.removeAll()
+                    for item in list.items.sorted(byKeyPath: "order") {
+                        itemNames.append(item.name)
+                    }
+                    if isEditNameMode {
+                        editSortMode?.wrappedValue = .active
+                    } else {
+                        isDeleteMode = false
+                        editSortMode?.wrappedValue = .inactive
+                    }
+                    isEditNameMode.toggle()
                 }
-                if isEditNameMode {
-                    editSortMode?.wrappedValue = .active
-                } else {
-                    isDeleteMode = false
-                    editSortMode?.wrappedValue = .inactive
-                }
-                isEditNameMode.toggle()
             },trashAction: {
-                if isDeleteMode {
-                    editSortMode?.wrappedValue = .active
-                } else {
-                    isEditNameMode = false
-                    editSortMode?.wrappedValue = .inactive
+                withAnimation() {
+                    if isDeleteMode {
+                        editSortMode?.wrappedValue = .active
+                    } else {
+                        isEditNameMode = false
+                        editSortMode?.wrappedValue = .inactive
+                    }
+                    isDeleteMode.toggle()
                 }
-                isDeleteMode.toggle()
             })
         }.navigationBarBackButtonHidden()
             .background(
