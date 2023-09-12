@@ -11,22 +11,27 @@ struct FooterView: View {
     
     @ObservedObject private var rootViewModel = RootViewModel.shared
     
-    public var sortAction: () -> Void
-    public var editAction: () -> Void
-    public var trashAction: () -> Void
-    
     var body: some View {
         HStack{
             Spacer()
             Button {
-                sortAction()
+                if rootViewModel.currentMode != .sort {
+                    rootViewModel.onSortMode()
+                } else {
+                    rootViewModel.offSortMode()
+                }
             } label: {
                 Image(systemName: "arrow.up.arrow.down")
                     .foregroundColor(rootViewModel.currentMode == .sort ? .green : .white)
             }
             Spacer()
             Button {
-                editAction()
+                if rootViewModel.currentMode != .edit {
+                    rootViewModel.offSortMode()
+                    rootViewModel.onEditNameMode()
+                } else {
+                    rootViewModel.offSortMode()
+                }
             } label: {
                 Image(systemName: "pencil.tip.crop.circle")
                     .font(.title2)
@@ -34,7 +39,12 @@ struct FooterView: View {
             }
             Spacer()
             Button {
-                trashAction()
+                if rootViewModel.currentMode != .delete {
+                    rootViewModel.offSortMode()
+                    rootViewModel.onDeleteMode()
+                } else {
+                    rootViewModel.offSortMode()
+                }
             } label: {
                 Image(systemName: "trash")
                     .foregroundColor(rootViewModel.currentMode == .delete ? .green : .white)
@@ -59,6 +69,6 @@ struct FooterView: View {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView(sortAction: {}, editAction: {}, trashAction: {})
+        FooterView()
     }
 }

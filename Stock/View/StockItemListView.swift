@@ -9,21 +9,18 @@ import SwiftUI
 
 struct StockItemListView: View {
     
-    @ObservedObject var rootViewModel = RootViewModel.shared
+    @ObservedObject private var rootViewModel = RootViewModel.shared
     
-//    private let viewModel = StockItemListViewModel()
-    let stock: Stock
+    public let stock: Stock
     
     @State var name = ""
     
     @State var itemNames:[String] = [""]
     
     @State var isAddMode = false
-    @State var isEditNameMode = false
-    @State var isDeleteMode = false
+
     
     @Environment(\.dismiss) var dismiss
-    @Environment(\.editMode) var editSortMode
     
     var body: some View {
         ZStack {
@@ -34,8 +31,6 @@ struct StockItemListView: View {
                            trailingAction: {
                     withAnimation() {          // 明示的なアニメーション指定
                         self.isAddMode.toggle()
-                        editSortMode?.wrappedValue = .active
-                        isDeleteMode = false
                     }
                 })
                 
@@ -108,41 +103,16 @@ struct StockItemListView: View {
                         }.onDelete { sourceSet in
                             rootViewModel.deleteStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, listId: rootViewModel.currentStock.id)
                             print(rootViewModel.currentStock)
-                        }.deleteDisabled(!isDeleteMode)
+                        }.deleteDisabled(rootViewModel.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
                 }
             }
-            FooterView(sortAction:{
-                if editSortMode?.wrappedValue == .active {
-                    editSortMode?.wrappedValue = .inactive
-                } else {
-                    isDeleteMode = false
-                    isEditNameMode = false
-                    editSortMode?.wrappedValue = .active
-                }
-            }, editAction: {
-                itemNames.removeAll()
-                for item in rootViewModel.currentItems {
-                    itemNames.append(item.name)
-                }
-                if isEditNameMode {
-                    editSortMode?.wrappedValue = .active
-                } else {
-                    isDeleteMode = false
-                    editSortMode?.wrappedValue = .inactive
-                }
-                isEditNameMode.toggle()
-            }, trashAction: {
-                if isDeleteMode {
-                    editSortMode?.wrappedValue = .active
-                } else {
-                    isEditNameMode = false
-                    editSortMode?.wrappedValue = .inactive
-                }
-                isDeleteMode.toggle()
-            })
-        }.navigationBarBackButtonHidden()
+            // MARK: - Footer
+            FooterView()
+            
+        }.environment(\.editMode, .constant(rootViewModel.editSortMode))
+        .navigationBarBackButtonHidden()
             .navigationBarHidden(true)
             .background(
                 LinearGradient(
@@ -154,7 +124,6 @@ struct StockItemListView: View {
                 if rootViewModel.currentStock.items.isEmpty {
                     isAddMode = true
                 }
-                editSortMode?.wrappedValue = .active
                 rootViewModel.setCurrentStock(id: stock.id)
             }
     }

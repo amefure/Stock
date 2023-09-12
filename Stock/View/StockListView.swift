@@ -81,29 +81,7 @@ struct StockListView: View {
             }
             
             // MARK: - Footer
-            FooterView(sortAction: {
-                if rootViewModel.currentMode != .sort {
-                    rootViewModel.onSortMode()
-                } else {
-                    rootViewModel.offSortMode()
-                }
-            }, editAction: {
-                if rootViewModel.currentMode != .edit {
-                    rootViewModel.offSortMode()
-                    rootViewModel.onEditNameMode()
-                } else {
-                    rootViewModel.offSortMode()
-                }
-                
-            }, trashAction: {
-                if rootViewModel.currentMode != .delete {
-                    rootViewModel.offSortMode()
-                    rootViewModel.onDeleteMode()
-                } else {
-                    rootViewModel.offSortMode()
-                }
-               
-            })
+            FooterView()
             
         }.environment(\.editMode, .constant(rootViewModel.editSortMode))
             .background(
