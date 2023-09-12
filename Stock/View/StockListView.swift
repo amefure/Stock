@@ -12,16 +12,11 @@ struct StockListView: View {
     
     //    private var viewModel = StockListViewModel()
     
-    @ObservedObject var rootViewModel = RootViewModel.shared
-    @ObservedObject var interstitial = AdmobInterstitialView()
+    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var interstitial = AdmobInterstitialView()
     
     @State private var name = ""
-    
     @State private var isPresented = false
-    
-    @Environment(\.editMode) var editSortMode
-    
-    
     @State private var isLimitAlert: Bool = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
@@ -54,36 +49,26 @@ struct StockListView: View {
                     
                     AvailableListBackGroundStack {
                         ForEach(rootViewModel.stocks) { stock in
-                            
-                        
-                            if rootViewModel.currentMode == .delete {
-                                StockRowView(id: stock.id, displayName: stock.name)
-//                                Text(list.name)
-                            } else {
-                                //                                ZStack{
-                                //                                    Button {
-                                //                                        // 3回遷移したら広告を表示させる
-                                //                                        var countInterstitial =  rootViewModel.getCountInterstitial()
-                                //                                        countInterstitial += 1
-                                //                                        if countInterstitial == 3 {
-                                //                                            countInterstitial = 0
-                                //                                            interstitial.presentInterstitial()
-                                //                                        }
-                                //                                        rootViewModel.setCountInterstitial(countInterstitial)
-                                //                                        isPresented = true
-                                //                                    } label: {
-                                //                                        StockRowView(list: list, isDeleteMode: $isDeleteMode)
-                                //                                    }
-                                //                                    NavigationLink(value:list , label: { EmptyView() })
-                                //                                }
+                            ZStack{
+                                Button {
+                                    // 3回遷移したら広告を表示させる
+                                    var countInterstitial =  rootViewModel.getCountInterstitial()
+                                    countInterstitial += 1
+                                    if countInterstitial == 3 {
+                                        countInterstitial = 0
+                                        interstitial.presentInterstitial()
+                                    }
+                                    rootViewModel.setCountInterstitial(countInterstitial)
+                                    isPresented = true
+                                } label: {
+                                    StockRowView(id: stock.id, displayName: stock.name)
+                                    
+                                }
                                 NavigationLink {
                                     StockItemListView(stock: stock)
                                 } label: {
-                                    HStack {
-                                        StockRowView(id: stock.id, displayName: stock.name)
-                                    }
-                                }
-                            
+                                    EmptyView()
+                                }.opacity(rootViewModel.currentMode == .none ? 1 : 0)
                             }
                         }.onMove { sourceSet, destination in
                             rootViewModel.changeOrder(list: rootViewModel.stocks , sourceSet: sourceSet, destination: destination)
@@ -97,44 +82,40 @@ struct StockListView: View {
             
             // MARK: - Footer
             FooterView(sortAction: {
-                if editSortMode?.wrappedValue == .active {
-                    editSortMode?.wrappedValue = .inactive
+                if rootViewModel.currentMode != .sort {
+                    rootViewModel.onSortMode()
                 } else {
-                    editSortMode?.wrappedValue = .active
+                    rootViewModel.offSortMode()
                 }
             }, editAction: {
-                
+                rootViewModel.offSortMode()
                 rootViewModel.onEditNameMode()
-                editSortMode?.wrappedValue = .inactive
-                
             }, trashAction: {
+                rootViewModel.offSortMode()
                 rootViewModel.onDeleteMode()
-                editSortMode?.wrappedValue = .inactive
-                
             })
             
-        }
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
-                startPoint: .top, endPoint: .bottom
-            ))
-        .onAppear {
-            rootViewModel.readAllStock()
-            editSortMode?.wrappedValue = .inactive
-            interstitial.loadInterstitial()
-        }
-        .alert(Text(L10n.dialogAdmobTitle),
-               isPresented: $isLimitAlert,
-               actions: {
-            Button(action: {}, label: {
-                Text("OK")
+        }.environment(\.editMode, .constant(rootViewModel.editSortMode))
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
+                    startPoint: .top, endPoint: .bottom
+                ))
+            .onAppear {
+                rootViewModel.readAllStock()
+                interstitial.loadInterstitial()
+            }
+            .alert(Text(L10n.dialogAdmobTitle),
+                   isPresented: $isLimitAlert,
+                   actions: {
+                Button(action: {}, label: {
+                    Text("OK")
+                })
+            }, message: {
+                Text(L10n.dialogAdmobText)
             })
-        }, message: {
-            Text(L10n.dialogAdmobText)
-        })
-        .navigationBarBackButtonHidden()
-        .navigationBarHidden(true)
+            .navigationBarBackButtonHidden()
+            .navigationBarHidden(true)
     }
 }
 

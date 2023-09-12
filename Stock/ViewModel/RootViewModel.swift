@@ -5,8 +5,8 @@
 //  Created by t&a on 2023/09/12.
 //
 
-import UIKit
 import RealmSwift
+import SwiftUI
 
 
 enum Mode {
@@ -14,6 +14,7 @@ enum Mode {
     case edit
     case delete
     case sort
+    case none
 }
 
 class RootViewModel: ObservableObject {
@@ -25,6 +26,8 @@ class RootViewModel: ObservableObject {
     @Published var currentItems: Array<StockItem> = []
     
     @Published var currentMode:Mode = .sort
+    
+    @Published var editSortMode:EditMode = .active
     
     public func onAddMode(){
         currentMode = .add
@@ -40,8 +43,13 @@ class RootViewModel: ObservableObject {
     
     public func onSortMode(){
         currentMode = .sort
+        editSortMode = .active
     }
     
+    public func offSortMode(){
+        currentMode = .none
+        editSortMode = .inactive
+    }
 
     private let repository: RepositoryProtocol = RealmRepository()
     

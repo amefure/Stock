@@ -21,7 +21,6 @@ struct StockRowView: View {
         HStack {
             if rootViewModel.currentMode == .edit {
                 TextField(displayName, text: $name)
-                    .padding(7.5)
                     .onChange(of: name) { newValue in
                         rootViewModel.updateStock(id: id, name: newValue)
                     }
@@ -49,8 +48,6 @@ struct StockRowView: View {
         }.padding(8)
     }
 }
-
-
 
 struct StockRowView_Previews: PreviewProvider {
     static var previews: some View {
