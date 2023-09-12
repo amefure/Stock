@@ -25,9 +25,9 @@ class StockItemListViewModel {
         repository.updateFlagStockItem(itemId: itemId, flag: flag)
     }
     
-    public func readStockItemList() -> Results<StockItem> {
-        return repository.readStockItemList()
-    }
+//    public func readStockItemList() -> Results<StockItem> {
+//        return repository.readStockItemList()
+//    }
     
     public func deleteStockItem(list:Stock, sourceSet:IndexSet, listId:ObjectId, itemId:ObjectId) {
         guard let source = sourceSet.first else { return }

@@ -10,9 +10,10 @@ import RealmSwift
 
 struct StockListView: View {
     
-    private let viewModel = StockListViewModel()
-    // MARK: - Database
-    @ObservedResults(Stock.self) var allBringList
+    //    private var viewModel = StockListViewModel()
+    
+    @ObservedObject var rootViewModel = RootViewModel.shared
+    @ObservedObject var interstitial = AdmobInterstitialView()
     
     @State private var name = ""
     @State private var itemNames:[String] = [""]
@@ -21,17 +22,13 @@ struct StockListView: View {
     @State private var isDeleteMode = false
     
     @Environment(\.editMode) var editSortMode
-    @State private var sendList: Stock = Stock()
-    // Storage
-    @AppStorage("LimitCapacity") var limitCapacity = 5
-    // Storage
-    @AppStorage("LimitInterstitial") var LimitInterstitial = 0
     
-    @ObservedObject  var interstitial = AdmobInterstitialView()
+    
     @State private var isLimitAlert: Bool = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
-        if allBringList.count >= limitCapacity {
+        let limitCapacity = rootViewModel.getLimitCapacity()
+        if rootViewModel.stocks.count >= limitCapacity {
             isLimitAlert = true
             return false
         } else {
@@ -47,25 +44,25 @@ struct StockListView: View {
                 
                 InputView(name: $name, action: {
                     if checkLimitCapacity() {
-                        viewModel.createStock(name: name, order: allBringList.count)
+                        rootViewModel.createStock(name: name, order: rootViewModel.stocks .count)
                     }
                 })
                 
                 
-                if allBringList.isEmpty {
+                if rootViewModel.stocks .isEmpty {
                     Spacer()
                         .frame(width: UIScreen.main.bounds.width)
                 } else {
                     
                     AvailableListBackGroundStack {
-                        ForEach(allBringList.sorted(byKeyPath: "order")) { list in
+                        ForEach(rootViewModel.stocks ) { list in
                             
                             if isEditNameMode {
                                 HStack {
                                     TextField(list.name, text: $itemNames[list.order])
                                         .padding(7.5)
                                         .onChange(of: itemNames[list.order]) { newValue in
-                                            viewModel.updateStock(id: list.id, name: newValue)
+                                            rootViewModel.updateStock(id: list.id, name: newValue)
                                         }
                                     Image(systemName: "pencil.tip.crop.circle")
                                         .foregroundColor(.gray)
@@ -76,29 +73,35 @@ struct StockListView: View {
                                 StockRowView(list: list, isDeleteMode: $isDeleteMode)
                                 
                             } else {
-                                Button {
-                                    sendList = list
-                                    LimitInterstitial += 1
-                                    if LimitInterstitial == 3 {
-                                        LimitInterstitial = 0
-                                        interstitial.presentInterstitial()
+                                ZStack{
+                                    Button {
+                                        
+                                        rootViewModel.setCurrentStock(id: list.id)
+                                        // 3回遷移したら広告を表示させる
+                                        var countInterstitial =  rootViewModel.getCountInterstitial()
+                                        countInterstitial += 1
+                                        if countInterstitial == 3 {
+                                            countInterstitial = 0
+                                            interstitial.presentInterstitial()
+                                        }
+                                        rootViewModel.setCountInterstitial(countInterstitial)
+                                        isPresented = true
+                                    } label: {
+                                        StockRowView(list: list, isDeleteMode: $isDeleteMode)
                                     }
-                                    isPresented = true
-                                } label: {
-                                    StockRowView(list: list, isDeleteMode: $isDeleteMode)
+                                    NavigationLink(value:list , label: { EmptyView() })
                                 }
                             }
                         }.onMove { sourceSet, destination in
-                            viewModel.changeOrder(list: allBringList, sourceSet: sourceSet, destination: destination)
+                            rootViewModel.changeOrder(list: rootViewModel.stocks , sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
-                            viewModel.deleteStock(list: allBringList, sourceSet: sourceSet)
+                            rootViewModel.deleteStock(list: rootViewModel.stocks , sourceSet: sourceSet)
                         }.deleteDisabled(!isDeleteMode)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
-                    NavigationLink(destination:
-                                    StockItemListView(list: sendList),
-                           isActive: $isPresented,
-                                   label: { EmptyView() }).hidden()
+                        .navigationDestination(for: Stock.self) { stock in
+                            StockItemListView()
+                        }
                 }
             }
             
@@ -114,7 +117,7 @@ struct StockListView: View {
             }, editAction: {
                 
                 itemNames.removeAll()
-                for item in allBringList.sorted(byKeyPath: "order") {
+                for item in rootViewModel.stocks {
                     itemNames.append(item.name)
                 }
                 if !isEditNameMode {
@@ -137,21 +140,22 @@ struct StockListView: View {
                 startPoint: .top, endPoint: .bottom
             ))
         .onAppear {
-            itemNames = Array(repeating: "", count: allBringList.count)
+            rootViewModel.readAllStock()
+            itemNames = Array(repeating: "", count: rootViewModel.stocks .count)
             editSortMode?.wrappedValue = .inactive
             interstitial.loadInterstitial()
         }.disabled(!interstitial.interstitialLoaded)
-        .alert(Text(L10n.dialogAdmobTitle),
-                isPresented: $isLimitAlert,
-                actions: {
-            Button(action: {}, label: {
-                Text("OK")
+            .alert(Text(L10n.dialogAdmobTitle),
+                   isPresented: $isLimitAlert,
+                   actions: {
+                Button(action: {}, label: {
+                    Text("OK")
+                })
+            }, message: {
+                Text(L10n.dialogAdmobText)
             })
-        }, message: {
-            Text(L10n.dialogAdmobText)
-        })
-        .navigationBarBackButtonHidden()
-        .navigationBarHidden(true)
+            .navigationBarBackButtonHidden()
+            .navigationBarHidden(true)
     }
 }
 

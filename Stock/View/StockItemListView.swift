@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct StockItemListView: View {
-    private let viewModel = StockItemListViewModel()
     
-    let list:Stock
+    @ObservedObject var rootViewModel = RootViewModel.shared
+    
+//    private let viewModel = StockItemListViewModel()
+    
+    
     @State var name = ""
     
     @State var itemNames:[String] = [""]
@@ -36,32 +39,32 @@ struct StockItemListView: View {
                     }
                 })
                 
-                if list.items.isEmpty || isAddMode {
+                if rootViewModel.currentStock.items.isEmpty || isAddMode {
                     InputView(name: $name, action: {
-                        viewModel.createStockItem(listId: list.id, name: name, order: list.size)
+                        rootViewModel.createStockItem(listId: rootViewModel.currentStock.id, name: name, order: rootViewModel.currentStock.size)
                         
                         itemNames.append("")
                     }).transition(.scale)
                 }
                 
                 VStack {
-                    Text(list.name)
+                    Text(rootViewModel.currentStock.name)
                     
                     Rectangle()
                         .stroke(Color.green, lineWidth: 2)
                         .frame(width: 200, height: 2)
                 }
                 
-                if list.items.isEmpty {
+                if rootViewModel.currentStock.items.isEmpty {
                     Spacer()
                         .frame(width: UIScreen.main.bounds.width)
                 } else {
                     AvailableListBackGroundStack {
-                        ForEach(list.items.sorted(byKeyPath: "order")) { item in
+                        ForEach(rootViewModel.currentStock.items.sorted(byKeyPath: "order")) { item in
                             HStack{
                                 if item.name.prefix(1) != "-" {
                                     Button {
-                                        viewModel.updateFlagStockItem(itemId: item.id, flag: !item.flag)
+                                        rootViewModel.updateFlagStockItem(itemId: item.id, flag: !item.flag)
                                     } label: {
                                         Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
                                             .foregroundColor(.green)
@@ -74,7 +77,7 @@ struct StockItemListView: View {
                                     HStack {
                                         TextField(item.name, text: $itemNames[item.order])
                                             .onChange(of: itemNames[item.order]) { newValue in
-                                                viewModel.updateStockItem(itemId: item.id, name: newValue)
+                                                rootViewModel.updateStockItem(itemId: item.id, name: newValue)
                                             }
                                         Image(systemName: "pencil.tip.crop.circle")
                                             .foregroundColor(.gray)
@@ -85,6 +88,7 @@ struct StockItemListView: View {
                                             .fontWeight(.bold)
                                     } else {
                                         Text(item.name)
+//                                        Text(item.order)
                                     }
                                     
                                 }
@@ -101,9 +105,14 @@ struct StockItemListView: View {
                                 }
                             }
                         }.onMove { sourceSet, destination in
-                            viewModel.changeOrder(list: list, sourceSet: sourceSet, destination: destination)
+                            rootViewModel.changeOrderStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
-                            viewModel.deleteStockItem(list: list, sourceSet: sourceSet, listId: list.id, itemId: list.items[sourceSet.first!].id)
+                            rootViewModel.deleteStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, listId: rootViewModel.currentStock.id)
+                            itemNames.removeAll()
+                            for item in rootViewModel.currentStock.items.sorted(byKeyPath: "order") {
+                                itemNames.append(item.name)
+                            }
+                            print("sourceSet")
                         }.deleteDisabled(!isDeleteMode)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
@@ -119,7 +128,7 @@ struct StockItemListView: View {
                 }
             }, editAction: {
                 itemNames.removeAll()
-                for item in list.items.sorted(byKeyPath: "order") {
+                for item in rootViewModel.currentStock.items.sorted(byKeyPath: "order") {
                     itemNames.append(item.name)
                 }
                 if isEditNameMode {
@@ -146,8 +155,8 @@ struct StockItemListView: View {
                     startPoint: .top, endPoint: .bottom
                 ))
             .onAppear {
-                itemNames = Array(repeating: "", count: list.items.count)
-                if list.items.isEmpty {
+                itemNames = Array(repeating: "", count: rootViewModel.currentStock.items.count)
+                if rootViewModel.currentStock.items.isEmpty {
                     isAddMode = true
                 }
                 editSortMode?.wrappedValue = .active
@@ -158,6 +167,6 @@ struct StockItemListView: View {
 
 struct StockItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        StockItemListView(list: Stock.demoList)
+        StockItemListView()
     }
 }

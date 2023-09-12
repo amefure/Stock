@@ -33,6 +33,8 @@
 		12F666FE2AAF4F53004BA49E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */; };
 		12F667012AAF50B3004BA49E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12F667032AAF50B3004BA49E /* Localizable.strings */; };
 		12F667062AAF557A004BA49E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667052AAF557A004BA49E /* Strings.swift */; };
+		12F6670A2AAFEF22004BA49E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */; };
+		12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6670B2AB0326A004BA49E /* RootViewModel.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		12F667022AAF50B3004BA49E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12F667042AAF50CF004BA49E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12F667052AAF557A004BA49E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		12F6670B2AB0326A004BA49E /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +112,7 @@
 				12F666C62AADEC93004BA49E /* GoogleService-Info.plist */,
 				12F666E92AADF27D004BA49E /* Generated */,
 				12F666E42AADF204004BA49E /* Resources */,
-				12F666CC2AADED4C004BA49E /* Extension */,
+				12F666CC2AADED4C004BA49E /* Extension&Utility */,
 				12F666CA2AADED34004BA49E /* Model */,
 				12F666C92AADED2E004BA49E /* View */,
 				12F666CB2AADED39004BA49E /* ViewModel */,
@@ -154,18 +158,20 @@
 				12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */,
 				12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */,
 				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
+				12F6670B2AB0326A004BA49E /* RootViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		12F666CC2AADED4C004BA49E /* Extension */ = {
+		12F666CC2AADED4C004BA49E /* Extension&Utility */ = {
 			isa = PBXGroup;
 			children = (
 				12F666D02AADED96004BA49E /* ExColor.swift */,
 				12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */,
 				12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */,
+				12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */,
 			);
-			path = Extension;
+			path = "Extension&Utility";
 			sourceTree = "<group>";
 		};
 		12F666CD2AADED53004BA49E /* Repository */ = {
@@ -349,6 +355,7 @@
 				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
 				12F666D12AADED96004BA49E /* ExColor.swift in Sources */,
 				12F666F62AAE983A004BA49E /* FooterView.swift in Sources */,
+				12F6670A2AAFEF22004BA49E /* UserDefaultsManager.swift in Sources */,
 				12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */,
 				12F666D52AADEDED004BA49E /* Stock.swift in Sources */,
 				12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */,
@@ -362,6 +369,7 @@
 				12F666F42AAE8FE6004BA49E /* InputView.swift in Sources */,
 				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
 				12F666F82AAF3CA1004BA49E /* AdMobView.swift in Sources */,
+				12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */,
 				12F666F22AAE8DF6004BA49E /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,10 +519,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,9 +530,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -544,10 +555,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,9 +566,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

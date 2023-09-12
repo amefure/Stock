@@ -23,6 +23,7 @@ struct AvailableNavigationStack<Content:View>:View{
             NavigationView {
                 content
             }.accentColor(Color.green)
+                .navigationViewStyle(.stack)
         }
     }
 }
