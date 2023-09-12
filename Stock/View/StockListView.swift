@@ -53,11 +53,12 @@ struct StockListView: View {
                 } else {
                     
                     AvailableListBackGroundStack {
-                        ForEach(rootViewModel.stocks) { list in
+                        ForEach(rootViewModel.stocks) { stock in
                             
                         
                             if rootViewModel.currentMode == .delete {
-                                StockRowView(list: list)
+                                StockRowView(id: stock.id, displayName: stock.name)
+//                                Text(list.name)
                             } else {
                                 //                                ZStack{
                                 //                                    Button {
@@ -76,10 +77,10 @@ struct StockListView: View {
                                 //                                    NavigationLink(value:list , label: { EmptyView() })
                                 //                                }
                                 NavigationLink {
-                                    StockItemListView(stock: list)
+                                    StockItemListView(stock: stock)
                                 } label: {
                                     HStack {
-                                        StockRowView(list: list)
+                                        StockRowView(id: stock.id, displayName: stock.name)
                                     }
                                 }
                             

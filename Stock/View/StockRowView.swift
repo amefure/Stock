@@ -6,24 +6,27 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct StockRowView: View {
     
-    @ObservedObject var rootViewModel = RootViewModel.shared
-    let list:Stock
+    @ObservedObject private var rootViewModel = RootViewModel.shared
+    
+    public let id:ObjectId
+    public let displayName:String
 
-    @State var name:String = ""
+    @State private var name:String = ""
     
     var body: some View {
         HStack {
             if rootViewModel.currentMode == .edit {
-                TextField(list.name, text: $name)
+                TextField(displayName, text: $name)
                     .padding(7.5)
                     .onChange(of: name) { newValue in
-                        rootViewModel.updateStock(id: list.id, name: newValue)
+                        rootViewModel.updateStock(id: id, name: newValue)
                     }
             } else {
-                Text("\(list.name)")
+                Text("\(displayName)")
                     .foregroundColor(.white)
             }
             
@@ -51,6 +54,6 @@ struct StockRowView: View {
 
 struct StockRowView_Previews: PreviewProvider {
     static var previews: some View {
-        StockRowView(list: Stock.demoList)
+        StockRowView(id: ObjectId(), displayName: "ame")
     }
 }
