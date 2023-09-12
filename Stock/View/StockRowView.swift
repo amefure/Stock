@@ -14,6 +14,7 @@ struct StockRowView: View {
     
     public let id:ObjectId
     public let displayName:String
+    public var stockItemFlag = false
 
     @State private var name:String = ""
     
@@ -22,11 +23,22 @@ struct StockRowView: View {
             if rootViewModel.currentMode == .edit {
                 TextField(displayName, text: $name)
                     .onChange(of: name) { newValue in
-                        rootViewModel.updateStock(id: id, name: newValue)
+                        if stockItemFlag {
+                            rootViewModel.updateStockItem(itemId: id, name: newValue)
+                        } else {
+                            rootViewModel.updateStock(id: id, name: newValue)
+                        }
+                        
                     }
             } else {
-                Text("\(displayName)")
-                    .foregroundColor(.white)
+                
+                if displayName.prefix(1) == "-" && stockItemFlag {
+                    Text("■  \(String(displayName.dropFirst()))")
+                        .fontWeight(.bold)
+                } else {
+                    Text("\(displayName)")
+                        .foregroundColor(.white)
+                }
             }
             
             Spacer()
