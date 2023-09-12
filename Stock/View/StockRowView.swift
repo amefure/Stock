@@ -8,28 +8,49 @@
 import SwiftUI
 
 struct StockRowView: View {
+    
+    @ObservedObject var rootViewModel = RootViewModel.shared
     let list:Stock
-    @Binding var isDeleteMode:Bool
+
+    @State var name:String = ""
+    
     var body: some View {
         HStack {
-            Text("\(list.name)")
-                .foregroundColor(.white)
+            if rootViewModel.currentMode == .edit {
+                TextField(list.name, text: $name)
+                    .padding(7.5)
+                    .onChange(of: name) { newValue in
+                        rootViewModel.updateStock(id: list.id, name: newValue)
+                    }
+            } else {
+                Text("\(list.name)")
+                    .foregroundColor(.white)
+            }
+            
             Spacer()
             
-            if isDeleteMode {
+            
+            if rootViewModel.currentMode == .edit {
+                Image(systemName: "pencil.tip.crop.circle")
+                    .foregroundColor(.gray)
+            } else if rootViewModel.currentMode == .delete {
                 Group {
                     Image(systemName: "trash")
                     Image(systemName: "arrow.left")
                     Image(systemName: "hand.tap")
                 }.font(.caption)
                     .foregroundColor(.gray)
+            } else if rootViewModel.currentMode == .sort {
+                
             }
         }.padding(8)
     }
 }
 
+
+
 struct StockRowView_Previews: PreviewProvider {
     static var previews: some View {
-        StockRowView(list: Stock.demoList, isDeleteMode: Binding.constant(true))
+        StockRowView(list: Stock.demoList)
     }
 }

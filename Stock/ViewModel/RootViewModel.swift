@@ -8,6 +8,14 @@
 import UIKit
 import RealmSwift
 
+
+enum Mode {
+    case add
+    case edit
+    case delete
+    case sort
+}
+
 class RootViewModel: ObservableObject {
     
     static let shared = RootViewModel()
@@ -16,6 +24,25 @@ class RootViewModel: ObservableObject {
     @Published var currentStock = Stock()
     @Published var currentItems: Array<StockItem> = []
     
+    @Published var currentMode:Mode = .sort
+    
+    public func onAddMode(){
+        currentMode = .add
+    }
+    
+    public func onEditNameMode(){
+        currentMode = .edit
+    }
+
+    public func onDeleteMode(){
+        currentMode = .delete
+    }
+    
+    public func onSortMode(){
+        currentMode = .sort
+    }
+    
+
     private let repository: RepositoryProtocol = RealmRepository()
     
     public func readAllStock() {
