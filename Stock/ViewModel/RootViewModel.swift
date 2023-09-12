@@ -25,9 +25,9 @@ class RootViewModel: ObservableObject {
     @Published var currentStock = Stock()
     @Published var currentItems: Array<StockItem> = []
     
-    @Published var currentMode:Mode = .sort
+    @Published var currentMode:Mode = .none
     
-    @Published var editSortMode:EditMode = .active
+    @Published var editSortMode:EditMode = .inactive
     
     public func onAddMode(){
         currentMode = .add

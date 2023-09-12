@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FooterView: View {
     
+    @ObservedObject private var rootViewModel = RootViewModel.shared
+    
     public var sortAction: () -> Void
     public var editAction: () -> Void
     public var trashAction: () -> Void
@@ -20,7 +22,7 @@ struct FooterView: View {
                 sortAction()
             } label: {
                 Image(systemName: "arrow.up.arrow.down")
-                    .foregroundColor(.white)
+                    .foregroundColor(rootViewModel.currentMode == .sort ? .green : .white)
             }
             Spacer()
             Button {
@@ -28,14 +30,14 @@ struct FooterView: View {
             } label: {
                 Image(systemName: "pencil.tip.crop.circle")
                     .font(.title2)
-                    .foregroundColor(.white)
+                    .foregroundColor(rootViewModel.currentMode == .edit ? .green : .white)
             }
             Spacer()
             Button {
                 trashAction()
             } label: {
                 Image(systemName: "trash")
-                    .foregroundColor(.white)
+                    .foregroundColor(rootViewModel.currentMode == .delete ? .green : .white)
             }
             Spacer()
             NavigationLink {

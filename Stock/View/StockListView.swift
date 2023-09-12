@@ -88,11 +88,21 @@ struct StockListView: View {
                     rootViewModel.offSortMode()
                 }
             }, editAction: {
-                rootViewModel.offSortMode()
-                rootViewModel.onEditNameMode()
+                if rootViewModel.currentMode != .edit {
+                    rootViewModel.offSortMode()
+                    rootViewModel.onEditNameMode()
+                } else {
+                    rootViewModel.offSortMode()
+                }
+                
             }, trashAction: {
-                rootViewModel.offSortMode()
-                rootViewModel.onDeleteMode()
+                if rootViewModel.currentMode != .delete {
+                    rootViewModel.offSortMode()
+                    rootViewModel.onDeleteMode()
+                } else {
+                    rootViewModel.offSortMode()
+                }
+               
             })
             
         }.environment(\.editMode, .constant(rootViewModel.editSortMode))
