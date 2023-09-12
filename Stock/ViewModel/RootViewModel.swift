@@ -14,6 +14,7 @@ class RootViewModel: ObservableObject {
     
     @Published var stocks: Array<Stock> = []
     @Published var currentStock = Stock()
+    @Published var currentItems: Array<StockItem> = []
     
     private let repository: RepositoryProtocol = RealmRepository()
     
@@ -26,6 +27,7 @@ class RootViewModel: ObservableObject {
     public func setCurrentStock(id: ObjectId) {
         if let result = stocks.first(where: { $0.id == id }) {
             currentStock = result
+            currentItems =  Array(currentStock.items).sorted(by: { $0.order < $1.order })
         }
     }
     
@@ -87,6 +89,7 @@ class RootViewModel: ObservableObject {
     public func createStockItem(listId:ObjectId, name:String, order:Int) {
         repository.createStockItem(stockId: listId, name: name, order: order)
         self.readAllStock()
+        self.setCurrentStock(id: listId)
     }
     
     public func updateStockItem(itemId:ObjectId,name:String) {
@@ -146,6 +149,7 @@ class RootViewModel: ObservableObject {
             repository.updateOrderStockItem(itemId: moveId, order: destination)
         }
         self.readAllStock()
+        self.setCurrentStock(id: list.id)
     }
     
     

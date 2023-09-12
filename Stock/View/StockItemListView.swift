@@ -12,7 +12,7 @@ struct StockItemListView: View {
     @ObservedObject var rootViewModel = RootViewModel.shared
     
 //    private let viewModel = StockItemListViewModel()
-    
+    let stock: Stock
     
     @State var name = ""
     
@@ -60,7 +60,7 @@ struct StockItemListView: View {
                         .frame(width: UIScreen.main.bounds.width)
                 } else {
                     AvailableListBackGroundStack {
-                        ForEach(rootViewModel.currentStock.items.sorted(byKeyPath: "order")) { item in
+                        ForEach(rootViewModel.currentItems) { item in
                             HStack{
                                 if item.name.prefix(1) != "-" {
                                     Button {
@@ -68,51 +68,46 @@ struct StockItemListView: View {
                                     } label: {
                                         Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
                                             .foregroundColor(.green)
-                                        
+
                                     }.buttonStyle(.plain)
                                 }
                                 
-                                
-                                if isEditNameMode {
-                                    HStack {
-                                        TextField(item.name, text: $itemNames[item.order])
-                                            .onChange(of: itemNames[item.order]) { newValue in
-                                                rootViewModel.updateStockItem(itemId: item.id, name: newValue)
-                                            }
-                                        Image(systemName: "pencil.tip.crop.circle")
-                                            .foregroundColor(.gray)
-                                    }
-                                } else {
-                                    if item.name.prefix(1) == "-" {
-                                        Text("■ \(String(item.name.dropFirst()))")
-                                            .fontWeight(.bold)
-                                    } else {
+//                                if isEditNameMode {
+//                                    HStack {
+//                                        TextField(item.name, text: $itemNames[item.order])
+//                                            .onChange(of: itemNames[item.order]) { newValue in
+//                                                rootViewModel.updateStockItem(itemId: item.id, name: newValue)
+//                                            }
+//                                        Image(systemName: "pencil.tip.crop.circle")
+//                                            .foregroundColor(.gray)
+//                                    }
+//                                } else {
+//                                    if item.name.prefix(1) == "-" {
+//                                        Text("■ \(String(item.name.dropFirst()))")
+//                                            .fontWeight(.bold)
+//                                    } else {
                                         Text(item.name)
-//                                        Text(item.order)
-                                    }
-                                    
-                                }
-                                
-                                Spacer()
-                                
-                                if isDeleteMode {
-                                    Group {
-                                        Image(systemName: "trash")
-                                        Image(systemName: "arrow.left")
-                                        Image(systemName: "hand.tap")
-                                    }.font(.caption)
-                                        .foregroundColor(.gray)
-                                }
+////                                        Text(item.order)
+//                                    }
+//
+//                                }
+//
+//                                Spacer()
+//
+//                                if isDeleteMode {
+//                                    Group {
+//                                        Image(systemName: "trash")
+//                                        Image(systemName: "arrow.left")
+//                                        Image(systemName: "hand.tap")
+//                                    }.font(.caption)
+//                                        .foregroundColor(.gray)
+//                                }
                             }
                         }.onMove { sourceSet, destination in
                             rootViewModel.changeOrderStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
                             rootViewModel.deleteStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, listId: rootViewModel.currentStock.id)
-                            itemNames.removeAll()
-                            for item in rootViewModel.currentStock.items.sorted(byKeyPath: "order") {
-                                itemNames.append(item.name)
-                            }
-                            print("sourceSet")
+                            print(rootViewModel.currentStock)
                         }.deleteDisabled(!isDeleteMode)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
@@ -128,7 +123,7 @@ struct StockItemListView: View {
                 }
             }, editAction: {
                 itemNames.removeAll()
-                for item in rootViewModel.currentStock.items.sorted(byKeyPath: "order") {
+                for item in rootViewModel.currentItems {
                     itemNames.append(item.name)
                 }
                 if isEditNameMode {
@@ -155,11 +150,12 @@ struct StockItemListView: View {
                     startPoint: .top, endPoint: .bottom
                 ))
             .onAppear {
-                itemNames = Array(repeating: "", count: rootViewModel.currentStock.items.count)
+                itemNames = Array(repeating: "", count: rootViewModel.currentItems.count)
                 if rootViewModel.currentStock.items.isEmpty {
                     isAddMode = true
                 }
                 editSortMode?.wrappedValue = .active
+                rootViewModel.setCurrentStock(id: stock.id)
             }
     }
 }
@@ -167,6 +163,6 @@ struct StockItemListView: View {
 
 struct StockItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        StockItemListView()
+        StockItemListView(stock: Stock())
     }
 }

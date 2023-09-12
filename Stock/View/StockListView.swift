@@ -73,23 +73,26 @@ struct StockListView: View {
                                 StockRowView(list: list, isDeleteMode: $isDeleteMode)
                                 
                             } else {
-                                ZStack{
-                                    Button {
-                                        
-                                        rootViewModel.setCurrentStock(id: list.id)
-                                        // 3回遷移したら広告を表示させる
-                                        var countInterstitial =  rootViewModel.getCountInterstitial()
-                                        countInterstitial += 1
-                                        if countInterstitial == 3 {
-                                            countInterstitial = 0
-                                            interstitial.presentInterstitial()
-                                        }
-                                        rootViewModel.setCountInterstitial(countInterstitial)
-                                        isPresented = true
-                                    } label: {
-                                        StockRowView(list: list, isDeleteMode: $isDeleteMode)
-                                    }
-                                    NavigationLink(value:list , label: { EmptyView() })
+//                                ZStack{
+//                                    Button {
+//                                        // 3回遷移したら広告を表示させる
+//                                        var countInterstitial =  rootViewModel.getCountInterstitial()
+//                                        countInterstitial += 1
+//                                        if countInterstitial == 3 {
+//                                            countInterstitial = 0
+//                                            interstitial.presentInterstitial()
+//                                        }
+//                                        rootViewModel.setCountInterstitial(countInterstitial)
+//                                        isPresented = true
+//                                    } label: {
+//                                        StockRowView(list: list, isDeleteMode: $isDeleteMode)
+//                                    }
+//                                    NavigationLink(value:list , label: { EmptyView() })
+//                                }
+                                NavigationLink {
+                                    StockItemListView(stock: list)
+                                } label: {
+                                    StockRowView(list: list, isDeleteMode: $isDeleteMode)
                                 }
                             }
                         }.onMove { sourceSet, destination in
@@ -99,9 +102,9 @@ struct StockListView: View {
                         }.deleteDisabled(!isDeleteMode)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
-                        .navigationDestination(for: Stock.self) { stock in
-                            StockItemListView()
-                        }
+//                        .navigationDestination(for: Stock.self) { stock in
+//                            StockItemListView()
+//                        }
                 }
             }
             
@@ -144,7 +147,7 @@ struct StockListView: View {
             itemNames = Array(repeating: "", count: rootViewModel.stocks .count)
             editSortMode?.wrappedValue = .inactive
             interstitial.loadInterstitial()
-        }.disabled(!interstitial.interstitialLoaded)
+        }
             .alert(Text(L10n.dialogAdmobTitle),
                    isPresented: $isLimitAlert,
                    actions: {
