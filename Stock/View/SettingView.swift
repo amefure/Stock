@@ -12,7 +12,7 @@ struct SettingView: View {
 
     private let viewModel = SettingViewModel()
     
-    @AppStorage("LimitCapacity") var limitCapacity = 6 // 初期値
+    @ObservedObject private var rootViewModel = RootViewModel.shared
     
     var body: some View {
         VStack{
@@ -23,7 +23,7 @@ struct SettingView: View {
                     RewardButtonView().foregroundColor(.white)
                     HStack {
                         Image(systemName: "bag")
-                        Text(L10n.settingCapacityText(limitCapacity))
+                        Text(L10n.settingCapacityText(rootViewModel.getLimitCapacity()))
                     }
                 }
                 

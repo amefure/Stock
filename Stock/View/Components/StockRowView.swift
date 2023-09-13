@@ -10,6 +10,7 @@ import RealmSwift
 
 struct StockRowView: View {
     
+    @ObservedObject private var repository = RepositoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
     
     public let id:ObjectId
@@ -24,9 +25,9 @@ struct StockRowView: View {
                 TextField(displayName, text: $name)
                     .onChange(of: name) { newValue in
                         if stockItemFlag {
-                            rootViewModel.updateStockItem(itemId: id, name: newValue)
+                            repository.updateStockItem(itemId: id, name: newValue)
                         } else {
-                            rootViewModel.updateStock(id: id, name: newValue)
+                            repository.updateStock(id: id, name: newValue)
                         }
                         
                     }

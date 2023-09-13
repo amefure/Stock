@@ -10,6 +10,7 @@ import RealmSwift
 
 struct StockListView: View {
     
+    @ObservedObject private var repository = RepositoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
     @ObservedObject private var interstitial = AdmobInterstitialView()
     
@@ -19,7 +20,7 @@ struct StockListView: View {
     
     private func checkLimitCapacity() -> Bool {
         let limitCapacity = rootViewModel.getLimitCapacity()
-        if rootViewModel.stocks.count >= limitCapacity {
+        if repository.stocks.count >= limitCapacity {
             isLimitAlert = true
             return false
         } else {
@@ -35,18 +36,18 @@ struct StockListView: View {
                 
                 InputView(name: $name, action: {
                     if checkLimitCapacity() {
-                        rootViewModel.createStock(name: name, order: rootViewModel.stocks.count)
+                        repository.createStock(name: name, order: repository.stocks.count)
                     }
                 })
                 
                 
-                if rootViewModel.stocks.isEmpty {
+                if repository.stocks.isEmpty {
                     Spacer()
                         .frame(width: UIScreen.main.bounds.width)
                 } else {
                     
                     AvailableListBackGroundStack {
-                        ForEach(rootViewModel.stocks) { stock in
+                        ForEach(repository.stocks) { stock in
                             ZStack{
                                 Button {
                                     // 3回遷移したら広告を表示させる
@@ -69,9 +70,9 @@ struct StockListView: View {
                                 }.opacity(rootViewModel.currentMode == .none ? 1 : 0)
                             }
                         }.onMove { sourceSet, destination in
-                            rootViewModel.changeOrder(list: rootViewModel.stocks , sourceSet: sourceSet, destination: destination)
+                            repository.changeOrder(list: repository.stocks , sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
-                            rootViewModel.deleteStock(list: rootViewModel.stocks , sourceSet: sourceSet)
+                            repository.deleteStock(list: repository.stocks , sourceSet: sourceSet)
                         }.deleteDisabled(rootViewModel.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
@@ -88,7 +89,7 @@ struct StockListView: View {
                     startPoint: .top, endPoint: .bottom
                 ))
             .onAppear {
-                rootViewModel.readAllStock()
+                repository.readAllStock()
                 interstitial.loadInterstitial()
                 rootViewModel.offSortMode()
             }

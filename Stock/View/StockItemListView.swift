@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StockItemListView: View {
     
+    @ObservedObject private var repository = RepositoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
     
     public let stock: Stock
@@ -34,31 +35,31 @@ struct StockItemListView: View {
                     }
                 })
                 
-                if rootViewModel.currentStock.items.isEmpty || rootViewModel.currentMode == .add {
+                if repository.currentStock.items.isEmpty || rootViewModel.currentMode == .add {
                     InputView(name: $name, action: {
-                        rootViewModel.createStockItem(listId: rootViewModel.currentStock.id, name: name, order: rootViewModel.currentStock.size)
+                        repository.createStockItem(listId: repository.currentStock.id, name: name, order: repository.currentStock.size)
                     }).transition(.scale)
                 }
                 
                 VStack {
-                    Text(rootViewModel.currentStock.name)
+                    Text(repository.currentStock.name)
                     
                     Rectangle()
                         .stroke(Color.green, lineWidth: 2)
                         .frame(width: 200, height: 2)
                 }
                 
-                if rootViewModel.currentItems.isEmpty {
+                if repository.currentItems.isEmpty {
                     Spacer()
                         .frame(width: UIScreen.main.bounds.width)
                 } else {
                     AvailableListBackGroundStack {
-                        ForEach(rootViewModel.currentItems) { item in
+                        ForEach(repository.currentItems) { item in
                             
                             HStack{
                                 if item.name.prefix(1) != "-" {
                                     Button {
-                                        rootViewModel.updateFlagStockItem(itemId: item.id, flag: !item.flag)
+                                        repository.updateFlagStockItem(itemId: item.id, flag: !item.flag)
                                     } label: {
                                         Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
                                             .foregroundColor(.green)
@@ -70,9 +71,9 @@ struct StockItemListView: View {
                             }
                             
                         }.onMove { sourceSet, destination in
-                            rootViewModel.changeOrderStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, destination: destination)
+                            repository.changeOrderStockItem(list: repository.currentStock, sourceSet: sourceSet, destination: destination)
                         }.onDelete { sourceSet in
-                            rootViewModel.deleteStockItem(list: rootViewModel.currentStock, sourceSet: sourceSet, listId: rootViewModel.currentStock.id)
+                            repository.deleteStockItem(list: repository.currentStock, sourceSet: sourceSet, listId: repository.currentStock.id)
                         }.deleteDisabled(rootViewModel.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
@@ -90,10 +91,10 @@ struct StockItemListView: View {
                     startPoint: .top, endPoint: .bottom
                 ))
             .onAppear {
-                if rootViewModel.currentStock.items.isEmpty {
+                if repository.currentStock.items.isEmpty {
                     rootViewModel.onAddMode()
                 }
-                rootViewModel.setCurrentStock(id: stock.id)
+                repository.setCurrentStock(id: stock.id)
             }
     }
 }

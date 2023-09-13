@@ -36,6 +36,7 @@
 		12F667142AB12A98004BA49E /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667132AB12A98004BA49E /* Mode.swift */; };
 		12F667162AB13045004BA49E /* HowToUseTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667152AB13045004BA49E /* HowToUseTheAppView.swift */; };
 		12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667172AB1306B004BA49E /* AccordionBoxView.swift */; };
+		12F6671A2AB13BC0004BA49E /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		12F667132AB12A98004BA49E /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		12F667152AB13045004BA49E /* HowToUseTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppView.swift; sourceTree = "<group>"; };
 		12F667172AB1306B004BA49E /* AccordionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionBoxView.swift; sourceTree = "<group>"; };
+		12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,8 +160,9 @@
 		12F666CB2AADED39004BA49E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
 				12F6670B2AB0326A004BA49E /* RootViewModel.swift */,
+				12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */,
+				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
 				12F666D12AADED96004BA49E /* ExColor.swift in Sources */,
 				12F666F62AAE983A004BA49E /* FooterView.swift in Sources */,
+				12F6671A2AB13BC0004BA49E /* RepositoryViewModel.swift in Sources */,
 				12F6670A2AAFEF22004BA49E /* UserDefaultsManager.swift in Sources */,
 				12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */,
 				12F666D52AADEDED004BA49E /* Stock.swift in Sources */,
@@ -520,6 +524,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Stock/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -531,7 +536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -556,6 +561,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Stock/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -567,7 +573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
