@@ -9,14 +9,6 @@ import RealmSwift
 import SwiftUI
 
 
-enum Mode {
-    case add
-    case edit
-    case delete
-    case sort
-    case none
-}
-
 class RootViewModel: ObservableObject {
     
     static let shared = RootViewModel()

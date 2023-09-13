@@ -16,10 +16,8 @@
 		12F666D52AADEDED004BA49E /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D42AADEDED004BA49E /* Stock.swift */; };
 		12F666D72AADEE26004BA49E /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D62AADEE26004BA49E /* StockItem.swift */; };
 		12F666D92AADEE64004BA49E /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D82AADEE64004BA49E /* StockListView.swift */; };
-		12F666DD2AADEEB9004BA49E /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */; };
 		12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666DE2AADEF1D004BA49E /* StockRowView.swift */; };
 		12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666E02AADEF43004BA49E /* StockItemListView.swift */; };
-		12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */; };
 		12F666E62AADF22B004BA49E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666E52AADF22B004BA49E /* Images.xcassets */; };
 		12F666E82AADF252004BA49E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666E72AADF252004BA49E /* Colors.xcassets */; };
 		12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666EA2AADF2C4004BA49E /* Assets.swift */; };
@@ -35,6 +33,9 @@
 		12F667062AAF557A004BA49E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667052AAF557A004BA49E /* Strings.swift */; };
 		12F6670A2AAFEF22004BA49E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */; };
 		12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6670B2AB0326A004BA49E /* RootViewModel.swift */; };
+		12F667142AB12A98004BA49E /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667132AB12A98004BA49E /* Mode.swift */; };
+		12F667162AB13045004BA49E /* HowToUseTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667152AB13045004BA49E /* HowToUseTheAppView.swift */; };
+		12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667172AB1306B004BA49E /* AccordionBoxView.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,10 +51,8 @@
 		12F666D42AADEDED004BA49E /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		12F666D62AADEE26004BA49E /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
 		12F666D82AADEE64004BA49E /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
-		12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
 		12F666DE2AADEF1D004BA49E /* StockRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRowView.swift; sourceTree = "<group>"; };
 		12F666E02AADEF43004BA49E /* StockItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListView.swift; sourceTree = "<group>"; };
-		12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListViewModel.swift; sourceTree = "<group>"; };
 		12F666E52AADF22B004BA49E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		12F666E72AADF252004BA49E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		12F666EA2AADF2C4004BA49E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -70,6 +69,9 @@
 		12F667052AAF557A004BA49E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		12F6670B2AB0326A004BA49E /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		12F667132AB12A98004BA49E /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		12F667152AB13045004BA49E /* HowToUseTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppView.swift; sourceTree = "<group>"; };
+		12F667172AB1306B004BA49E /* AccordionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionBoxView.swift; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,9 +137,9 @@
 			children = (
 				12F666B82AADEBC5004BA49E /* StockApp.swift */,
 				12F666D82AADEE64004BA49E /* StockListView.swift */,
-				12F666DE2AADEF1D004BA49E /* StockRowView.swift */,
 				12F666E02AADEF43004BA49E /* StockItemListView.swift */,
 				12F666F92AAF4311004BA49E /* SettingView.swift */,
+				12F667152AB13045004BA49E /* HowToUseTheAppView.swift */,
 				12F666EE2AAE0944004BA49E /* Components */,
 			);
 			path = View;
@@ -148,6 +150,7 @@
 			children = (
 				12F666D42AADEDED004BA49E /* Stock.swift */,
 				12F666D62AADEE26004BA49E /* StockItem.swift */,
+				12F667132AB12A98004BA49E /* Mode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,8 +158,6 @@
 		12F666CB2AADED39004BA49E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12F666DC2AADEEB9004BA49E /* StockListViewModel.swift */,
-				12F666E22AADEF6B004BA49E /* StockItemListViewModel.swift */,
 				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
 				12F6670B2AB0326A004BA49E /* RootViewModel.swift */,
 			);
@@ -205,10 +206,12 @@
 			isa = PBXGroup;
 			children = (
 				12F666F12AAE8DF6004BA49E /* HeaderView.swift */,
+				12F666F32AAE8FE6004BA49E /* InputView.swift */,
+				12F666DE2AADEF1D004BA49E /* StockRowView.swift */,
+				12F666FB2AAF459C004BA49E /* RewardButtonView.swift */,
 				12F666F72AAF3CA1004BA49E /* AdMobView.swift */,
 				12F666F52AAE983A004BA49E /* FooterView.swift */,
-				12F666FB2AAF459C004BA49E /* RewardButtonView.swift */,
-				12F666F32AAE8FE6004BA49E /* InputView.swift */,
+				12F667172AB1306B004BA49E /* AccordionBoxView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -349,7 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12F666D72AADEE26004BA49E /* StockItem.swift in Sources */,
-				12F666DD2AADEEB9004BA49E /* StockListViewModel.swift in Sources */,
+				12F667142AB12A98004BA49E /* Mode.swift in Sources */,
 				12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */,
 				12F666FA2AAF4311004BA49E /* SettingView.swift in Sources */,
 				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
@@ -359,14 +362,15 @@
 				12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */,
 				12F666D52AADEDED004BA49E /* Stock.swift in Sources */,
 				12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */,
+				12F667162AB13045004BA49E /* HowToUseTheAppView.swift in Sources */,
 				12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */,
 				12F666FC2AAF459C004BA49E /* RewardButtonView.swift in Sources */,
 				12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */,
 				12F667062AAF557A004BA49E /* Strings.swift in Sources */,
 				12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */,
-				12F666E32AADEF6B004BA49E /* StockItemListViewModel.swift in Sources */,
 				12F666FE2AAF4F53004BA49E /* SettingViewModel.swift in Sources */,
 				12F666F42AAE8FE6004BA49E /* InputView.swift in Sources */,
+				12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */,
 				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
 				12F666F82AAF3CA1004BA49E /* AdMobView.swift in Sources */,
 				12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */,

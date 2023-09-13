@@ -67,6 +67,14 @@ struct SettingView: View {
                 gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
                 startPoint: .top, endPoint: .bottom
             ))
+        .toolbar {
+            NavigationLink {
+                HowToUseTheAppView()
+            } label: {
+                Image(systemName: "questionmark.app")
+            }
+
+        }
     }
 }
 

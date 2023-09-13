@@ -10,8 +10,6 @@ import RealmSwift
 
 struct StockListView: View {
     
-    //    private var viewModel = StockListViewModel()
-    
     @ObservedObject private var rootViewModel = RootViewModel.shared
     @ObservedObject private var interstitial = AdmobInterstitialView()
     
@@ -92,6 +90,7 @@ struct StockListView: View {
             .onAppear {
                 rootViewModel.readAllStock()
                 interstitial.loadInterstitial()
+                rootViewModel.offSortMode()
             }
             .alert(Text(L10n.dialogAdmobTitle),
                    isPresented: $isLimitAlert,

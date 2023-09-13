@@ -21,7 +21,22 @@
 "setting_review_url_query" = "?action=write-review";
 "app_url" = "https://apps.apple.com/jp/app/stock";
 
-"setting_recommend_title" = "Recommend 'Stock'";
+"setting_recommend_title" = "Recommend ’Stock’";
 
 "setting_terms_of_service_title" = "Terms of Service and Privacy Policy";
 "setting_terms_of_service_url" = "https://tech.amefure.com/app-terms-of-service";
+
+// How to Use The App
+"how_to_use_title" = "How to Use The App";
+"how_to_use_q1_title" = "What is Stock?";
+"how_to_use_q1_text" = "In this app, the general inventory list is called ’Stock’. ";
+"how_to_use_q2_title" = "How many Stocks can I register?";
+"how_to_use_q2_text" = "The number of ’Stocks’ that can be registered is limited. \nHowever, you can also add it by watching an advertisement. ";
+"how_to_use_q3_title" = "Doesn’t the item disappear even if I check it in the inventory list?";
+"how_to_use_q3_text" = "Even if you check an item, it will not disappear.";
+"how_to_use_q4_title" = "I want to categorize by item list";
+"how_to_use_q4_text" = "By adding 「-」 to the prefix, it will be recognized as a category and will be automatically corrected as ’■ Category name’. \n\n-Category name → ■ Category name";
+"how_to_use_q5_title" = "What is a mode?";
+"how_to_use_q5_text" = "This app provides four modes for operating the list: Add・Edit・Delete and Sort.";
+"how_to_use_q6_title" = "I want you to add ○○ functions";
+"how_to_use_q6_text" = "We will do our best to respond to your feedback by reviewing the app or using the contact form on our Terms of Use website. \nHowever, please note that we may not be able to meet your request. ";

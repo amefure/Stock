@@ -26,3 +26,18 @@
 
 "setting_terms_of_service_title" = "利用規約とプライバシーポリシー";
 "setting_terms_of_service_url" = "https://tech.amefure.com/app-terms-of-service";
+
+// How to Use The App
+"how_to_use_title" = "使い方";
+"how_to_use_q1_title" = "Stockとはなんですか？";
+"how_to_use_q1_text" = "このアプリ内では持ち物リストの大枠を「Stock」と呼んでいます。";
+"how_to_use_q2_title" = "登録できるStockの数はいくつですか？";
+"how_to_use_q2_text" = "登録できる「Stock」の数は制限されています。\nですが広告を視聴していただくことで追加することも可能です。";
+"how_to_use_q3_title" = "持ち物リストでチェックを入れてもアイテムは消えないですか？";
+"how_to_use_q3_text" = "アイテムにチェックを打っても消えることはありません。";
+"how_to_use_q4_title" = "アイテムリストでカテゴリ分けしたいです";
+"how_to_use_q4_text" = "接頭辞に「-」をつけることで  カテゴリとして判断し「■ カテゴリ名」のように自動修正されます。\n\n-カテゴリ名 → ■ カテゴリ名";
+"how_to_use_q5_title" = "モードとはなんですか？";
+"how_to_use_q5_text" = "このアプリではリストを操作するモードを「追加」・「編集」・「削除」・「並び替え」の4種類用意しています。";
+"how_to_use_q6_title" = "○○な機能を追加してほしい";
+"how_to_use_q6_text" = "アプリのレビューもしくは「利用規約」のWebサイトのお問い合わせフォームからフィードバックをいただけるとできる限り対処いたします。\nしかしご要望に添えない可能性があることをご了承ください。";

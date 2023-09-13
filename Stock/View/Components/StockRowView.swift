@@ -33,8 +33,11 @@ struct StockRowView: View {
             } else {
                 
                 if displayName.prefix(1) == "-" && stockItemFlag {
-                    Text("■  \(String(displayName.dropFirst()))")
-                        .fontWeight(.bold)
+                    Group {
+                        Text("■").padding(.trailing, 10)
+                        Text("\(String(displayName.dropFirst()))")
+                    }.fontWeight(.bold)
+                        .offset(x: -8)
                 } else {
                     Text("\(displayName)")
                         .foregroundColor(.white)
@@ -54,10 +57,8 @@ struct StockRowView: View {
                     Image(systemName: "hand.tap")
                 }.font(.caption)
                     .foregroundColor(.gray)
-            } else if rootViewModel.currentMode == .sort {
-                
             }
-        }.padding(8)
+        }.padding(stockItemFlag ? 0 : 8)
     }
 }
 
