@@ -11,7 +11,7 @@
 "dialog_admob_title" = "Notice";
 "dialog_admob_text" = "You can only watch an ad once a day.";
 
-"setting_admob_title" = "Watch ads and add space";
+"setting_admob_title" = "Watch ads and add Stock";
 
 "setting_capacity_section_title" = "advertisement";
 "setting_capacity_section_footer" = "・The number of capacities added is 3.\n・Capacity can be added only once a day.";

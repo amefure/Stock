@@ -45,7 +45,9 @@ struct RewardButtonView: View {
         }) {
             HStack {
                 Image(systemName: "bag.badge.plus")
+                    .foregroundColor(reward.rewardLoaded ? .white : .gray)
                 Text(L10n.settingAdmobTitle)
+                    .foregroundColor(reward.rewardLoaded ? .white : .gray)
             }
         }
         .onAppear {

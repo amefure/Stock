@@ -20,7 +20,7 @@ struct SettingView: View {
            
             AvailableListBackGroundStack {
                 Section(header: Text(L10n.settingCapacitySectionTitle), footer: Text(L10n.settingCapacitySectionFooter)) {
-                    RewardButtonView().foregroundColor(.white)
+                    RewardButtonView()
                     HStack {
                         Image(systemName: "bag")
                         Text(L10n.settingCapacityText(rootViewModel.getLimitCapacity()))
@@ -31,22 +31,22 @@ struct SettingView: View {
                 
                 Section(header: Text("Link")) {
                     // 1:レビューページ
-                    Link(destination: URL(string: L10n.appUrl + L10n.settingReviewUrlQuery)!, label: {
-                        HStack {
-                            Image(systemName: "hand.thumbsup")
-                            Text(L10n.settingReviewTitle)
-                        }.foregroundColor(.white)
-                    })
-                    
-                    // 2:シェアボタン
-                    Button(action: {
-                        viewModel.shareApp(shareText: "", shareLink: L10n.appUrl)
-                    }) {
-                        HStack {
-                            Image(systemName: "star.bubble")
-                            Text(L10n.settingRecommendTitle)
-                        }.foregroundColor(.white)
-                    }
+//                    Link(destination: URL(string: L10n.appUrl + L10n.settingReviewUrlQuery)!, label: {
+//                        HStack {
+//                            Image(systemName: "hand.thumbsup")
+//                            Text(L10n.settingReviewTitle)
+//                        }.foregroundColor(.white)
+//                    })
+//
+//                    // 2:シェアボタン
+//                    Button(action: {
+//                        viewModel.shareApp(shareText: "", shareLink: L10n.appUrl)
+//                    }) {
+//                        HStack {
+//                            Image(systemName: "star.bubble")
+//                            Text(L10n.settingRecommendTitle)
+//                        }.foregroundColor(.white)
+//                    }
                     
                     // 3:利用規約とプライバシーポリシー
                     Link(destination: URL(string: L10n.settingTermsOfServiceUrl)!, label: {
