@@ -5,6 +5,8 @@
   Created by t&a on 2023/09/11.
   
 */
+"text_field_placeholder" = "Enter text...";
+
 "dialog_capacity_over_title" = "Storage capacity reached...";
 "dialog_capacity_over_text" = "You can increase your storage capacity by watching ads in settings.";
 
@@ -12,6 +14,7 @@
 "dialog_admob_text" = "You can only watch an ad once a day.";
 
 "setting_admob_title" = "Watch ads and add Stock";
+"setting_admob_title_disable" = "Loading ads...";
 
 "setting_capacity_section_title" = "advertisement";
 "setting_capacity_section_footer" = "・The number of capacities added is 3.\n・Capacity can be added only once a day.";

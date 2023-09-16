@@ -5,6 +5,8 @@
   Created by t&a on 2023/09/11.
   
 */
+"text_field_placeholder" = "";
+
 "dialog_capacity_over_title" = "保存容量が上限に達しました...";
 "dialog_capacity_over_text" = "設定から広告を視聴すると\n保存容量を増やすことができます。";
 
@@ -12,7 +14,7 @@
 "dialog_admob_text" = "広告を視聴できるのは1日に1回までです。";
 
 "setting_admob_title" = "広告を視聴して容量を追加する";
-
+"setting_admob_title_disable" = "広告を読み込んでいます...";
 "setting_capacity_section_title" = "広告";
 "setting_capacity_section_footer" = "・追加される容量は3個です。\n・容量の追加は1日に1回までです。";
 "setting_capacity_text_%@" = "現在の容量: %@個";

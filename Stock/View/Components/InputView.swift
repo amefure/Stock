@@ -14,7 +14,7 @@ struct InputView: View {
     
     var body: some View {
         HStack {
-            TextField("", text: $name)
+            TextField(L10n.textFieldPlaceholder, text: $name)
             Button {
                 if name.isEmpty { return }
                 action()
