@@ -19,14 +19,17 @@ class RootViewModel: ObservableObject {
     // Mode
     public func onAddMode(){
         currentMode = .add
+        editSortMode = .inactive
     }
     
     public func onEditNameMode(){
         currentMode = .edit
+        editSortMode = .inactive
     }
 
     public func onDeleteMode(){
         currentMode = .delete
+        editSortMode = .inactive
     }
     
     public func onSortMode(){

@@ -91,10 +91,14 @@ struct StockItemListView: View {
                     startPoint: .top, endPoint: .bottom
                 ))
             .onAppear {
+                repository.setCurrentStock(id: stock.id)
                 if repository.currentStock.items.isEmpty {
                     rootViewModel.onAddMode()
+                } else {
+                    rootViewModel.onSortMode()
                 }
-                repository.setCurrentStock(id: stock.id)
+            }.onDisappear {
+                rootViewModel.offSortMode()
             }
     }
 }
