@@ -37,10 +37,12 @@ struct StockRowView: View {
                     Group {
                         Text("■").padding(.trailing, 10)
                         Text("\(String(displayName.dropFirst()))")
+                            .textSelection(.enabled)
                     }.fontWeight(.bold)
                         .offset(x: -8)
                 } else {
                     Text("\(displayName)")
+                        .textSelection(.enabled)
                         .foregroundColor(.white)
                 }
             }
