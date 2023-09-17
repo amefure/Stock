@@ -5,16 +5,19 @@
   Created by t&a on 2023/09/11.
   
 */
+// MARK: - View
 "text_field_placeholder" = "";
 
+// MARK: - Dialog
 "dialog_capacity_over_title" = "保存容量が上限に達しました...";
 "dialog_capacity_over_text" = "設定から広告を視聴すると\n保存容量を増やすことができます。";
 
+// MARK: - Setting
 "dialog_admob_title" = "お知らせ";
 "dialog_admob_text" = "広告を視聴できるのは1日に1回までです。";
 
 "setting_admob_title" = "広告を視聴して容量を追加する";
-"setting_admob_title_disable" = "広告を読み込んでいます...";
+"setting_admob_title_disable" = "広告の準備ができていません";
 "setting_capacity_section_title" = "広告";
 "setting_capacity_section_footer" = "・追加される容量は3個です。\n・容量の追加は1日に1回までです。";
 "setting_capacity_text_%@" = "現在の容量: %@個";
@@ -22,14 +25,15 @@
 
 "setting_review_title" = "アプリをレビューする";
 "setting_review_url_query" = "?action=write-review";
-"app_url" = "https://apps.apple.com/jp/app/stock";
+"app_url" = "https://apps.apple.com/jp/app/stock-持ち物リスト/id6466220771";
 
 "setting_recommend_title" = "「Stock」をオススメする";
+"setting_recommend_share_text" = "お出かけ前の忘れ物チェックにはこのアプリがおすすめ！";
 
 "setting_terms_of_service_title" = "利用規約とプライバシーポリシー";
 "setting_terms_of_service_url" = "https://tech.amefure.com/app-terms-of-service";
 
-// How to Use The App
+// MARK: - How to Use The App
 "how_to_use_title" = "使い方";
 "how_to_use_q1_title" = "Stockとはなんですか？";
 "how_to_use_q1_text" = "このアプリ内では持ち物リストの大枠を「Stock」と呼んでいます。";

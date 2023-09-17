@@ -17,7 +17,6 @@ struct SettingView: View {
     var body: some View {
         VStack{
             
-           
             AvailableListBackGroundStack {
                 Section(header: Text(L10n.settingCapacitySectionTitle), footer: Text(L10n.settingCapacitySectionFooter)) {
                     RewardButtonView()
@@ -31,25 +30,25 @@ struct SettingView: View {
                 
                 Section(header: Text("Link")) {
                     // 1:レビューページ
-//                    Link(destination: URL(string: L10n.appUrl + L10n.settingReviewUrlQuery)!, label: {
-//                        HStack {
-//                            Image(systemName: "hand.thumbsup")
-//                            Text(L10n.settingReviewTitle)
-//                        }.foregroundColor(.white)
-//                    })
-//
-//                    // 2:シェアボタン
-//                    Button(action: {
-//                        viewModel.shareApp(shareText: "", shareLink: L10n.appUrl)
-//                    }) {
-//                        HStack {
-//                            Image(systemName: "star.bubble")
-//                            Text(L10n.settingRecommendTitle)
-//                        }.foregroundColor(.white)
-//                    }
+                    Link(destination: viewModel.reviewUrl, label: {
+                        HStack {
+                            Image(systemName: "hand.thumbsup")
+                            Text(L10n.settingReviewTitle)
+                        }.foregroundColor(.white)
+                    })
+                    
+                    // 2:シェアボタン
+                    Button(action: {
+                        viewModel.shareApp()
+                    }) {
+                        HStack {
+                            Image(systemName: "star.bubble")
+                            Text(L10n.settingRecommendTitle)
+                        }.foregroundColor(.white)
+                    }
                     
                     // 3:利用規約とプライバシーポリシー
-                    Link(destination: URL(string: L10n.settingTermsOfServiceUrl)!, label: {
+                    Link(destination: viewModel.termsUrl, label: {
                         HStack {
                             Image(systemName: "note.text")
                             Text(L10n.settingTermsOfServiceTitle)
@@ -61,7 +60,7 @@ struct SettingView: View {
             Spacer()
             
             AdMobBannerView().frame(height: 60)
-        
+
         }.background(
             LinearGradient(
                 gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
@@ -73,7 +72,6 @@ struct SettingView: View {
             } label: {
                 Image(systemName: "questionmark.app")
             }
-
         }
     }
 }

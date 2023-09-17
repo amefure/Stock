@@ -5,16 +5,19 @@
   Created by t&a on 2023/09/11.
   
 */
+// MARK: - View
 "text_field_placeholder" = "Enter text...";
 
+// MARK: - Dialog
 "dialog_capacity_over_title" = "Storage capacity reached...";
 "dialog_capacity_over_text" = "You can increase your storage capacity by watching ads in settings.";
 
 "dialog_admob_title" = "Notice";
 "dialog_admob_text" = "You can only watch an ad once a day.";
 
+// MARK: - Setting
 "setting_admob_title" = "Watch ads and add Stock";
-"setting_admob_title_disable" = "Loading ads...";
+"setting_admob_title_disable" = "Ad not ready";
 
 "setting_capacity_section_title" = "advertisement";
 "setting_capacity_section_footer" = "・The number of capacities added is 3.\n・Capacity can be added only once a day.";
@@ -22,14 +25,15 @@
 
 "setting_review_title" = "Review app";
 "setting_review_url_query" = "?action=write-review";
-"app_url" = "https://apps.apple.com/jp/app/stock";
+"app_url" = "https://apps.apple.com/jp/app/stock-持ち物リスト/id6466220771";
 
 "setting_recommend_title" = "Recommend ’Stock’";
+"setting_recommend_share_text" = "This app is recommended for checking things you forgot before going out!";
 
 "setting_terms_of_service_title" = "Terms of Service and Privacy Policy";
 "setting_terms_of_service_url" = "https://tech.amefure.com/app-terms-of-service";
 
-// How to Use The App
+// MARK: - How to Use The App
 "how_to_use_title" = "How to Use The App";
 "how_to_use_q1_title" = "What is Stock?";
 "how_to_use_q1_text" = "In this app, the general inventory list is called ’Stock’. ";
