@@ -90,14 +90,16 @@ class RepositoryViewModel: ObservableObject {
         self.setCurrentStock(id: listId)
     }
     
-    public func updateStockItem(itemId:ObjectId,name:String) {
+    public func updateStockItem(listId:ObjectId, itemId:ObjectId,name:String) {
         repository.updateStockItem(itemId: itemId, name: name)
         self.readAllStock()
+        self.setCurrentStock(id: listId)
     }
     
-    public func updateFlagStockItem(itemId:ObjectId,flag:Bool) {
+    public func updateFlagStockItem(listId:ObjectId, itemId:ObjectId,flag:Bool) {
         repository.updateFlagStockItem(itemId: itemId, flag: flag)
         self.readAllStock()
+        self.setCurrentStock(id: listId)
     }
     
     public func readStockItemList() -> Results<StockItem> {

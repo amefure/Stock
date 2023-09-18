@@ -59,7 +59,7 @@ struct StockItemListView: View {
                             HStack{
                                 if item.name.prefix(1) != "-" {
                                     Button {
-                                        repository.updateFlagStockItem(itemId: item.id, flag: !item.flag)
+                                        repository.updateFlagStockItem(listId: repository.currentStock.id, itemId: item.id, flag: !item.flag)
                                     } label: {
                                         Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
                                             .foregroundColor(.green)

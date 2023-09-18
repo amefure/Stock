@@ -25,7 +25,7 @@ struct StockRowView: View {
                 TextField(displayName, text: $name)
                     .onChange(of: name) { newValue in
                         if stockItemFlag {
-                            repository.updateStockItem(itemId: id, name: newValue)
+                            repository.updateStockItem(listId: repository.currentStock.id ,itemId: id, name: newValue)
                         } else {
                             repository.updateStock(id: id, name: newValue)
                         }
