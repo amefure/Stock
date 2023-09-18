@@ -68,7 +68,8 @@ class RealmRepository: RepositoryProtocol {
     public func readAllStock() -> Results<Stock> {
         try! realm.write {
             let stocks = realm.objects(Stock.self)
-            return stocks.sorted(byKeyPath: "id", ascending: true)
+            // Deleteでクラッシュするため凍結させる
+            return stocks.freeze().sorted(byKeyPath: "id", ascending: true)
         }
     }
     

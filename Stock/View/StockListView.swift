@@ -16,7 +16,7 @@ struct StockListView: View {
     
     @State private var name = ""
     @State private var isPresented = false
-    @State private var isLimitAlert: Bool = false // 上限に達した場合のアラート
+    @State private var isLimitAlert = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
         let limitCapacity = rootViewModel.getLimitCapacity()
@@ -61,7 +61,6 @@ struct StockListView: View {
                                     isPresented = true
                                 } label: {
                                     StockRowView(id: stock.id, displayName: stock.name)
-                                    
                                 }
                                 NavigationLink {
                                     StockItemListView(stock: stock)
@@ -85,7 +84,8 @@ struct StockListView: View {
         }.environment(\.editMode, .constant(rootViewModel.editSortMode))
             .background(
                 LinearGradient(
-                    gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
+                    gradient: Gradient(colors: [Color(hexString: "#434343"),
+                                                Color(hexString: "#000000")]),
                     startPoint: .top, endPoint: .bottom
                 ))
             .onAppear {
