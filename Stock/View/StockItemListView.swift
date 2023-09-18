@@ -35,7 +35,7 @@ struct StockItemListView: View {
                     }
                 })
                 
-                if repository.currentStock.items.isEmpty || rootViewModel.currentMode == .add {
+                if rootViewModel.currentMode == .add {
                     InputView(name: $name, action: {
                         repository.createStockItem(listId: repository.currentStock.id, name: name, order: repository.currentStock.size)
                     }).transition(.scale)
