@@ -13,7 +13,7 @@ struct RewardButtonView: View {
     @ObservedObject var reward = Reward()
 
     // MARK: - Storage
-    @AppStorage("LimitCapacity") var limitCapacity = 6 // 初期値
+    @ObservedObject private var rootViewModel = RootViewModel.shared
     @AppStorage("LastAcquisitionDate") var lastAcquisitionDate = ""
 
     // MARK: - View
@@ -36,9 +36,12 @@ struct RewardButtonView: View {
             // 1日1回までしか視聴できないようにする
             if lastAcquisitionDate != nowTime() {
                 reward.showReward() //  広告配信
-                limitCapacity = limitCapacity + 3
                 lastAcquisitionDate = nowTime() // 最終視聴日を格納
-
+                // 広告視聴後に追加させるため時間をずらす
+                DispatchQueue.main.asyncAfter ( deadline: DispatchTime.now() + 1) {
+                    // 容量を追加
+                    rootViewModel.addLimitCapacity()
+                }
             } else {
                 isAlertReward = true
             }

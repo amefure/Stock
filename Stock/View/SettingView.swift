@@ -22,7 +22,7 @@ struct SettingView: View {
                     RewardButtonView()
                     HStack {
                         Image(systemName: "bag")
-                        Text(L10n.settingCapacityText(rootViewModel.getLimitCapacity()))
+                        Text(L10n.settingCapacityText(rootViewModel.limitCapacity))
                     }
                 }
                 

@@ -19,8 +19,7 @@ struct StockListView: View {
     @State private var isLimitAlert = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
-        let limitCapacity = rootViewModel.getLimitCapacity()
-        if repository.stocks.count >= limitCapacity {
+        if repository.stocks.count >= rootViewModel.limitCapacity {
             isLimitAlert = true
             return false
         } else {
@@ -51,13 +50,11 @@ struct StockListView: View {
                             ZStack{
                                 Button {
                                     // 3回遷移したら広告を表示させる
-                                    var countInterstitial =  rootViewModel.getCountInterstitial()
-                                    countInterstitial += 1
-                                    if countInterstitial == 3 {
-                                        countInterstitial = 0
+                                    rootViewModel.addCountInterstitial()
+                                    if rootViewModel.countInterstitial == 3 {
+                                        rootViewModel.countInterstitial = 0
                                         interstitial.presentInterstitial()
                                     }
-                                    rootViewModel.setCountInterstitial(countInterstitial)
                                     isPresented = true
                                 } label: {
                                     StockRowView(id: stock.id, displayName: stock.name)
@@ -92,15 +89,16 @@ struct StockListView: View {
                 repository.readAllStock()
                 interstitial.loadInterstitial()
                 rootViewModel.offSortMode()
+                rootViewModel.loadLimitCapacity()
             }
-            .alert(Text(L10n.dialogAdmobTitle),
+            .alert(Text(L10n.dialogCapacityOverTitle),
                    isPresented: $isLimitAlert,
                    actions: {
                 Button(action: {}, label: {
                     Text("OK")
                 })
             }, message: {
-                Text(L10n.dialogAdmobText)
+                Text(L10n.dialogCapacityOverText)
             })
             .navigationBarBackButtonHidden()
             .navigationBarHidden(true)

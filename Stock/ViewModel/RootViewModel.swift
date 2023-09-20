@@ -15,6 +15,14 @@ class RootViewModel: ObservableObject {
     
     @Published var currentMode:Mode = .none
     @Published var editSortMode:EditMode = .inactive
+    // 広告表示カウント
+    @Published var countInterstitial:Int = 0 // 初期値
+    // 保存容量
+    @Published var limitCapacity:Int = 6     // 初期値
+    // 追加容量
+    private let addCapacity:Int = 3          // 増加値
+    
+    
     
     // Mode
     public func onAddMode(){
@@ -43,21 +51,21 @@ class RootViewModel: ObservableObject {
     }
     
     // UserDefaults
-    public func setLimitCapacity(_ capacity: Int) {
-        userDefaultsManager.setLimitCapacity(capacity)
+    public func addLimitCapacity() {
+        limitCapacity += addCapacity
+        userDefaultsManager.setLimitCapacity(limitCapacity)
     }
     
-    public func getLimitCapacity() -> Int {
-        return userDefaultsManager.getLimitCapacity()
+    public func loadLimitCapacity() {
+        limitCapacity = userDefaultsManager.getLimitCapacity()
     }
     
-    public func setCountInterstitial(_ count: Int) {
-        userDefaultsManager.setCountInterstitial(count)
+    public func addCountInterstitial() {
+        countInterstitial += 1
+        userDefaultsManager.setCountInterstitial(countInterstitial)
     }
     
-    public func getCountInterstitial() -> Int {
-        return userDefaultsManager.getCountInterstitial()
+    public func getCountInterstitial() {
+        countInterstitial = userDefaultsManager.getCountInterstitial()
     }
-    
-    
 }
