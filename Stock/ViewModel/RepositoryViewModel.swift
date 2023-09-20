@@ -90,14 +90,22 @@ class RepositoryViewModel: ObservableObject {
         self.setCurrentStock(id: listId)
     }
     
-    public func updateStockItem(listId:ObjectId, itemId:ObjectId,name:String) {
+    public func updateStockItem(listId: ObjectId, itemId: ObjectId, name: String) {
         repository.updateStockItem(itemId: itemId, name: name)
         self.readAllStock()
         self.setCurrentStock(id: listId)
     }
     
-    public func updateFlagStockItem(listId:ObjectId, itemId:ObjectId,flag:Bool) {
+    public func updateFlagStockItem(listId: ObjectId, itemId: ObjectId, flag: Bool) {
         repository.updateFlagStockItem(itemId: itemId, flag: flag)
+        self.readAllStock()
+        self.setCurrentStock(id: listId)
+    }
+    
+    public func updateAllFlagStockItem(listId: ObjectId, flag: Bool) {
+        for item in currentItems {
+            repository.updateFlagStockItem(itemId: item.id, flag: flag)
+        }
         self.readAllStock()
         self.setCurrentStock(id: listId)
     }
@@ -106,7 +114,7 @@ class RepositoryViewModel: ObservableObject {
         return repository.readStockItemList()
     }
     
-    public func deleteStockItem(list:Stock, sourceSet:IndexSet, listId:ObjectId) {
+    public func deleteStockItem(list: Stock, sourceSet: IndexSet, listId: ObjectId) {
         guard let source = sourceSet.first else { return }
         let items2 = list.items.sorted(by: { $0.order < $1.order })
         let items = Array(items2)
@@ -127,7 +135,7 @@ class RepositoryViewModel: ObservableObject {
         
     }
     
-    public func changeOrderStockItem(list:Stock, sourceSet:IndexSet, destination:Int) {
+    public func changeOrderStockItem(list: Stock, sourceSet: IndexSet, destination: Int) {
         guard let source = sourceSet.first else { return }
         
         let items = list.items.sorted(by: { $0.order < $1.order })

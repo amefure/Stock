@@ -14,16 +14,21 @@ class Stock: Object,ObjectKeyIdentifiable {
     @Persisted var items = RealmSwift.List<StockItem>()
     @Persisted var order:Int = 0
     
-    public var size:Int {
-        return items.count
+    public var size: Double {
+        return Double(items.count)
     }
     
-    static var demoList:Stock {
+    static var demoList: Stock {
         let list = Stock()
         list.name = "Test"
         let items = RealmSwift.List<StockItem>()
         items.append(objectsIn: [StockItem.demoItems, StockItem.demoItems])
         list.items = items
         return list
+    }
+    
+    public var checkItemsCnt: Double {
+        let checkItems = items.filter({$0.flag == true})
+        return Double(checkItems.count)
     }
 }

@@ -18,9 +18,18 @@ struct StockItemListView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    private var progressWidth: CGFloat {
+        if repository.currentStock.checkItemsCnt != 0 || repository.currentStock.size != 0 {
+            let width = 200 * CGFloat(repository.currentStock.checkItemsCnt/repository.currentStock.size)
+            return width
+        } else {
+            return 200
+        }
+    }
+    
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: 0) {
                 HeaderView(leadingIcon: "chevron.backward",
                            trailingIcon: "plus.square",
                            leadingAction: { dismiss() },
@@ -37,17 +46,43 @@ struct StockItemListView: View {
                 
                 if rootViewModel.currentMode == .add {
                     InputView(name: $name, action: {
-                        repository.createStockItem(listId: repository.currentStock.id, name: name, order: repository.currentStock.size)
+                        repository.createStockItem(listId: repository.currentStock.id, name: name, order: Int(repository.currentStock.size))
                     }).transition(.scale)
                 }
                 
                 VStack {
                     Text(repository.currentStock.name)
                     
-                    Rectangle()
-                        .stroke(Color.green, lineWidth: 2)
-                        .frame(width: 200, height: 2)
-                }
+                    
+                    HStack {
+                        // チェックリセットボタン
+                        if repository.currentStock.size != 0 {
+                            Button {
+                                repository.updateAllFlagStockItem(listId: repository.currentStock.id, flag: false)
+                            } label: {
+                                Image(systemName: "checklist.unchecked")
+                            }
+                        }
+                        // プログレスバー
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .stroke(Color.gray, lineWidth: 2)
+                                .frame(width: 200, height: 2)
+                            Rectangle()
+                                .stroke(Color.green, lineWidth: 2)
+                                .frame(width: progressWidth, height: 2)
+                        }
+                        // Allチェックボタン
+                        if repository.currentStock.size != 0 {
+                            Button {
+                                repository.updateAllFlagStockItem(listId: repository.currentStock.id, flag: true)
+                            } label: {
+                                Image(systemName: "checklist.checked")
+                            }
+                        }
+                    }
+                }.padding()
+                
                 
                 if repository.currentItems.isEmpty {
                     Spacer()
@@ -63,7 +98,6 @@ struct StockItemListView: View {
                                     } label: {
                                         Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
                                             .foregroundColor(.green)
-
                                     }.buttonStyle(.plain)
                                 }
                                 
@@ -83,7 +117,7 @@ struct StockItemListView: View {
             FooterView()
             
         }.environment(\.editMode, .constant(rootViewModel.editSortMode))
-        .navigationBarBackButtonHidden()
+            .navigationBarBackButtonHidden()
             .navigationBarHidden(true)
             .background(
                 LinearGradient(
