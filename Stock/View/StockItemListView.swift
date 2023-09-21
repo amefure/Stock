@@ -20,7 +20,9 @@ struct StockItemListView: View {
     
     private var progressWidth: CGFloat {
         if repository.currentStock.checkItemsCnt != 0 || repository.currentStock.size != 0 {
-            let width = 200 * CGFloat(repository.currentStock.checkItemsCnt/repository.currentStock.size)
+            let calcCheckCnt = repository.currentStock.checkItemsCnt
+            let calcAllCnt = repository.currentStock.size - repository.currentStock.exclusionItemsCnt
+            let width = 200 * CGFloat(calcCheckCnt/calcAllCnt)
             return width
         } else {
             return 200

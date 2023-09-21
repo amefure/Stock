@@ -104,7 +104,9 @@ class RepositoryViewModel: ObservableObject {
     
     public func updateAllFlagStockItem(listId: ObjectId, flag: Bool) {
         for item in currentItems {
-            repository.updateFlagStockItem(itemId: item.id, flag: flag)
+            if !item.name.hasPrefix("-") {
+                repository.updateFlagStockItem(itemId: item.id, flag: flag)
+            }
         }
         self.readAllStock()
         self.setCurrentStock(id: listId)

@@ -18,6 +18,16 @@ class Stock: Object,ObjectKeyIdentifiable {
         return Double(items.count)
     }
     
+    public var checkItemsCnt: Double {
+        let checkItems = items.filter({ $0.flag == true })
+        return Double(checkItems.count)
+    }
+    
+    public var exclusionItemsCnt: Double {
+        let exclusionItems = items.filter({ $0.name.hasPrefix("-") })
+        return Double(exclusionItems.count)
+    }
+    
     static var demoList: Stock {
         let list = Stock()
         list.name = "Test"
@@ -25,10 +35,5 @@ class Stock: Object,ObjectKeyIdentifiable {
         items.append(objectsIn: [StockItem.demoItems, StockItem.demoItems])
         list.items = items
         return list
-    }
-    
-    public var checkItemsCnt: Double {
-        let checkItems = items.filter({$0.flag == true})
-        return Double(checkItems.count)
     }
 }
