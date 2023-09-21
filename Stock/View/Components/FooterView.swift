@@ -54,8 +54,8 @@ struct FooterView: View {
                 SettingView()
             } label: {
                 Image(systemName: "gearshape")
-                    .foregroundColor(.white)
-            }
+                    .foregroundColor(rootViewModel.currentMode == .sort ? .gray : .white)
+            }.disabled(rootViewModel.currentMode == .sort)
             Spacer()
 
         }.frame(width: UIScreen.main.bounds.width / 2)
