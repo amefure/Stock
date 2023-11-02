@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B32AF3E21000C66BDB /* StockWatchApp.swift */; };
+		123A16B62AF3E21000C66BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* ContentView.swift */; };
+		123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16B72AF3E21100C66BDB /* Assets.xcassets */; };
+		123A16BB2AF3E21100C66BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */; };
 		12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666B82AADEBC5004BA49E /* StockApp.swift */; };
 		12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */; };
 		12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F666C62AADEC93004BA49E /* GoogleService-Info.plist */; };
@@ -41,6 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		123A16B32AF3E21000C66BDB /* StockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWatchApp.swift; sourceTree = "<group>"; };
+		123A16B52AF3E21000C66BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		123A16B72AF3E21100C66BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12F666B52AADEBC5004BA49E /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F666B82AADEBC5004BA49E /* StockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockApp.swift; sourceTree = "<group>"; };
 		12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -80,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		123A16AE2AF3E21000C66BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12F666B22AADEBC5004BA49E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,10 +107,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		123A16B22AF3E21000C66BDB /* StockWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				123A16B32AF3E21000C66BDB /* StockWatchApp.swift */,
+				123A16B52AF3E21000C66BDB /* ContentView.swift */,
+				123A16B72AF3E21100C66BDB /* Assets.xcassets */,
+				123A16B92AF3E21100C66BDB /* Preview Content */,
+			);
+			path = "StockWatch Watch App";
+			sourceTree = "<group>";
+		};
+		123A16B92AF3E21100C66BDB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		12F666AC2AADEBC5004BA49E = {
 			isa = PBXGroup;
 			children = (
 				12F666B72AADEBC5004BA49E /* Stock */,
+				123A16B22AF3E21000C66BDB /* StockWatch Watch App */,
 				12F666B62AADEBC5004BA49E /* Products */,
 				D21FBA19D5D7EB9E665EDB59 /* Pods */,
 				6B5A92AB7F14FD83981853A4 /* Frameworks */,
@@ -105,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				12F666B52AADEBC5004BA49E /* Stock.app */,
+				123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +276,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		123A16B02AF3E21000C66BDB /* StockWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 123A16BE2AF3E21100C66BDB /* Build configuration list for PBXNativeTarget "StockWatch Watch App" */;
+			buildPhases = (
+				123A16AD2AF3E21000C66BDB /* Sources */,
+				123A16AE2AF3E21000C66BDB /* Frameworks */,
+				123A16AF2AF3E21000C66BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StockWatch Watch App";
+			productName = "StockWatch Watch App";
+			productReference = 123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		12F666B42AADEBC5004BA49E /* Stock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12F666C32AADEBC7004BA49E /* Build configuration list for PBXNativeTarget "Stock" */;
@@ -265,9 +319,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					123A16B02AF3E21000C66BDB = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					12F666B42AADEBC5004BA49E = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -288,11 +345,21 @@
 			projectRoot = "";
 			targets = (
 				12F666B42AADEBC5004BA49E /* Stock */,
+				123A16B02AF3E21000C66BDB /* StockWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		123A16AF2AF3E21000C66BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				123A16BB2AF3E21100C66BDB /* Preview Assets.xcassets in Resources */,
+				123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12F666B32AADEBC5004BA49E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +417,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		123A16AD2AF3E21000C66BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				123A16B62AF3E21000C66BDB /* ContentView.swift in Sources */,
+				123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12F666B12AADEBC5004BA49E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +473,75 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		123A16BC2AF3E21100C66BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StockWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		123A16BD2AF3E21100C66BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StockWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 		12F666C12AADEBC7004BA49E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -588,6 +733,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		123A16BE2AF3E21100C66BDB /* Build configuration list for PBXNativeTarget "StockWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				123A16BC2AF3E21100C66BDB /* Debug */,
+				123A16BD2AF3E21100C66BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		12F666B02AADEBC5004BA49E /* Build configuration list for PBXProject "Stock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
