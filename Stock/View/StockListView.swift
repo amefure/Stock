@@ -15,7 +15,6 @@ struct StockListView: View {
     @ObservedObject private var interstitial = AdmobInterstitialView()
     
     @State private var name = ""
-    @State private var isPresented = false
     @State private var isLimitAlert = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
@@ -55,7 +54,6 @@ struct StockListView: View {
                                         rootViewModel.countInterstitial = 0
                                         interstitial.presentInterstitial()
                                     }
-                                    isPresented = true
                                 } label: {
                                     StockRowView(id: stock.id, displayName: stock.name)
                                 }
