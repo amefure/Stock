@@ -146,9 +146,8 @@
 		123A16B22AF3E21000C66BDB /* StockWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				123A16B32AF3E21000C66BDB /* StockWatchApp.swift */,
-				123A16B52AF3E21000C66BDB /* ContentView.swift */,
-				123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */,
+				123A16D02AF52C0900C66BDB /* View */,
+				123A16D12AF52C1A00C66BDB /* ViewModel */,
 				123A16B72AF3E21100C66BDB /* Assets.xcassets */,
 				123A16B92AF3E21100C66BDB /* Preview Content */,
 			);
@@ -161,6 +160,23 @@
 				123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		123A16D02AF52C0900C66BDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				123A16B32AF3E21000C66BDB /* StockWatchApp.swift */,
+				123A16B52AF3E21000C66BDB /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		123A16D12AF52C1A00C66BDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		12F666AC2AADEBC5004BA49E = {
