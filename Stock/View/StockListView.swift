@@ -13,6 +13,7 @@ struct StockListView: View {
     @ObservedObject private var repository = RepositoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
     @ObservedObject private var interstitial = AdmobInterstitialView()
+    @ObservedObject private var watchConnector = WatchConnectViewModel.shared
     
     @State private var name = ""
     @State private var isLimitAlert = false // 上限に達した場合のアラート
@@ -30,7 +31,12 @@ struct StockListView: View {
         ZStack {
             VStack{
                 // MARK: - Header
-                HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
+                if watchConnector.isReachable {
+                    HeaderView(leadingIcon: "", trailingIcon: "applewatch.radiowaves.left.and.right", leadingAction: {}, trailingAction: {})
+                } else {
+                    HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
+                }
+               
                 
                 InputView(name: $name, action: {
                     if checkLimitCapacity() {

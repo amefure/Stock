@@ -9,5 +9,13 @@ target 'Stock' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'FirebaseAnalytics'
   pod 'RealmSwift' 
+end
 
+
+target 'StockWatch Watch App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for StockWatch Watch App
+  pod 'RealmSwift' 
 end

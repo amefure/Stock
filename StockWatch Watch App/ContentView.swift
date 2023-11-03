@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var iosConnector = iOSConnectViewModel()
+    @State var isConnect: Bool = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(isConnect ? "connect" : "No connect")
+            Button {
+                print(iosConnector.session.isReachable)
+                isConnect = iosConnector.session.isReachable
+            } label: {
+                Text("Check")
+            }
+
         }
         .padding()
     }

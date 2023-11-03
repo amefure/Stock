@@ -11,6 +11,11 @@
 		123A16B62AF3E21000C66BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* ContentView.swift */; };
 		123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16B72AF3E21100C66BDB /* Assets.xcassets */; };
 		123A16BB2AF3E21100C66BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */; };
+		123A16C02AF3E2A200C66BDB /* iOSConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */; };
+		123A16C22AF3E2C800C66BDB /* WatchConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16C12AF3E2C800C66BDB /* WatchConnectViewModel.swift */; };
+		123A16CA2AF465B600C66BDB /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D42AADEDED004BA49E /* Stock.swift */; };
+		123A16CB2AF465B800C66BDB /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D62AADEE26004BA49E /* StockItem.swift */; };
+		123A16CC2AF4F16800C66BDB /* StockWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666B82AADEBC5004BA49E /* StockApp.swift */; };
 		12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */; };
 		12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F666C62AADEC93004BA49E /* GoogleService-Info.plist */; };
@@ -42,14 +47,42 @@
 		12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667172AB1306B004BA49E /* AccordionBoxView.swift */; };
 		12F6671A2AB13BC0004BA49E /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */; };
 		9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */; };
+		D0421DA98CD477554A86411E /* Pods_StockWatch_Watch_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13570DD197F356B1727E9240 /* Pods_StockWatch_Watch_App.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		123A16CD2AF4F16800C66BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12F666AD2AADEBC5004BA49E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 123A16B02AF3E21000C66BDB;
+			remoteInfo = "StockWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		123A16CF2AF4F16800C66BDB /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				123A16CC2AF4F16800C66BDB /* StockWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		06EE230EEC3480465C26678D /* Pods-StockWatch Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatch Watch App.debug.xcconfig"; path = "Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App.debug.xcconfig"; sourceTree = "<group>"; };
 		123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A16B32AF3E21000C66BDB /* StockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWatchApp.swift; sourceTree = "<group>"; };
 		123A16B52AF3E21000C66BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		123A16B72AF3E21100C66BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectViewModel.swift; sourceTree = "<group>"; };
+		123A16C12AF3E2C800C66BDB /* WatchConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectViewModel.swift; sourceTree = "<group>"; };
 		12F666B52AADEBC5004BA49E /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F666B82AADEBC5004BA49E /* StockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockApp.swift; sourceTree = "<group>"; };
 		12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -83,6 +116,8 @@
 		12F667152AB13045004BA49E /* HowToUseTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppView.swift; sourceTree = "<group>"; };
 		12F667172AB1306B004BA49E /* AccordionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionBoxView.swift; sourceTree = "<group>"; };
 		12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		13570DD197F356B1727E9240 /* Pods_StockWatch_Watch_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockWatch_Watch_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		527B61039EB990B157619835 /* Pods-StockWatch Watch App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatch Watch App.release.xcconfig"; path = "Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App.release.xcconfig"; sourceTree = "<group>"; };
 		90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0421DA98CD477554A86411E /* Pods_StockWatch_Watch_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +148,7 @@
 			children = (
 				123A16B32AF3E21000C66BDB /* StockWatchApp.swift */,
 				123A16B52AF3E21000C66BDB /* ContentView.swift */,
+				123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */,
 				123A16B72AF3E21100C66BDB /* Assets.xcassets */,
 				123A16B92AF3E21100C66BDB /* Preview Content */,
 			);
@@ -200,6 +237,7 @@
 				12F6670B2AB0326A004BA49E /* RootViewModel.swift */,
 				12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */,
 				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
+				123A16C12AF3E2C800C66BDB /* WatchConnectViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */,
+				13570DD197F356B1727E9240 /* Pods_StockWatch_Watch_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,6 +308,8 @@
 			children = (
 				90768591E79D79D58DF86FB0 /* Pods-Stock.debug.xcconfig */,
 				D52EE470740272F9154FC79C /* Pods-Stock.release.xcconfig */,
+				06EE230EEC3480465C26678D /* Pods-StockWatch Watch App.debug.xcconfig */,
+				527B61039EB990B157619835 /* Pods-StockWatch Watch App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -280,9 +321,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 123A16BE2AF3E21100C66BDB /* Build configuration list for PBXNativeTarget "StockWatch Watch App" */;
 			buildPhases = (
+				46D3C9C14A31EC7CF6E5672A /* [CP] Check Pods Manifest.lock */,
 				123A16AD2AF3E21000C66BDB /* Sources */,
 				123A16AE2AF3E21000C66BDB /* Frameworks */,
 				123A16AF2AF3E21000C66BDB /* Resources */,
+				63025DCC37704465953DD242 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,10 +345,12 @@
 				12F666B22AADEBC5004BA49E /* Frameworks */,
 				12F666B32AADEBC5004BA49E /* Resources */,
 				4B9E5CE0BFF2220D0548EFDA /* [CP] Embed Pods Frameworks */,
+				123A16CF2AF4F16800C66BDB /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				123A16CE2AF4F16800C66BDB /* PBXTargetDependency */,
 			);
 			name = Stock;
 			productName = Stock;
@@ -375,6 +420,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		46D3C9C14A31EC7CF6E5672A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockWatch Watch App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4B9E5CE0BFF2220D0548EFDA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +457,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stock/Pods-Stock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63025DCC37704465953DD242 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		85EB5F2CFB0ECD3BBD1FFE94 /* [CP] Check Pods Manifest.lock */ = {
@@ -423,6 +507,9 @@
 			files = (
 				123A16B62AF3E21000C66BDB /* ContentView.swift in Sources */,
 				123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */,
+				123A16CA2AF465B600C66BDB /* Stock.swift in Sources */,
+				123A16CB2AF465B800C66BDB /* StockItem.swift in Sources */,
+				123A16C02AF3E2A200C66BDB /* iOSConnectViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,12 +540,21 @@
 				12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */,
 				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
 				12F666F82AAF3CA1004BA49E /* AdMobView.swift in Sources */,
+				123A16C22AF3E2C800C66BDB /* WatchConnectViewModel.swift in Sources */,
 				12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */,
 				12F666F22AAE8DF6004BA49E /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		123A16CE2AF4F16800C66BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 123A16B02AF3E21000C66BDB /* StockWatch Watch App */;
+			targetProxy = 123A16CD2AF4F16800C66BDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		12F667032AAF50B3004BA49E /* Localizable.strings */ = {
@@ -475,6 +571,7 @@
 /* Begin XCBuildConfiguration section */
 		123A16BC2AF3E21100C66BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06EE230EEC3480465C26678D /* Pods-StockWatch Watch App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -484,19 +581,19 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = StockWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ame.Stock;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -510,6 +607,7 @@
 		};
 		123A16BD2AF3E21100C66BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 527B61039EB990B157619835 /* Pods-StockWatch Watch App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -519,19 +617,19 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = StockWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ame.Stock;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
