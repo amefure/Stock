@@ -36,8 +36,14 @@ struct StockListView: View {
                 } else {
                     HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
                 }
-               
                 
+                Button {
+                    watchConnector.send(stocks: repository.stocks)
+                } label: {
+                    Text("JSON")
+                }
+
+
                 InputView(name: $name, action: {
                     if checkLimitCapacity() {
                         repository.createStock(name: name, order: repository.stocks.count)

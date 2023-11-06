@@ -26,6 +26,27 @@ class WatchConnectViewModel: NSObject, ObservableObject {
             self.session.activate()
         }
     }
+    
+    private func jsonConverter(stocks: [Stock]) -> String {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        if let jsonData = try? encoder.encode(stocks) {
+            if let json = String(data: jsonData , encoding: .utf8) {
+                // 文字コードUTF8のData型に変換
+                return json
+            }
+        }
+        // エンコード失敗
+        return ""
+    }
+    
+    public func send(stocks: [Stock]) {
+        let json = jsonConverter(stocks: stocks)
+        let stockDic: [String: String] = ["stocks": json]
+        self.session.sendMessage(stockDic) { error in
+            print(error)
+        }
+    }
 }
 
 

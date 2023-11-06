@@ -29,14 +29,22 @@ extension iOSConnectViewModel: WCSessionDelegate {
             print(error.localizedDescription)
         } else {
             print("セッション：アクティベート")
+            isConnenct = true
         }
     }
     
     /// sendMessageメソッドで送信されたデータを受け取るデリゲートメソッド
    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-       guard let lang = message["lang"] as? String else {
-           return
+       // iOSからデータを取得
+       guard let json = message["stocks"] as? String else { return }
+       
+       // JSONデータをString型→Data型に変換
+       guard let jsonData = String(json).data(using: .utf8) else { return }
+
+       // JSONデータを構造体に準拠した形式に変換
+       if let stocks = try? JSONDecoder().decode([Stock].self, from: jsonData) {
+           self.stocks = stocks
        }
-       isConnenct = true
    }
+    
 }

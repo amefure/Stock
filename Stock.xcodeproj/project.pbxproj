@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B32AF3E21000C66BDB /* StockWatchApp.swift */; };
-		123A16B62AF3E21000C66BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* ContentView.swift */; };
+		123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* StockListView.swift */; };
 		123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16B72AF3E21100C66BDB /* Assets.xcassets */; };
 		123A16BB2AF3E21100C66BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */; };
 		123A16C02AF3E2A200C66BDB /* iOSConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */; };
@@ -78,7 +78,7 @@
 		06EE230EEC3480465C26678D /* Pods-StockWatch Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatch Watch App.debug.xcconfig"; path = "Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App.debug.xcconfig"; sourceTree = "<group>"; };
 		123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A16B32AF3E21000C66BDB /* StockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWatchApp.swift; sourceTree = "<group>"; };
-		123A16B52AF3E21000C66BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		123A16B52AF3E21000C66BDB /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 		123A16B72AF3E21100C66BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectViewModel.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				123A16B32AF3E21000C66BDB /* StockWatchApp.swift */,
-				123A16B52AF3E21000C66BDB /* ContentView.swift */,
+				123A16B52AF3E21000C66BDB /* StockListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,7 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				123A16B62AF3E21000C66BDB /* ContentView.swift in Sources */,
+				123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */,
 				123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */,
 				123A16CA2AF465B600C66BDB /* Stock.swift in Sources */,
 				123A16CB2AF465B800C66BDB /* StockItem.swift in Sources */,
