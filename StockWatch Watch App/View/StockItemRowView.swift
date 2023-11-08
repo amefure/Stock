@@ -45,8 +45,8 @@ struct StockItemRowView: View {
             isFlag = item.flag
         }
         .alert(isPresented: $isAlert) {
-                    Alert(title: Text("ここはタイトルです"),
-                          message: Text("ここはメッセージです。"),
+            Alert(title: Text(L10n.watchNoPairingAlertTitle),
+                          message: Text(L10n.watchNoPairingAlertDesc),
                           dismissButton: .default(Text("OK")))
                 }
     }

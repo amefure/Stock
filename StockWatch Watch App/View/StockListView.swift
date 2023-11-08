@@ -30,7 +30,7 @@ struct StockListView: View {
                         }
                     }
                 } else {
-                    Text("データがありません。")
+                    Text(L10n.watchNoData)
                         .onAppear {
                             /// ローカルからデータを取得する
                             repositoryViewModel.readAllStock()

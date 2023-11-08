@@ -47,3 +47,9 @@
 "how_to_use_q5_text" = "This app provides four modes for operating the list: Add・Edit・Delete and Sort.";
 "how_to_use_q6_title" = "I want you to add ○○ functions";
 "how_to_use_q6_text" = "We will do our best to respond to your feedback by reviewing the app or using the contact form on our Terms of Use website. \nHowever, please note that we may not be able to meet your request. ";
+
+
+// MARK: - Watch
+"watch_no_data" = "No data.";
+"watch_no_pairing_alert_title" = "Change failed";
+"watch_no_pairing_alert_desc" = "Pairing with iPhone has been broken.";

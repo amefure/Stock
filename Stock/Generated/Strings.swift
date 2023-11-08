@@ -81,6 +81,12 @@ internal enum L10n {
   /// 
   ///   Created by t&a on 2023/09/11.
   internal static let textFieldPlaceholder = L10n.tr("Localizable", "text_field_placeholder", fallback: "")
+  /// データがありません。
+  internal static let watchNoData = L10n.tr("Localizable", "watch_no_data", fallback: "データがありません。")
+  /// iPhoneとのペアリングが切れています。
+  internal static let watchNoPairingAlertDesc = L10n.tr("Localizable", "watch_no_pairing_alert_desc", fallback: "iPhoneとのペアリングが切れています。")
+  /// 変更失敗
+  internal static let watchNoPairingAlertTitle = L10n.tr("Localizable", "watch_no_pairing_alert_title", fallback: "変更失敗")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
