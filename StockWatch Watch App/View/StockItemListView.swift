@@ -9,25 +9,12 @@ import SwiftUI
 
 struct StockItemListView: View {
     
-    @ObservedObject var iosConnector = iOSConnectViewModel.shared
-    
-    public let stock: Stock
-    
+    public var stock: Stock
      
     var body: some View {
         List {
             ForEach(stock.items) { item in
-                HStack{
-                    if item.name.prefix(1) != "-" {
-                        Button {
-                            iosConnector.sendCheckItemNotify(stockId: stock.id.stringValue, itemId: item.id.stringValue, flag: item.flag)
-                        } label: {
-                            Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
-                                .foregroundColor(.green)
-                        }.buttonStyle(.plain)
-                    }
-                    Text(item.name)
-                }
+                StockItemRowView(stock: stock, item: item)
             }
         }
     }

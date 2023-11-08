@@ -36,24 +36,6 @@ struct StockListView: View {
                 } else {
                     HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
                 }
-                
-                Button {
-                    watchConnector.send(stocks: repository.stocks)
-                    
-                    print(repository.stocks)
-                    
-                    let text = "105553171858992"
-                    
-                    guard let itemObjId = try? ObjectId(string: text) else {
-                        print("失敗")
-                        return
-                    }
-                    print(itemObjId)
-                    
-                } label: {
-                    Text("JSON")
-                }
-
 
                 InputView(name: $name, action: {
                     if checkLimitCapacity() {
@@ -111,6 +93,9 @@ struct StockListView: View {
                 interstitial.loadInterstitial()
                 rootViewModel.offSortMode()
                 rootViewModel.loadLimitCapacity()
+                if watchConnector.isReachable {
+                    watchConnector.send(stocks: repository.stocks)
+                }
             }
             .alert(Text(L10n.dialogCapacityOverTitle),
                    isPresented: $isLimitAlert,

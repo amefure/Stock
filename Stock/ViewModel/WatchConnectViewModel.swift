@@ -66,6 +66,10 @@ extension WatchConnectViewModel: WCSessionDelegate {
     /// Watchアプリ通信可能状態が変化した際に呼ばれる
     func sessionReachabilityDidChange(_ session: WCSession) {
         isReachable = session.isReachable
+        if isReachable {
+            // 未接続状態から接続された時にも情報を送信
+            send(stocks: repository.stocks)
+        }
     }
     
     /// sendMessageメソッドで送信されたデータを受け取るデリゲートメソッド
@@ -84,6 +88,10 @@ extension WatchConnectViewModel: WCSessionDelegate {
         // スレッドを明示的に指定しないとクラッシュする
         DispatchQueue.main.async { [weak self] in
             self?.repository.updateFlagStockItem(listId: stockObjId, itemId: itemObjId, flag: flag)
+        }
+        /// 少しタイミングをずらしてwatch側も更新
+        DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 0.01) { [weak self] in
+            self?.send(stocks: self?.repository.stocks ?? [])
         }
    }
 

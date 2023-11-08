@@ -26,7 +26,7 @@ class iOSConnectViewModel: NSObject, ObservableObject {
     }
     
     public func sendCheckItemNotify(stockId: String, itemId: String, flag: Bool) {
-        var toggle = flag == false
+        let toggle = flag == false
         let stockDic: [String: String] = ["CheckItemNotify": stockId + "," + itemId + "," + String(toggle)]
         self.session.sendMessage(stockDic) { error in
             print(error)
