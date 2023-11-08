@@ -18,6 +18,7 @@ struct HowToUseTheAppView: View {
                 AccordionBoxView(question: L10n.howToUseQ4Title, answer:  L10n.howToUseQ4Text)
                 AccordionBoxView(question: L10n.howToUseQ5Title, answer:  L10n.howToUseQ5Text)
                 AccordionBoxView(question: L10n.howToUseQ6Title, answer:  L10n.howToUseQ6Text)
+                AccordionBoxView(question: L10n.howToUseQ7Title, answer:  L10n.howToUseQ7Text)
              }
              
              

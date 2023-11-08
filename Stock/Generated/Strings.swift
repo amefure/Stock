@@ -49,6 +49,11 @@ internal enum L10n {
   internal static let howToUseQ6Text = L10n.tr("Localizable", "how_to_use_q6_text", fallback: "アプリのレビューもしくは「利用規約」のWebサイトのお問い合わせフォームからフィードバックをいただけるとできる限り対処いたします。\nしかしご要望に添えない可能性があることをご了承ください。")
   /// ○○な機能を追加してほしい
   internal static let howToUseQ6Title = L10n.tr("Localizable", "how_to_use_q6_title", fallback: "○○な機能を追加してほしい")
+  /// このアプリがインストールされているiPhoneとペアリングしているApple WatchでもStockの機能を利用することが可能です。
+  /// データはiPhoneと同期しており、Apple Watchからは並び替えやデータの追加、削除ができませんが、チェックリストの確認とチェックの付け外し操作が可能になっています。
+  internal static let howToUseQ7Text = L10n.tr("Localizable", "how_to_use_q7_text", fallback: "このアプリがインストールされているiPhoneとペアリングしているApple WatchでもStockの機能を利用することが可能です。\nデータはiPhoneと同期しており、Apple Watchからは並び替えやデータの追加、削除ができませんが、チェックリストの確認とチェックの付け外し操作が可能になっています。")
+  /// Apple Watchとの連携
+  internal static let howToUseQ7Title = L10n.tr("Localizable", "how_to_use_q7_title", fallback: "Apple Watchとの連携")
   /// 使い方
   internal static let howToUseTitle = L10n.tr("Localizable", "how_to_use_title", fallback: "使い方")
   /// 広告を視聴して容量を追加する
