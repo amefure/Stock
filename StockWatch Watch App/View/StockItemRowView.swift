@@ -15,13 +15,19 @@ struct StockItemRowView: View {
     public let stock: Stock
     public var item: StockItem
     @State var isFlag = false
+    @State var isAlert = false
     
     var body: some View {
         HStack{
             if item.name.prefix(1) != "-" {
                 Button {
-                    isFlag.toggle()
-                    iosConnector.sendCheckItemNotify(stockId: stock.id.stringValue, itemId: item.id.stringValue, flag: item.flag)
+                    
+                    if iosConnector.isConnenct {
+                        isFlag.toggle()
+                        iosConnector.sendCheckItemNotify(stockId: stock.id.stringValue, itemId: item.id.stringValue, flag: item.flag)
+                    } else {
+                        isAlert = true
+                    }
                 } label: {
                     Image(systemName: isFlag ? "checkmark.circle.fill" : "circle")
                         .foregroundColor(.green)
@@ -29,16 +35,20 @@ struct StockItemRowView: View {
                 Text(item.name)
             } else {
                 Group {
-                    Text("■").padding(.trailing, 10)
+                    Text("■").padding(.horizontal, 10)
                     Text("\(String(item.name.dropFirst()))")
                 }.fontWeight(.bold)
                     .offset(x: -8)
             }
-            
         }
         .onAppear {
             isFlag = item.flag
         }
+        .alert(isPresented: $isAlert) {
+                    Alert(title: Text("ここはタイトルです"),
+                          message: Text("ここはメッセージです。"),
+                          dismissButton: .default(Text("OK")))
+                }
     }
 }
 

@@ -13,7 +13,7 @@ struct StockItemListView: View {
      
     var body: some View {
         List {
-            ForEach(stock.items) { item in
+            ForEach(stock.items.sorted(by: { $0.order < $1.order })) { item in
                 StockItemRowView(stock: stock, item: item)
             }
         }

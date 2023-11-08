@@ -20,6 +20,11 @@
 		123A16D52AFB4D7600C66BDB /* EXCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16D42AFB4D7600C66BDB /* EXCollection.swift */; };
 		123A16D62AFB4D7600C66BDB /* EXCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16D42AFB4D7600C66BDB /* EXCollection.swift */; };
 		123A16D82AFB526500C66BDB /* StockItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16D72AFB526500C66BDB /* StockItemRowView.swift */; };
+		12C3DD3A2AFB984D004E6D4A /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C3DD392AFB984D004E6D4A /* RepositoryViewModel.swift */; };
+		12C3DD3E2AFB9C4B004E6D4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666E52AADF22B004BA49E /* Images.xcassets */; };
+		12C3DD3F2AFB9C55004E6D4A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666EA2AADF2C4004BA49E /* Assets.swift */; };
+		12C3DD402AFB9C58004E6D4A /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667052AAF557A004BA49E /* Strings.swift */; };
+		12C3DD432AFB9DAD004E6D4A /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C3DD422AFB9DAD004E6D4A /* RealmRepository.swift */; };
 		12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666B82AADEBC5004BA49E /* StockApp.swift */; };
 		12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */; };
 		12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F666C62AADEC93004BA49E /* GoogleService-Info.plist */; };
@@ -90,6 +95,8 @@
 		123A16D22AF8B55500C66BDB /* StockItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListView.swift; sourceTree = "<group>"; };
 		123A16D42AFB4D7600C66BDB /* EXCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXCollection.swift; sourceTree = "<group>"; };
 		123A16D72AFB526500C66BDB /* StockItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemRowView.swift; sourceTree = "<group>"; };
+		12C3DD392AFB984D004E6D4A /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		12C3DD422AFB9DAD004E6D4A /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		12F666B52AADEBC5004BA49E /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F666B82AADEBC5004BA49E /* StockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockApp.swift; sourceTree = "<group>"; };
 		12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -153,6 +160,7 @@
 		123A16B22AF3E21000C66BDB /* StockWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				12C3DD412AFB9D9F004E6D4A /* Repository */,
 				123A16D02AF52C0900C66BDB /* View */,
 				123A16D12AF52C1A00C66BDB /* ViewModel */,
 				123A16B72AF3E21100C66BDB /* Assets.xcassets */,
@@ -184,8 +192,17 @@
 			isa = PBXGroup;
 			children = (
 				123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */,
+				12C3DD392AFB984D004E6D4A /* RepositoryViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12C3DD412AFB9D9F004E6D4A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				12C3DD422AFB9DAD004E6D4A /* RealmRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		12F666AC2AADEBC5004BA49E = {
@@ -426,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C3DD3E2AFB9C4B004E6D4A /* Images.xcassets in Resources */,
 				123A16BB2AF3E21100C66BDB /* Preview Assets.xcassets in Resources */,
 				123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */,
 			);
@@ -532,12 +550,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				123A16D82AFB526500C66BDB /* StockItemRowView.swift in Sources */,
+				12C3DD3F2AFB9C55004E6D4A /* Assets.swift in Sources */,
 				123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */,
+				12C3DD3A2AFB984D004E6D4A /* RepositoryViewModel.swift in Sources */,
 				123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */,
+				12C3DD432AFB9DAD004E6D4A /* RealmRepository.swift in Sources */,
 				123A16CA2AF465B600C66BDB /* Stock.swift in Sources */,
 				123A16CB2AF465B800C66BDB /* StockItem.swift in Sources */,
 				123A16D32AF8B55500C66BDB /* StockItemListView.swift in Sources */,
 				123A16D62AFB4D7600C66BDB /* EXCollection.swift in Sources */,
+				12C3DD402AFB9C58004E6D4A /* Strings.swift in Sources */,
 				123A16C02AF3E2A200C66BDB /* iOSConnectViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

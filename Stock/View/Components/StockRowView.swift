@@ -37,7 +37,7 @@ struct StockRowView: View {
                 
                 if displayName.prefix(1) == "-" && stockItemFlag {
                     Group {
-                        Text("■").padding(.trailing, 10)
+                        Text("■").padding(.horizontal, 10)
                         Text("\(String(displayName.dropFirst()))")
                             .textSelection(.enabled)
                     }.fontWeight(.bold)

@@ -27,7 +27,7 @@ class RepositoryViewModel: ObservableObject {
     public func setCurrentStock(id: ObjectId) {
         if let result = stocks.first(where: { $0.id == id }) {
             currentStock = result
-            currentItems =  Array(currentStock.items).sorted(by: { $0.order < $1.order })
+            currentItems = Array(currentStock.items).sorted(by: { $0.order < $1.order })
         }
     }
     
