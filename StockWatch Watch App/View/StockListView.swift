@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StockListView: View {
     
-    @ObservedObject var iosConnector = iOSConnectViewModel()
+    @ObservedObject var iosConnector = iOSConnectViewModel.shared
     @State var isConnect: Bool = false
     
     var body: some View {
@@ -17,7 +17,7 @@ struct StockListView: View {
             List {
                 ForEach(iosConnector.stocks) { stock in
                     NavigationLink {
-                        
+                        StockItemListView(stock: stock)
                     } label: {
                         Text(stock.name)
                     }

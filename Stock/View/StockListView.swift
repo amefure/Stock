@@ -39,6 +39,17 @@ struct StockListView: View {
                 
                 Button {
                     watchConnector.send(stocks: repository.stocks)
+                    
+                    print(repository.stocks)
+                    
+                    let text = "105553171858992"
+                    
+                    guard let itemObjId = try? ObjectId(string: text) else {
+                        print("失敗")
+                        return
+                    }
+                    print(itemObjId)
+                    
                 } label: {
                     Text("JSON")
                 }

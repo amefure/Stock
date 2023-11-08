@@ -9,6 +9,9 @@ import WatchConnectivity
 
 class iOSConnectViewModel: NSObject, ObservableObject {
     
+    static var shared = iOSConnectViewModel()
+    
+    
     @Published var stocks: [Stock] = []
     @Published var isConnenct: Bool = false
 
@@ -19,6 +22,14 @@ class iOSConnectViewModel: NSObject, ObservableObject {
         if WCSession.isSupported() {
             self.session.delegate = self
             self.session.activate()
+        }
+    }
+    
+    public func sendCheckItemNotify(stockId: String, itemId: String, flag: Bool) {
+        var toggle = flag == false
+        let stockDic: [String: String] = ["CheckItemNotify": stockId + "," + itemId + "," + String(toggle)]
+        self.session.sendMessage(stockDic) { error in
+            print(error)
         }
     }
 }

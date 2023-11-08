@@ -16,6 +16,7 @@
 		123A16CA2AF465B600C66BDB /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D42AADEDED004BA49E /* Stock.swift */; };
 		123A16CB2AF465B800C66BDB /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666D62AADEE26004BA49E /* StockItem.swift */; };
 		123A16CC2AF4F16800C66BDB /* StockWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		123A16D32AF8B55500C66BDB /* StockItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16D22AF8B55500C66BDB /* StockItemListView.swift */; };
 		12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F666B82AADEBC5004BA49E /* StockApp.swift */; };
 		12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */; };
 		12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F666C62AADEC93004BA49E /* GoogleService-Info.plist */; };
@@ -83,6 +84,7 @@
 		123A16BA2AF3E21100C66BDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		123A16BF2AF3E2A200C66BDB /* iOSConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectViewModel.swift; sourceTree = "<group>"; };
 		123A16C12AF3E2C800C66BDB /* WatchConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectViewModel.swift; sourceTree = "<group>"; };
+		123A16D22AF8B55500C66BDB /* StockItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListView.swift; sourceTree = "<group>"; };
 		12F666B52AADEBC5004BA49E /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F666B82AADEBC5004BA49E /* StockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockApp.swift; sourceTree = "<group>"; };
 		12F666BF2AADEBC7004BA49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				123A16B32AF3E21000C66BDB /* StockWatchApp.swift */,
 				123A16B52AF3E21000C66BDB /* StockListView.swift */,
+				123A16D22AF8B55500C66BDB /* StockItemListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */,
 				123A16CA2AF465B600C66BDB /* Stock.swift in Sources */,
 				123A16CB2AF465B800C66BDB /* StockItem.swift in Sources */,
+				123A16D32AF8B55500C66BDB /* StockItemListView.swift in Sources */,
 				123A16C02AF3E2A200C66BDB /* iOSConnectViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
