@@ -12,6 +12,7 @@ struct StockRowView: View {
     
     @ObservedObject private var repository = RepositoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var watchConnector = WatchConnectViewModel.shared
     
     public let id: ObjectId
     public let displayName: String
@@ -28,8 +29,10 @@ struct StockRowView: View {
                         if displayName != newValue {
                             if stockItemFlag {
                                 repository.updateStockItem(listId: repository.currentStock.id ,itemId: id, name: newValue)
+                                watchConnector.send(stocks: repository.stocks)
                             } else {
                                 repository.updateStock(id: id, name: newValue)
+                                watchConnector.send(stocks: repository.stocks)
                             }
                         }
                     }

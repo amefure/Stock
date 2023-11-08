@@ -40,6 +40,7 @@ struct StockListView: View {
                 InputView(name: $name, action: {
                     if checkLimitCapacity() {
                         repository.createStock(name: name, order: repository.stocks.count)
+                        watchConnector.send(stocks: repository.stocks)
                     }
                 })
                 
@@ -70,8 +71,10 @@ struct StockListView: View {
                             }
                         }.onMove { sourceSet, destination in
                             repository.changeOrder(list: repository.stocks , sourceSet: sourceSet, destination: destination)
+                            watchConnector.send(stocks: repository.stocks)
                         }.onDelete { sourceSet in
                             repository.deleteStock(list: repository.stocks , sourceSet: sourceSet)
+                            watchConnector.send(stocks: repository.stocks)
                         }.deleteDisabled(rootViewModel.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)

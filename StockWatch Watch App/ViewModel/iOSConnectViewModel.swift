@@ -48,23 +48,20 @@ extension iOSConnectViewModel: WCSessionDelegate {
     /// iOSアプリ通信可能状態が変化した際に呼ばれる
     func sessionReachabilityDidChange(_ session: WCSession) {
         DispatchQueue.main.async { [weak self] in
-            print(session.isReachable)
             self?.isConnenct = session.isReachable
         }
     }
     
     /// sendMessageメソッドで送信されたデータを受け取るデリゲートメソッド
    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-       print("iOSからデータを受け取ったよ")
        // iOSからデータを取得
        guard let json = message["stocks"] as? String else { return }
-       print("iOSからデータを受け取ったよ")
+       
        // JSONデータをString型→Data型に変換
        guard let jsonData = String(json).data(using: .utf8) else { return }
 
        // JSONデータを構造体に準拠した形式に変換
        if let stocks = try? JSONDecoder().decode([Stock].self, from: jsonData) {
-           print(stocks)
            DispatchQueue.main.async { [weak self] in
                self?.repositoryViewModel.setAllStock(stocks: stocks)
            }

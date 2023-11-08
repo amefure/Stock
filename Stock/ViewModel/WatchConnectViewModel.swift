@@ -43,6 +43,7 @@ class WatchConnectViewModel: NSObject, ObservableObject {
     }
     
     public func send(stocks: [Stock]) {
+        guard isReachable == true else { return }
         let json = jsonConverter(stocks: stocks)
         let stockDic: [String: String] = ["stocks": json]
         self.session.sendMessage(stockDic) { error in

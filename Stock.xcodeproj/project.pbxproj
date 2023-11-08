@@ -160,9 +160,9 @@
 		123A16B22AF3E21000C66BDB /* StockWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				12C3DD412AFB9D9F004E6D4A /* Repository */,
 				123A16D02AF52C0900C66BDB /* View */,
 				123A16D12AF52C1A00C66BDB /* ViewModel */,
+				12C3DD412AFB9D9F004E6D4A /* Repository */,
 				123A16B72AF3E21100C66BDB /* Assets.xcassets */,
 				123A16B92AF3E21100C66BDB /* Preview Content */,
 			);

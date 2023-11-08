@@ -11,6 +11,7 @@ struct StockItemListView: View {
     
     @ObservedObject private var repository = RepositoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var watchConnector = WatchConnectViewModel.shared
     
     public let stock: Stock
     
@@ -49,6 +50,7 @@ struct StockItemListView: View {
                 if rootViewModel.currentMode == .add {
                     InputView(name: $name, action: {
                         repository.createStockItem(listId: repository.currentStock.id, name: name, order: Int(repository.currentStock.size))
+                        watchConnector.send(stocks: repository.stocks)
                     }).transition(.scale)
                 }
                 
@@ -61,6 +63,7 @@ struct StockItemListView: View {
                         if repository.currentStock.size != 0 {
                             Button {
                                 repository.updateAllFlagStockItem(listId: repository.currentStock.id, flag: false)
+                                watchConnector.send(stocks: repository.stocks)
                             } label: {
                                 Image(systemName: "checklist.unchecked")
                             }
@@ -78,6 +81,7 @@ struct StockItemListView: View {
                         if repository.currentStock.size != 0 {
                             Button {
                                 repository.updateAllFlagStockItem(listId: repository.currentStock.id, flag: true)
+                                watchConnector.send(stocks: repository.stocks)
                             } label: {
                                 Image(systemName: "checklist.checked")
                             }
@@ -97,6 +101,7 @@ struct StockItemListView: View {
                                 if item.name.prefix(1) != "-" {
                                     Button {
                                         repository.updateFlagStockItem(listId: repository.currentStock.id, itemId: item.id, flag: !item.flag)
+                                        watchConnector.send(stocks: repository.stocks)
                                     } label: {
                                         Image(systemName: item.flag ? "checkmark.circle.fill" : "circle")
                                             .foregroundColor(.green)
@@ -108,8 +113,10 @@ struct StockItemListView: View {
                             
                         }.onMove { sourceSet, destination in
                             repository.changeOrderStockItem(list: repository.currentStock, sourceSet: sourceSet, destination: destination)
+                            watchConnector.send(stocks: repository.stocks)
                         }.onDelete { sourceSet in
                             repository.deleteStockItem(list: repository.currentStock, sourceSet: sourceSet, listId: repository.currentStock.id)
+                            watchConnector.send(stocks: repository.stocks)
                         }.deleteDisabled(rootViewModel.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
