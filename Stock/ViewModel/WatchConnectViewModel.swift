@@ -75,9 +75,9 @@ extension WatchConnectViewModel: WCSessionDelegate {
         guard let value = message["CheckItemNotify"] as? String else { return }
 
         let array = value.components(separatedBy: ",")
-        let stockId = array[0]
-        let itemId = array[1]
-        let flag = array[2] == "true"
+        let stockId = array[safe: 0] ?? ""
+        let itemId = array[safe:1] ?? ""
+        let flag = array[safe: 2] ?? "true" == "true"
         guard let stockObjId = try? ObjectId(string: stockId) else { return }
         guard let itemObjId = try? ObjectId(string: itemId) else { return }
         
