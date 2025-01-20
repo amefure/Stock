@@ -1,0 +1,117 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "4FAB1355",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "300",
+      "familyShareable" : false,
+      "internalID" : "96C28A58",
+      "localizations" : [
+        {
+          "description" : "アプリ内に表示されているバナー広告が非表示になります。",
+          "displayName" : "TEST_ADS",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "アプリ内に表示されているバナー広告が非表示になります。",
+          "displayName" : "TEST_広告削除",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "com.test.remove_ads",
+      "referenceName" : "Remove Ads",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "500",
+      "familyShareable" : false,
+      "internalID" : "99538D52",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "TEST_UNLOCK_STORAGE",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "誕生日情報の登録上限数が解放され、制限なく誕生日情報を登録できるようになります。",
+          "displayName" : "TEST_容量解放",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "com.test.unlock_storage",
+      "referenceName" : "Unlock Storage",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "ja",
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

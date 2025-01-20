@@ -24,7 +24,7 @@ struct InputView: View {
                     .foregroundColor(.white)
             }
         }.padding()
-            .frame(width: UIScreen.main.bounds.width / 1.2)
+            .frame(width: DeviceSizeUtility.deviceWidth / 1.2)
             .background(Color(hexString: "#222222"))
             .cornerRadius(20)
     }

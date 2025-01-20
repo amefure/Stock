@@ -11,7 +11,7 @@ import RealmSwift
 struct StockListView: View {
     
     @ObservedObject private var repository = RepositoryViewModel.shared
-    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     @ObservedObject private var interstitial = AdmobInterstitialView()
     @ObservedObject private var watchConnector = WatchConnectViewModel.shared
     
@@ -19,7 +19,9 @@ struct StockListView: View {
     @State private var isLimitAlert = false // 上限に達した場合のアラート
     
     private func checkLimitCapacity() -> Bool {
-        if repository.stocks.count >= rootViewModel.limitCapacity {
+        // 容量解放済みなら常にtrue
+        guard !rootEnvironment.unlockStorage else { return true }
+        if repository.stocks.count >= rootEnvironment.limitCapacity {
             isLimitAlert = true
             return false
         } else {
@@ -32,42 +34,48 @@ struct StockListView: View {
             VStack{
                 // MARK: - Header
                 if watchConnector.isReachable {
-                    HeaderView(leadingIcon: "", trailingIcon: "applewatch.radiowaves.left.and.right", leadingAction: {}, trailingAction: {})
+                    HeaderView(trailingIcon: "applewatch.radiowaves.left.and.right")
                 } else {
-                    HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
+                    HeaderView()
                 }
 
-                InputView(name: $name, action: {
-                    if checkLimitCapacity() {
-                        repository.createStock(name: name, order: repository.stocks.count)
-                        watchConnector.send(stocks: repository.stocks)
+                InputView(
+                    name: $name,
+                    action: {
+                        if checkLimitCapacity() {
+                            repository.createStock(name: name, order: repository.stocks.count)
+                            watchConnector.send(stocks: repository.stocks)
+                        }
                     }
-                })
-                
+                )
                 
                 if repository.stocks.isEmpty {
                     Spacer()
-                        .frame(width: UIScreen.main.bounds.width)
+                        .frame(width: DeviceSizeUtility.deviceWidth)
                 } else {
                     
                     AvailableListBackGroundStack {
                         ForEach(repository.stocks) { stock in
                             ZStack{
                                 Button {
+                                    /// 広告削除を購入済みならインタースティシャルをスキップ
+                                    guard !rootEnvironment.removeAds else { return }
                                     // 3回遷移したら広告を表示させる
-                                    rootViewModel.addCountInterstitial()
-                                    if rootViewModel.countInterstitial == 3 {
-                                        rootViewModel.countInterstitial = 0
+                                    rootEnvironment.addCountInterstitial()
+                                    if rootEnvironment.countInterstitial == 3 {
+                                        rootEnvironment.countInterstitial = 0
                                         interstitial.presentInterstitial()
                                     }
                                 } label: {
                                     StockRowView(id: stock.id, displayName: stock.name)
+                                        .environmentObject(rootEnvironment)
                                 }
                                 NavigationLink {
                                     StockItemListView(stock: stock)
+                                        .environmentObject(rootEnvironment)
                                 } label: {
                                     EmptyView()
-                                }.opacity(rootViewModel.currentMode == .none ? 1 : 0)
+                                }.opacity(rootEnvironment.currentMode == .none ? 1 : 0)
                             }
                         }.onMove { sourceSet, destination in
                             repository.changeOrder(list: repository.stocks , sourceSet: sourceSet, destination: destination)
@@ -75,7 +83,7 @@ struct StockListView: View {
                         }.onDelete { sourceSet in
                             repository.deleteStock(list: repository.stocks , sourceSet: sourceSet)
                             watchConnector.send(stocks: repository.stocks)
-                        }.deleteDisabled(rootViewModel.currentMode != .delete)
+                        }.deleteDisabled(rootEnvironment.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
                 }
@@ -83,19 +91,14 @@ struct StockListView: View {
             
             // MARK: - Footer
             FooterView()
+                .environmentObject(rootEnvironment)
             
-        }.environment(\.editMode, .constant(rootViewModel.editSortMode))
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color(hexString: "#434343"),
-                                                Color(hexString: "#000000")]),
-                    startPoint: .top, endPoint: .bottom
-                ))
+        }.environment(\.editMode, .constant(rootEnvironment.editSortMode))
+            .gradientBackground()
             .onAppear {
                 repository.readAllStock()
                 interstitial.loadInterstitial()
-                rootViewModel.offSortMode()
-                rootViewModel.loadLimitCapacity()
+                rootEnvironment.onAppear()
                 if watchConnector.isReachable {
                     watchConnector.send(stocks: repository.stocks)
                 }

@@ -62,15 +62,17 @@ struct InAppPurchaseView: View {
                                 } label: {
                                     if viewModel.isPurchasingId == product.id {
                                         ProgressView()
-                                            .tint(.white)
-                                            .foregroundStyle(.white)
+                                            .tint(.black)
                                             .frame(width: DeviceSizeUtility.deviceWidth - 60, height: 50)
+                                            .background(.white)
+                                            .foregroundStyle(.black)
                                             .clipShape(RoundedRectangle(cornerRadius: 8))
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                     } else {
                                         Text(viewModel.isPurchased(product.id) ? "購入済み" : "購入する")
-                                            .foregroundStyle(.white)
                                             .frame(width: DeviceSizeUtility.deviceWidth - 60, height: 50)
+                                            .background(.white)
+                                            .foregroundStyle(.black)
                                             .clipShape(RoundedRectangle(cornerRadius: 8))
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                     }
@@ -95,8 +97,9 @@ struct InAppPurchaseView: View {
                             viewModel.restore()
                         } label: {
                             Text("復元する")
-                                .foregroundStyle(.white)
                                 .frame(width: DeviceSizeUtility.deviceWidth - 60, height: 50)
+                                .background(.white)
+                                .foregroundStyle(.black)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                                 .shadow(color: .gray, radius: 3, x: 4, y: 4)
                         }.buttonStyle(.plain)

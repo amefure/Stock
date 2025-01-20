@@ -10,8 +10,8 @@ import RealmSwift
 
 struct StockRowView: View {
     
+    @EnvironmentObject private var rootEnvironment: RootEnvironment
     @ObservedObject private var repository = RepositoryViewModel.shared
-    @ObservedObject private var rootViewModel = RootViewModel.shared
     @ObservedObject private var watchConnector = WatchConnectViewModel.shared
     
     public let id: ObjectId
@@ -22,7 +22,7 @@ struct StockRowView: View {
     
     var body: some View {
         HStack {
-            if rootViewModel.currentMode == .edit {
+            if rootEnvironment.currentMode == .edit {
                 TextField(displayName, text: $name)
                     .onChange(of: name) { newValue in
                         // 変更がないなら処理を行わない
@@ -40,7 +40,8 @@ struct StockRowView: View {
                 
                 if displayName.prefix(1) == "-" && stockItemFlag {
                     Group {
-                        Text("■").padding(.horizontal, 10)
+                        Text("■")
+                            .padding(.horizontal, 10)
                         Text("\(String(displayName.dropFirst()))")
                             .textSelection(.enabled)
                     }.fontWeight(.bold)
@@ -55,10 +56,10 @@ struct StockRowView: View {
             Spacer()
             
             
-            if rootViewModel.currentMode == .edit {
+            if rootEnvironment.currentMode == .edit {
                 Image(systemName: "pencil.tip.crop.circle")
                     .foregroundColor(.gray)
-            } else if rootViewModel.currentMode == .delete {
+            } else if rootEnvironment.currentMode == .delete {
                 Group {
                     Image(systemName: "trash")
                     Image(systemName: "arrow.left")

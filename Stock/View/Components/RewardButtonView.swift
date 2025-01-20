@@ -9,17 +9,12 @@ import SwiftUI
 
 struct RewardButtonView: View {
 
-    // MARK: - AdMob
-    @ObservedObject var reward = Reward()
-
-    // MARK: - Storage
-    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var reward = Reward()
+    @EnvironmentObject private var rootEnvironment: RootEnvironment
     @AppStorage("LastAcquisitionDate") var lastAcquisitionDate = ""
 
-    // MARK: - View
-    @State var isAlertReward: Bool = false // リワード広告視聴回数制限アラート
+    @State private var isAlertReward: Bool = false // リワード広告視聴回数制限アラート
 
-    // MARK: - Method
 
     private func nowTime() -> String {
         let df = DateFormatter()
@@ -32,7 +27,7 @@ struct RewardButtonView: View {
     }
 
     var body: some View {
-        Button(action: {
+        Button {
             // 1日1回までしか視聴できないようにする
             if lastAcquisitionDate != nowTime() {
                 reward.showReward() //  広告配信
@@ -40,32 +35,25 @@ struct RewardButtonView: View {
                 // 広告視聴後に追加させるため時間をずらす
                 DispatchQueue.main.asyncAfter ( deadline: DispatchTime.now() + 1) {
                     // 容量を追加
-                    rootViewModel.addLimitCapacity()
+                    rootEnvironment.addLimitCapacity()
                 }
             } else {
                 isAlertReward = true
             }
-        }) {
+        } label: {
             HStack {
                 Image(systemName: "bag.badge.plus")
                     .foregroundColor(reward.rewardLoaded ? .white : .gray)
                 Text(reward.rewardLoaded ? L10n.settingAdmobTitle : L10n.settingAdmobTitleDisable)
                     .foregroundColor(reward.rewardLoaded ? .white : .gray)
             }
-        }
-        .onAppear {
-            reward.loadReward()
-        }
-        .disabled(!reward.rewardLoaded)
-        .alert(Text(L10n.dialogAdmobTitle),
-               isPresented: $isAlertReward,
-               actions: {
-                   Button(action: {}, label: {
-                       Text("OK")
-                   })
-               }, message: {
-                   Text(L10n.dialogAdmobText)
-               })
+        }.onAppear { reward.loadReward() }
+            .disabled(!reward.rewardLoaded)
+            .alert(
+                isPresented: $isAlertReward,
+                title: L10n.dialogAdmobTitle,
+                message: L10n.dialogAdmobText
+            )
     }
 }
 

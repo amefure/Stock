@@ -21,6 +21,7 @@
 		1234D2D72D3E781E003A07A5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2D62D3E781E003A07A5 /* AppManager.swift */; };
 		1234D2D92D3E78DF003A07A5 /* ExModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2D82D3E78DE003A07A5 /* ExModifier.swift */; };
 		1234D2DC2D3E7937003A07A5 /* DeviceSizeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */; };
+		1234D2DE2D3E7C10003A07A5 /* AsyncProducts.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 1234D2DD2D3E7C10003A07A5 /* AsyncProducts.storekit */; };
 		123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B32AF3E21000C66BDB /* StockWatchApp.swift */; };
 		123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* StockListView.swift */; };
 		123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16B72AF3E21100C66BDB /* Assets.xcassets */; };
@@ -64,7 +65,7 @@
 		12F667012AAF50B3004BA49E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12F667032AAF50B3004BA49E /* Localizable.strings */; };
 		12F667062AAF557A004BA49E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667052AAF557A004BA49E /* Strings.swift */; };
 		12F6670A2AAFEF22004BA49E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */; };
-		12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6670B2AB0326A004BA49E /* RootViewModel.swift */; };
+		12F6670C2AB0326A004BA49E /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6670B2AB0326A004BA49E /* RootEnvironment.swift */; };
 		12F667142AB12A98004BA49E /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667132AB12A98004BA49E /* Mode.swift */; };
 		12F667162AB13045004BA49E /* HowToUseTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667152AB13045004BA49E /* HowToUseTheAppView.swift */; };
 		12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F667172AB1306B004BA49E /* AccordionBoxView.swift */; };
@@ -111,6 +112,7 @@
 		1234D2D62D3E781E003A07A5 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		1234D2D82D3E78DE003A07A5 /* ExModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExModifier.swift; sourceTree = "<group>"; };
 		1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeUtility.swift; sourceTree = "<group>"; };
+		1234D2DD2D3E7C10003A07A5 /* AsyncProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = AsyncProducts.storekit; sourceTree = "<group>"; };
 		123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A16B32AF3E21000C66BDB /* StockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWatchApp.swift; sourceTree = "<group>"; };
 		123A16B52AF3E21000C66BDB /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 		12F667042AAF50CF004BA49E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12F667052AAF557A004BA49E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		12F6670B2AB0326A004BA49E /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		12F6670B2AB0326A004BA49E /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
 		12F667132AB12A98004BA49E /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		12F667152AB13045004BA49E /* HowToUseTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppView.swift; sourceTree = "<group>"; };
 		12F667172AB1306B004BA49E /* AccordionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionBoxView.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			children = (
 				12F666C82AADECDC004BA49E /* Info.plist */,
 				12F666C62AADEC93004BA49E /* GoogleService-Info.plist */,
+				1234D2DD2D3E7C10003A07A5 /* AsyncProducts.storekit */,
 				12F666E92AADF27D004BA49E /* Generated */,
 				12F666E42AADF204004BA49E /* Resources */,
 				12F666CC2AADED4C004BA49E /* Extension&Utility */,
@@ -361,7 +364,7 @@
 		12F666CB2AADED39004BA49E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12F6670B2AB0326A004BA49E /* RootViewModel.swift */,
+				12F6670B2AB0326A004BA49E /* RootEnvironment.swift */,
 				12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */,
 				1234D2CE2D3E75E2003A07A5 /* InAppPurchaseViewModel.swift */,
 				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
@@ -542,6 +545,7 @@
 				12F667012AAF50B3004BA49E /* Localizable.strings in Resources */,
 				12F666C02AADEBC7004BA49E /* Preview Assets.xcassets in Resources */,
 				12F666E82AADF252004BA49E /* Colors.xcassets in Resources */,
+				1234D2DE2D3E7C10003A07A5 /* AsyncProducts.storekit in Resources */,
 				12F666E62AADF22B004BA49E /* Images.xcassets in Resources */,
 				12F666C72AADEC93004BA49E /* GoogleService-Info.plist in Resources */,
 			);
@@ -691,7 +695,7 @@
 				12F666F82AAF3CA1004BA49E /* AdMobView.swift in Sources */,
 				1234D2D42D3E76A2003A07A5 /* UserDefaultsRepository.swift in Sources */,
 				123A16C22AF3E2C800C66BDB /* WatchConnectViewModel.swift in Sources */,
-				12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */,
+				12F6670C2AB0326A004BA49E /* RootEnvironment.swift in Sources */,
 				12F666F22AAE8DF6004BA49E /* HeaderView.swift in Sources */,
 				1234D2CF2D3E75E3003A07A5 /* InAppPurchaseViewModel.swift in Sources */,
 				1234D2CA2D3E73CB003A07A5 /* ExView.swift in Sources */,

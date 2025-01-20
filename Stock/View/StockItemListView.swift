@@ -9,8 +9,8 @@ import SwiftUI
 
 struct StockItemListView: View {
     
+    @EnvironmentObject private var rootEnvironment: RootEnvironment
     @ObservedObject private var repository = RepositoryViewModel.shared
-    @ObservedObject private var rootViewModel = RootViewModel.shared
     @ObservedObject private var watchConnector = WatchConnectViewModel.shared
     
     public let stock: Stock
@@ -39,15 +39,15 @@ struct StockItemListView: View {
                            trailingAction: {
                     withAnimation() {
                         // 明示的なアニメーション指定
-                        if rootViewModel.currentMode != .add {
-                            rootViewModel.onAddMode()
+                        if rootEnvironment.currentMode != .add {
+                            rootEnvironment.onAddMode()
                         } else {
-                            rootViewModel.offSortMode()
+                            rootEnvironment.offSortMode()
                         }
                     }
                 })
                 
-                if rootViewModel.currentMode == .add {
+                if rootEnvironment.currentMode == .add {
                     InputView(name: $name, action: {
                         repository.createStockItem(listId: repository.currentStock.id, name: name, order: Int(repository.currentStock.size))
                         watchConnector.send(stocks: repository.stocks)
@@ -109,6 +109,7 @@ struct StockItemListView: View {
                                 }
                                 
                                 StockRowView(id: item.id , displayName: item.name ,stockItemFlag: true)
+                                    .environmentObject(rootEnvironment)
                             }
                             
                         }.onMove { sourceSet, destination in
@@ -117,31 +118,28 @@ struct StockItemListView: View {
                         }.onDelete { sourceSet in
                             repository.deleteStockItem(list: repository.currentStock, sourceSet: sourceSet, listId: repository.currentStock.id)
                             watchConnector.send(stocks: repository.stocks)
-                        }.deleteDisabled(rootViewModel.currentMode != .delete)
+                        }.deleteDisabled(rootEnvironment.currentMode != .delete)
                             .listRowBackground(Color.clear)
                     }.padding(.bottom, 20)
                 }
             }
             // MARK: - Footer
             FooterView()
+                .environmentObject(rootEnvironment)
             
-        }.environment(\.editMode, .constant(rootViewModel.editSortMode))
+        }.environment(\.editMode, .constant(rootEnvironment.editSortMode))
             .navigationBarBackButtonHidden()
             .navigationBarHidden(true)
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
-                    startPoint: .top, endPoint: .bottom
-                ))
+            .gradientBackground()
             .onAppear {
                 repository.setCurrentStock(id: stock.id)
                 if repository.currentStock.items.isEmpty {
-                    rootViewModel.onAddMode()
+                    rootEnvironment.onAddMode()
                 } else {
-                    rootViewModel.onSortMode()
+                    rootEnvironment.onSortMode()
                 }
             }.onDisappear {
-                rootViewModel.offSortMode()
+                rootEnvironment.offSortMode()
             }
     }
 }

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct HeaderView: View {
     
-    public var leadingIcon: String
-    public var trailingIcon: String
-    public var leadingAction: () -> Void
-    public var trailingAction: () -> Void
+    public var leadingIcon: String = ""
+    public var trailingIcon: String = ""
+    public var leadingAction: () -> Void = { }
+    public var trailingAction: () -> Void = { }
     
     var body: some View {
         HStack {

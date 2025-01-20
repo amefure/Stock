@@ -9,66 +9,68 @@ import SwiftUI
 
 struct FooterView: View {
     
-    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @EnvironmentObject private var rootEnvironment: RootEnvironment
     
     var body: some View {
         HStack{
             Spacer()
             Button {
-                if rootViewModel.currentMode != .sort {
-                    rootViewModel.onSortMode()
+                if rootEnvironment.currentMode != .sort {
+                    rootEnvironment.onSortMode()
                 } else {
-                    rootViewModel.offSortMode()
+                    rootEnvironment.offSortMode()
                 }
             } label: {
                 Image(systemName: "arrow.up.arrow.down")
-                    .foregroundColor(rootViewModel.currentMode == .sort ? .green : .white)
+                    .foregroundColor(rootEnvironment.currentMode == .sort ? .green : .white)
             }
             Spacer()
             Button {
-                if rootViewModel.currentMode != .edit {
-                    rootViewModel.offSortMode()
-                    rootViewModel.onEditNameMode()
+                if rootEnvironment.currentMode != .edit {
+                    rootEnvironment.offSortMode()
+                    rootEnvironment.onEditNameMode()
                 } else {
-                    rootViewModel.offSortMode()
+                    rootEnvironment.offSortMode()
                 }
             } label: {
                 Image(systemName: "pencil.tip.crop.circle")
                     .font(.title2)
-                    .foregroundColor(rootViewModel.currentMode == .edit ? .green : .white)
+                    .foregroundColor(rootEnvironment.currentMode == .edit ? .green : .white)
             }
             Spacer()
             Button {
-                if rootViewModel.currentMode != .delete {
-                    rootViewModel.offSortMode()
-                    rootViewModel.onDeleteMode()
+                if rootEnvironment.currentMode != .delete {
+                    rootEnvironment.offSortMode()
+                    rootEnvironment.onDeleteMode()
                 } else {
-                    rootViewModel.offSortMode()
+                    rootEnvironment.offSortMode()
                 }
             } label: {
                 Image(systemName: "trash")
-                    .foregroundColor(rootViewModel.currentMode == .delete ? .green : .white)
+                    .foregroundColor(rootEnvironment.currentMode == .delete ? .green : .white)
             }
             Spacer()
             NavigationLink {
                 SettingView()
+                    .environmentObject(rootEnvironment)
             } label: {
                 Image(systemName: "gearshape")
-                    .foregroundColor(rootViewModel.currentMode == .sort ? .gray : .white)
-            }.disabled(rootViewModel.currentMode == .sort)
+                    .foregroundColor(rootEnvironment.currentMode == .sort ? .gray : .white)
+            }.disabled(rootEnvironment.currentMode == .sort)
             Spacer()
 
-        }.frame(width: UIScreen.main.bounds.width / 2)
+        }.frame(width: DeviceSizeUtility.deviceWidth / 2)
             .padding()
             .background(Color(hexString: "#222222"))
             .cornerRadius(40)
             .shadow(color: .gray,radius: 3, x: 1, y: 1)
-            .offset(y:UIScreen.main.bounds.height / 2.3)
+            .offset(y: DeviceSizeUtility.deviceHeight / 2.3)
     }
 }
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
         FooterView()
+            .environmentObject(RootEnvironment())
     }
 }

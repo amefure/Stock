@@ -11,19 +11,30 @@ struct SettingView: View {
     
     private let viewModel = SettingViewModel()
     
-    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @EnvironmentObject private var rootEnvironment: RootEnvironment
     
     var body: some View {
         VStack{
             
             AvailableListBackGroundStack {
-                Section(header: Text(L10n.settingCapacitySectionTitle), footer: Text(L10n.settingCapacitySectionFooter)) {
-                    RewardButtonView()
-                    HStack {
-                        Image(systemName: "bag")
-                        Text(L10n.settingCapacityText(rootViewModel.limitCapacity))
+                Section(
+                    header: Text(L10n.settingCapacitySectionTitle),
+                    footer: Text(L10n.settingCapacitySectionFooter)
+                ) {
+                    if !rootEnvironment.unlockStorage {
+                        RewardButtonView()
+                            .environmentObject(rootEnvironment)
+                        HStack {
+                            Image(systemName: "bag")
+                            Text(L10n.settingCapacityText(rootEnvironment.limitCapacity))
+                        }
+                    } else {
+                        HStack {
+                            Image(systemName: "bag")
+                            Text(L10n.settingCapacityText("∞"))
+                        }
                     }
-                    
+                   
                     // アプリ内課金
                     NavigationLink {
                         InAppPurchaseView()
@@ -68,8 +79,11 @@ struct SettingView: View {
             }
             Spacer()
             
-            AdMobBannerView()
-                .frame(height: 60)
+            if !rootEnvironment.removeAds {
+                AdMobBannerView()
+                    .frame(height: 60)
+            }
+           
 
         }.gradientBackground()
             .toolbar {
