@@ -42,8 +42,8 @@ Pods/
 
 # Firebase
 GoogleService-Info.plist
-Stock/View/Components/AdMobView
-Stock/Models/InAppPurchase/SecretProductIdKey.swift
+Stock/View/Components/AdMobView.swift
+Stock/Model/InAppPurchase/SecretProductIdKey.swift
 
 # Carthage
 Carthage/Build/
