@@ -8,7 +8,7 @@ target 'Stock' do
   # Pods for Stock
   pod 'Google-Mobile-Ads-SDK'
   pod 'FirebaseAnalytics'
-  pod 'RealmSwift' 
+  pod 'RealmSwift', '~> 10.37.2'
 end
 
 
@@ -17,5 +17,5 @@ target 'StockWatch Watch App' do
   use_frameworks!
 
   # Pods for StockWatch Watch App
-  pod 'RealmSwift' 
+  pod 'RealmSwift', '~> 10.37.2'
 end
