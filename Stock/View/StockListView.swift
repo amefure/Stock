@@ -99,16 +99,11 @@ struct StockListView: View {
                 if watchConnector.isReachable {
                     watchConnector.send(stocks: repository.stocks)
                 }
-            }
-            .alert(Text(L10n.dialogCapacityOverTitle),
-                   isPresented: $isLimitAlert,
-                   actions: {
-                Button(action: {}, label: {
-                    Text("OK")
-                })
-            }, message: {
-                Text(L10n.dialogCapacityOverText)
-            })
+            }.alert(
+                isPresented: $isLimitAlert,
+                title: L10n.dialogCapacityOverTitle,
+                message: L10n.dialogCapacityOverText
+            )
             .navigationBarBackButtonHidden()
             .navigationBarHidden(true)
     }

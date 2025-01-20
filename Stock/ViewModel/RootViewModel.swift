@@ -11,20 +11,17 @@ import SwiftUI
 class RootViewModel: ObservableObject {
     
     static let shared = RootViewModel()
-    private let userDefaultsManager = UserDefaultsManager()
     
     @Published var currentMode:Mode = .none
     @Published var editSortMode:EditMode = .inactive
-    // 広告表示カウント
+    /// 広告表示カウント
     @Published var countInterstitial:Int = 0 // 初期値
-    // 保存容量
+    /// 保存容量
     @Published var limitCapacity:Int = 6     // 初期値
-    // 追加容量
+    /// 追加容量
     private let addCapacity:Int = 3          // 増加値
     
-    
-    
-    // Mode
+    // MARK: Mode
     public func onAddMode(){
         currentMode = .add
         editSortMode = .inactive
@@ -50,22 +47,22 @@ class RootViewModel: ObservableObject {
         editSortMode = .inactive
     }
     
-    // UserDefaults
+    // MARK: UserDefaults
     public func addLimitCapacity() {
         limitCapacity += addCapacity
-        userDefaultsManager.setLimitCapacity(limitCapacity)
+        AppManager.sharedUserDefaultManager.setLimitCapacity(limitCapacity)
     }
     
     public func loadLimitCapacity() {
-        limitCapacity = userDefaultsManager.getLimitCapacity()
+        limitCapacity = AppManager.sharedUserDefaultManager.getLimitCapacity()
     }
     
     public func addCountInterstitial() {
         countInterstitial += 1
-        userDefaultsManager.setCountInterstitial(countInterstitial)
+        AppManager.sharedUserDefaultManager.setCountInterstitial(countInterstitial)
     }
     
     public func getCountInterstitial() {
-        countInterstitial = userDefaultsManager.getCountInterstitial()
+        countInterstitial = AppManager.sharedUserDefaultManager.getCountInterstitial()
     }
 }

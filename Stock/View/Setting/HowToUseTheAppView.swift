@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HowToUseTheAppView: View {
     var body: some View {
-        List{
+        List {
              
             Section(L10n.howToUseTitle){
                 AccordionBoxView(question: L10n.howToUseQ1Title, answer:  L10n.howToUseQ1Text)
@@ -20,14 +20,9 @@ struct HowToUseTheAppView: View {
                 AccordionBoxView(question: L10n.howToUseQ6Title, answer:  L10n.howToUseQ6Text)
                 AccordionBoxView(question: L10n.howToUseQ7Title, answer:  L10n.howToUseQ7Text)
              }
-             
-             
-         }.background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
-                startPoint: .top, endPoint: .bottom
-            ))
-             .fontWeight(.bold)
+        }.scrollContentBackground(.hidden)
+            .gradientBackground()
+            .fontWeight(.bold)
     }
 }
 

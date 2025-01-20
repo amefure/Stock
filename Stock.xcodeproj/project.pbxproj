@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1234D2BB2D3E6DC4003A07A5 /* InAppPurchaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2BA2D3E6DC3003A07A5 /* InAppPurchaseRepository.swift */; };
+		1234D2BE2D3E6DF9003A07A5 /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2BD2D3E6DF8003A07A5 /* ProductItem.swift */; };
+		1234D2BF2D3E6DF9003A07A5 /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2BD2D3E6DF8003A07A5 /* ProductItem.swift */; };
+		1234D2C12D3E6E13003A07A5 /* SecretProductIdKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2C02D3E6E12003A07A5 /* SecretProductIdKey.swift */; };
+		1234D2C22D3E6E13003A07A5 /* SecretProductIdKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2C02D3E6E12003A07A5 /* SecretProductIdKey.swift */; };
+		1234D2C82D3E7325003A07A5 /* ExUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2C72D3E7324003A07A5 /* ExUIApplication.swift */; };
+		1234D2CA2D3E73CB003A07A5 /* ExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2C62D3E72A7003A07A5 /* ExView.swift */; };
+		1234D2CD2D3E75CB003A07A5 /* InAppPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2CC2D3E75CB003A07A5 /* InAppPurchaseView.swift */; };
+		1234D2CF2D3E75E3003A07A5 /* InAppPurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2CE2D3E75E2003A07A5 /* InAppPurchaseViewModel.swift */; };
+		1234D2D22D3E767F003A07A5 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2D12D3E767E003A07A5 /* RepositoryDependency.swift */; };
+		1234D2D42D3E76A2003A07A5 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2D32D3E76A2003A07A5 /* UserDefaultsRepository.swift */; };
+		1234D2D72D3E781E003A07A5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2D62D3E781E003A07A5 /* AppManager.swift */; };
+		1234D2D92D3E78DF003A07A5 /* ExModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2D82D3E78DE003A07A5 /* ExModifier.swift */; };
+		1234D2DC2D3E7937003A07A5 /* DeviceSizeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */; };
 		123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B32AF3E21000C66BDB /* StockWatchApp.swift */; };
 		123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* StockListView.swift */; };
 		123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16B72AF3E21100C66BDB /* Assets.xcassets */; };
@@ -85,6 +99,18 @@
 
 /* Begin PBXFileReference section */
 		06EE230EEC3480465C26678D /* Pods-StockWatch Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatch Watch App.debug.xcconfig"; path = "Target Support Files/Pods-StockWatch Watch App/Pods-StockWatch Watch App.debug.xcconfig"; sourceTree = "<group>"; };
+		1234D2BA2D3E6DC3003A07A5 /* InAppPurchaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseRepository.swift; sourceTree = "<group>"; };
+		1234D2BD2D3E6DF8003A07A5 /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
+		1234D2C02D3E6E12003A07A5 /* SecretProductIdKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretProductIdKey.swift; sourceTree = "<group>"; };
+		1234D2C62D3E72A7003A07A5 /* ExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExView.swift; sourceTree = "<group>"; };
+		1234D2C72D3E7324003A07A5 /* ExUIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIApplication.swift; sourceTree = "<group>"; };
+		1234D2CC2D3E75CB003A07A5 /* InAppPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseView.swift; sourceTree = "<group>"; };
+		1234D2CE2D3E75E2003A07A5 /* InAppPurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewModel.swift; sourceTree = "<group>"; };
+		1234D2D12D3E767E003A07A5 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
+		1234D2D32D3E76A2003A07A5 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
+		1234D2D62D3E781E003A07A5 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		1234D2D82D3E78DE003A07A5 /* ExModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExModifier.swift; sourceTree = "<group>"; };
+		1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeUtility.swift; sourceTree = "<group>"; };
 		123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A16B32AF3E21000C66BDB /* StockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWatchApp.swift; sourceTree = "<group>"; };
 		123A16B52AF3E21000C66BDB /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
@@ -157,6 +183,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1234D2BC2D3E6DED003A07A5 /* InAppPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				1234D2BD2D3E6DF8003A07A5 /* ProductItem.swift */,
+				1234D2C02D3E6E12003A07A5 /* SecretProductIdKey.swift */,
+			);
+			path = InAppPurchase;
+			sourceTree = "<group>";
+		};
+		1234D2C32D3E7283003A07A5 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				12F666D02AADED96004BA49E /* ExColor.swift */,
+				1234D2D82D3E78DE003A07A5 /* ExModifier.swift */,
+				123A16D42AFB4D7600C66BDB /* EXCollection.swift */,
+				1234D2C72D3E7324003A07A5 /* ExUIApplication.swift */,
+				1234D2C62D3E72A7003A07A5 /* ExView.swift */,
+				12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */,
+				12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */,
+			);
+			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		1234D2CB2D3E75BB003A07A5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				12F666F92AAF4311004BA49E /* SettingView.swift */,
+				12F667152AB13045004BA49E /* HowToUseTheAppView.swift */,
+				1234D2CC2D3E75CB003A07A5 /* InAppPurchaseView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		1234D2D02D3E767B003A07A5 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				1234D2D12D3E767E003A07A5 /* RepositoryDependency.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		1234D2D52D3E77B1003A07A5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1234D2D62D3E781E003A07A5 /* AppManager.swift */,
+				12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1234D2DA2D3E792A003A07A5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		123A16B22AF3E21000C66BDB /* StockWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +321,7 @@
 				12F666C92AADED2E004BA49E /* View */,
 				12F666CB2AADED39004BA49E /* ViewModel */,
 				12F666CD2AADED53004BA49E /* Repository */,
+				1234D2D52D3E77B1003A07A5 /* Managers */,
 				12F666BE2AADEBC7004BA49E /* Preview Content */,
 			);
 			path = Stock;
@@ -256,8 +341,7 @@
 				12F666B82AADEBC5004BA49E /* StockApp.swift */,
 				12F666D82AADEE64004BA49E /* StockListView.swift */,
 				12F666E02AADEF43004BA49E /* StockItemListView.swift */,
-				12F666F92AAF4311004BA49E /* SettingView.swift */,
-				12F667152AB13045004BA49E /* HowToUseTheAppView.swift */,
+				1234D2CB2D3E75BB003A07A5 /* Setting */,
 				12F666EE2AAE0944004BA49E /* Components */,
 			);
 			path = View;
@@ -269,6 +353,7 @@
 				12F666D42AADEDED004BA49E /* Stock.swift */,
 				12F666D62AADEE26004BA49E /* StockItem.swift */,
 				12F667132AB12A98004BA49E /* Mode.swift */,
+				1234D2BC2D3E6DED003A07A5 /* InAppPurchase */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +363,7 @@
 			children = (
 				12F6670B2AB0326A004BA49E /* RootViewModel.swift */,
 				12F667192AB13BC0004BA49E /* RepositoryViewModel.swift */,
+				1234D2CE2D3E75E2003A07A5 /* InAppPurchaseViewModel.swift */,
 				12F666FD2AAF4F53004BA49E /* SettingViewModel.swift */,
 				123A16C12AF3E2C800C66BDB /* WatchConnectViewModel.swift */,
 			);
@@ -287,11 +373,8 @@
 		12F666CC2AADED4C004BA49E /* Extension&Utility */ = {
 			isa = PBXGroup;
 			children = (
-				12F666D02AADED96004BA49E /* ExColor.swift */,
-				123A16D42AFB4D7600C66BDB /* EXCollection.swift */,
-				12F666D22AADEDAB004BA49E /* AvailableNavigationStack.swift */,
-				12F666EC2AAE03E7004BA49E /* AvailableListBackGroundStack.swift */,
-				12F667092AAFEF22004BA49E /* UserDefaultsManager.swift */,
+				1234D2C32D3E7283003A07A5 /* Extenstion */,
+				1234D2DA2D3E792A003A07A5 /* Utility */,
 			);
 			path = "Extension&Utility";
 			sourceTree = "<group>";
@@ -299,7 +382,10 @@
 		12F666CD2AADED53004BA49E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1234D2D02D3E767B003A07A5 /* DI */,
 				12F666CE2AADED67004BA49E /* RealmRepository.swift */,
+				1234D2BA2D3E6DC3003A07A5 /* InAppPurchaseRepository.swift */,
+				1234D2D32D3E76A2003A07A5 /* UserDefaultsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -551,7 +637,9 @@
 			files = (
 				123A16D82AFB526500C66BDB /* StockItemRowView.swift in Sources */,
 				12C3DD3F2AFB9C55004E6D4A /* Assets.swift in Sources */,
+				1234D2BE2D3E6DF9003A07A5 /* ProductItem.swift in Sources */,
 				123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */,
+				1234D2C12D3E6E13003A07A5 /* SecretProductIdKey.swift in Sources */,
 				12C3DD3A2AFB984D004E6D4A /* RepositoryViewModel.swift in Sources */,
 				123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */,
 				12C3DD432AFB9DAD004E6D4A /* RealmRepository.swift in Sources */,
@@ -571,6 +659,7 @@
 				12F666D72AADEE26004BA49E /* StockItem.swift in Sources */,
 				12F667142AB12A98004BA49E /* Mode.swift in Sources */,
 				12F666EB2AADF2C4004BA49E /* Assets.swift in Sources */,
+				1234D2D92D3E78DF003A07A5 /* ExModifier.swift in Sources */,
 				12F666FA2AAF4311004BA49E /* SettingView.swift in Sources */,
 				12F666D92AADEE64004BA49E /* StockListView.swift in Sources */,
 				12F666D12AADED96004BA49E /* ExColor.swift in Sources */,
@@ -578,23 +667,34 @@
 				123A16D52AFB4D7600C66BDB /* EXCollection.swift in Sources */,
 				12F6671A2AB13BC0004BA49E /* RepositoryViewModel.swift in Sources */,
 				12F6670A2AAFEF22004BA49E /* UserDefaultsManager.swift in Sources */,
+				1234D2CD2D3E75CB003A07A5 /* InAppPurchaseView.swift in Sources */,
 				12F666E12AADEF43004BA49E /* StockItemListView.swift in Sources */,
+				1234D2BB2D3E6DC4003A07A5 /* InAppPurchaseRepository.swift in Sources */,
 				12F666D52AADEDED004BA49E /* Stock.swift in Sources */,
 				12F666DF2AADEF1D004BA49E /* StockRowView.swift in Sources */,
 				12F667162AB13045004BA49E /* HowToUseTheAppView.swift in Sources */,
 				12F666B92AADEBC5004BA49E /* StockApp.swift in Sources */,
+				1234D2D22D3E767F003A07A5 /* RepositoryDependency.swift in Sources */,
 				12F666FC2AAF459C004BA49E /* RewardButtonView.swift in Sources */,
 				12F666D32AADEDAB004BA49E /* AvailableNavigationStack.swift in Sources */,
 				12F667062AAF557A004BA49E /* Strings.swift in Sources */,
+				1234D2BF2D3E6DF9003A07A5 /* ProductItem.swift in Sources */,
 				12F666ED2AAE03E7004BA49E /* AvailableListBackGroundStack.swift in Sources */,
 				12F666FE2AAF4F53004BA49E /* SettingViewModel.swift in Sources */,
+				1234D2D72D3E781E003A07A5 /* AppManager.swift in Sources */,
 				12F666F42AAE8FE6004BA49E /* InputView.swift in Sources */,
 				12F667182AB1306B004BA49E /* AccordionBoxView.swift in Sources */,
+				1234D2C22D3E6E13003A07A5 /* SecretProductIdKey.swift in Sources */,
 				12F666CF2AADED67004BA49E /* RealmRepository.swift in Sources */,
+				1234D2DC2D3E7937003A07A5 /* DeviceSizeUtility.swift in Sources */,
+				1234D2C82D3E7325003A07A5 /* ExUIApplication.swift in Sources */,
 				12F666F82AAF3CA1004BA49E /* AdMobView.swift in Sources */,
+				1234D2D42D3E76A2003A07A5 /* UserDefaultsRepository.swift in Sources */,
 				123A16C22AF3E2C800C66BDB /* WatchConnectViewModel.swift in Sources */,
 				12F6670C2AB0326A004BA49E /* RootViewModel.swift in Sources */,
 				12F666F22AAE8DF6004BA49E /* HeaderView.swift in Sources */,
+				1234D2CF2D3E75E3003A07A5 /* InAppPurchaseViewModel.swift in Sources */,
+				1234D2CA2D3E73CB003A07A5 /* ExView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +729,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -665,7 +765,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;

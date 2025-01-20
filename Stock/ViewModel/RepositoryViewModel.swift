@@ -11,11 +11,16 @@ import RealmSwift
 class RepositoryViewModel: ObservableObject {
     
     static let shared = RepositoryViewModel()
-    private let repository: RepositoryProtocol = RealmRepository()
+    private let repository: RepositoryProtocol
     
     @Published var stocks: Array<Stock> = []
     @Published var currentStock = Stock()
     @Published var currentItems: Array<StockItem> = []
+    
+    
+    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
+        repository = repositoryDependency.realmRepository
+    }
     
     // MARK: - Stock
     public func readAllStock() {

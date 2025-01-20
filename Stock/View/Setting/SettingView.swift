@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SettingView: View {
     
-
     private let viewModel = SettingViewModel()
     
     @ObservedObject private var rootViewModel = RootViewModel.shared
@@ -23,6 +22,16 @@ struct SettingView: View {
                     HStack {
                         Image(systemName: "bag")
                         Text(L10n.settingCapacityText(rootViewModel.limitCapacity))
+                    }
+                    
+                    // アプリ内課金
+                    NavigationLink {
+                        InAppPurchaseView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "app.gift.fill")
+                            Text("広告削除 & 容量解放")
+                        }.foregroundColor(.white)
                     }
                 }
                 
@@ -59,20 +68,17 @@ struct SettingView: View {
             }
             Spacer()
             
-            AdMobBannerView().frame(height: 60)
+            AdMobBannerView()
+                .frame(height: 60)
 
-        }.background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color(hexString: "#434343"),Color(hexString: "#000000")]),
-                startPoint: .top, endPoint: .bottom
-            ))
-        .toolbar {
-            NavigationLink {
-                HowToUseTheAppView()
-            } label: {
-                Image(systemName: "questionmark.app")
+        }.gradientBackground()
+            .toolbar {
+                NavigationLink {
+                    HowToUseTheAppView()
+                } label: {
+                    Image(systemName: "questionmark.app")
+                }
             }
-        }
     }
 }
 
