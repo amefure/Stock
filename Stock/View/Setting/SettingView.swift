@@ -41,7 +41,7 @@ struct SettingView: View {
                     } label: {
                         HStack {
                             Image(systemName: "app.gift.fill")
-                            Text("広告削除 & 容量解放")
+                            Text(L10n.settingInAppPurchaseTitle)
                         }.foregroundColor(.white)
                     }
                 }

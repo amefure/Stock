@@ -14,11 +14,11 @@ struct InAppPurchaseView: View {
     var body: some View {
         VStack {
 
-            Text("広告削除 & 容量解放")
+            Text(L10n.settingInAppPurchaseTitle)
                 .fontL(bold: true)
                 .padding(.vertical)
 
-            Text("購入後のキャンセルは致しかねますのでご了承ください。")
+            Text(L10n.settingInAppPurchaseMessage)
                 .fontS()
                 .padding(.horizontal)
 
@@ -34,7 +34,7 @@ struct InAppPurchaseView: View {
                         .frame(width: 50, height: 50)
                         .padding(.vertical)
 
-                    Text("課金アイテムの取得に失敗しました。\nネットワークの接続を確認してください。")
+                    Text(L10n.settingInAppPurchaseFetchError)
                         .fontM(bold: true)
 
                 }.frame(width: DeviceSizeUtility.deviceWidth)
@@ -69,7 +69,7 @@ struct InAppPurchaseView: View {
                                             .clipShape(RoundedRectangle(cornerRadius: 8))
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                     } else {
-                                        Text(viewModel.isPurchased(product.id) ? "購入済み" : "購入する")
+                                        Text(viewModel.isPurchased(product.id) ? L10n.settingInAppPurchased : L10n.settingInAppPurchase)
                                             .frame(width: DeviceSizeUtility.deviceWidth - 60, height: 50)
                                             .background(.white)
                                             .foregroundStyle(.black)
@@ -85,18 +85,18 @@ struct InAppPurchaseView: View {
                     }
 
                     VStack(spacing: 8) {
-                        Text("購入アイテムを復元する")
+                        Text(L10n.settingInAppPurchaseRestoreTitle)
                             .fontM(bold: true)
                             .frame(width: DeviceSizeUtility.deviceWidth - 60, alignment: .leading)
 
-                        Text("・一度ご購入いただけますと、\nアプリ再インストール時に「復元する」ボタンから\n復元が可能となっています。")
+                        Text(L10n.settingInAppPurchaseRestoreMsg)
                             .fontS()
                             .frame(width: DeviceSizeUtility.deviceWidth - 60, alignment: .leading)
 
                         Button {
                             viewModel.restore()
                         } label: {
-                            Text("復元する")
+                            Text(L10n.settingInAppPurchaseRestore)
                                 .frame(width: DeviceSizeUtility.deviceWidth - 60, height: 50)
                                 .background(.white)
                                 .foregroundStyle(.black)
@@ -115,7 +115,7 @@ struct InAppPurchaseView: View {
             .alert(
                 isPresented: $viewModel.purchaseError,
                 title: "Error",
-                message: "アイテムの購入に失敗しました。\nこの取引では料金は徴収されません。\nしばらく時間をおいてから再度お試しください。",
+                message: L10n.settingInAppPurchaseError,
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
                 positiveAction: {

@@ -20,12 +20,12 @@
       "internalID" : "96C28A58",
       "localizations" : [
         {
-          "description" : "アプリ内に表示されているバナー広告が非表示になります。",
+          "description" : "Ads displayed during screen transitions and banner ads displayed within the app will be hidden.",
           "displayName" : "TEST_ADS",
           "locale" : "en_US"
         },
         {
-          "description" : "アプリ内に表示されているバナー広告が非表示になります。",
+          "description" : "画面遷移時に表示される広告やアプリ内に表示されているバナー広告が非表示になります。",
           "displayName" : "TEST_広告削除",
           "locale" : "ja"
         }
@@ -45,7 +45,7 @@
           "locale" : "en_US"
         },
         {
-          "description" : "誕生日情報の登録上限数が解放され、制限なく誕生日情報を登録できるようになります。",
+          "description" : "Stock情報の登録上限数が解放され、制限なく登録できるようになります。",
           "displayName" : "TEST_容量解放",
           "locale" : "ja"
         }

@@ -31,7 +31,17 @@
 "setting_recommend_share_text" = "This app is recommended for checking things you forgot before going out!";
 
 "setting_terms_of_service_title" = "Terms of Service and Privacy Policy";
-"setting_terms_of_service_url" = "https://tech.amefure.com/app-terms-of-service";
+"setting_terms_of_service_url" = "https://appdev-room.com/app-terms-of-service";
+
+"setting_in_app_purchase_title" = "Remove Ads & Unlock Storage";
+"setting_in_app_purchase_message" = "Please note that we cannot accept cancellations after purchase.";
+"setting_in_app_purchase_error" = "Item purchase failed. \nNo fees will be collected for this transaction. \nPlease try again after a while.";
+"setting_in_app_purchase_fetch_error" = "Failed to obtain paid item. \nPlease check your network connection.";
+"setting_in_app_purchased" = "Purchased";
+"setting_in_app_purchase" = "Purchase";
+"setting_in_app_purchase_restore_title" = "Restore purchased items";
+"setting_in_app_purchase_restore_msg" = "・Once purchased, you can restore it by clicking the Restore button when reinstalling the app.";
+"setting_in_app_purchase_restore" = "Restore";
 
 // MARK: - How to Use The App
 "how_to_use_title" = "How to Use The App";

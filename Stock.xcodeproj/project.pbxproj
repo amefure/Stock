@@ -23,6 +23,7 @@
 		1234D2DC2D3E7937003A07A5 /* DeviceSizeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */; };
 		1234D2DE2D3E7C10003A07A5 /* AsyncProducts.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 1234D2DD2D3E7C10003A07A5 /* AsyncProducts.storekit */; };
 		1234D2E02D3E85B0003A07A5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1234D2DF2D3E85B0003A07A5 /* PrivacyInfo.xcprivacy */; };
+		1234D2E22D3E8830003A07A5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1234D2E12D3E8830003A07A5 /* StoreKit.framework */; };
 		123A16B42AF3E21000C66BDB /* StockWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B32AF3E21000C66BDB /* StockWatchApp.swift */; };
 		123A16B62AF3E21000C66BDB /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A16B52AF3E21000C66BDB /* StockListView.swift */; };
 		123A16B82AF3E21100C66BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A16B72AF3E21100C66BDB /* Assets.xcassets */; };
@@ -115,6 +116,7 @@
 		1234D2DB2D3E7936003A07A5 /* DeviceSizeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeUtility.swift; sourceTree = "<group>"; };
 		1234D2DD2D3E7C10003A07A5 /* AsyncProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = AsyncProducts.storekit; sourceTree = "<group>"; };
 		1234D2DF2D3E85B0003A07A5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1234D2E12D3E8830003A07A5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		123A16B12AF3E21000C66BDB /* StockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A16B32AF3E21000C66BDB /* StockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWatchApp.swift; sourceTree = "<group>"; };
 		123A16B52AF3E21000C66BDB /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F20949866BC53258F492164 /* Pods_Stock.framework in Frameworks */,
+				1234D2E22D3E8830003A07A5 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +435,7 @@
 		6B5A92AB7F14FD83981853A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1234D2E12D3E8830003A07A5 /* StoreKit.framework */,
 				FF31ADA715E6A8EB4DCB8B3C /* Pods_Stock.framework */,
 				13570DD197F356B1727E9240 /* Pods_StockWatch_Watch_App.framework */,
 			);
@@ -737,7 +741,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -752,7 +756,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -773,7 +777,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"StockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -788,7 +792,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -921,7 +925,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Stock/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -939,7 +943,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -958,7 +962,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Stock/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -976,7 +980,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

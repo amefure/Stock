@@ -69,6 +69,29 @@ internal enum L10n {
   internal static func settingCapacityText(_ p1: Any) -> String {
     return L10n.tr("Localizable", "setting_capacity_text_%@", String(describing: p1), fallback: "現在の容量: %@個")
   }
+  /// 購入する
+  internal static let settingInAppPurchase = L10n.tr("Localizable", "setting_in_app_purchase", fallback: "購入する")
+  /// アイテムの購入に失敗しました。
+  /// この取引では料金は徴収されません。
+  /// しばらく時間をおいてから再度お試しください。
+  internal static let settingInAppPurchaseError = L10n.tr("Localizable", "setting_in_app_purchase_error", fallback: "アイテムの購入に失敗しました。\nこの取引では料金は徴収されません。\nしばらく時間をおいてから再度お試しください。")
+  /// 課金アイテムの取得に失敗しました。
+  /// ネットワークの接続を確認してください。
+  internal static let settingInAppPurchaseFetchError = L10n.tr("Localizable", "setting_in_app_purchase_fetch_error", fallback: "課金アイテムの取得に失敗しました。\nネットワークの接続を確認してください。")
+  /// 購入後のキャンセルは致しかねますのでご了承ください。
+  internal static let settingInAppPurchaseMessage = L10n.tr("Localizable", "setting_in_app_purchase_message", fallback: "購入後のキャンセルは致しかねますのでご了承ください。")
+  /// 復元する
+  internal static let settingInAppPurchaseRestore = L10n.tr("Localizable", "setting_in_app_purchase_restore", fallback: "復元する")
+  /// ・一度ご購入いただけますと、
+  /// アプリ再インストール時に「復元する」ボタンから
+  /// 復元が可能となっています。
+  internal static let settingInAppPurchaseRestoreMsg = L10n.tr("Localizable", "setting_in_app_purchase_restore_msg", fallback: "・一度ご購入いただけますと、\nアプリ再インストール時に「復元する」ボタンから\n復元が可能となっています。")
+  /// 購入アイテムを復元する
+  internal static let settingInAppPurchaseRestoreTitle = L10n.tr("Localizable", "setting_in_app_purchase_restore_title", fallback: "購入アイテムを復元する")
+  /// 広告削除 & 容量解放
+  internal static let settingInAppPurchaseTitle = L10n.tr("Localizable", "setting_in_app_purchase_title", fallback: "広告削除 & 容量解放")
+  /// 購入済み
+  internal static let settingInAppPurchased = L10n.tr("Localizable", "setting_in_app_purchased", fallback: "購入済み")
   /// お出かけ前の忘れ物チェックにはこのアプリがおすすめ！
   internal static let settingRecommendShareText = L10n.tr("Localizable", "setting_recommend_share_text", fallback: "お出かけ前の忘れ物チェックにはこのアプリがおすすめ！")
   /// 「Stock」をオススメする
@@ -79,8 +102,8 @@ internal enum L10n {
   internal static let settingReviewUrlQuery = L10n.tr("Localizable", "setting_review_url_query", fallback: "?action=write-review")
   /// 利用規約とプライバシーポリシー
   internal static let settingTermsOfServiceTitle = L10n.tr("Localizable", "setting_terms_of_service_title", fallback: "利用規約とプライバシーポリシー")
-  /// https://tech.amefure.com/app-terms-of-service
-  internal static let settingTermsOfServiceUrl = L10n.tr("Localizable", "setting_terms_of_service_url", fallback: "https://tech.amefure.com/app-terms-of-service")
+  /// https://appdev-room.com/app-terms-of-service
+  internal static let settingTermsOfServiceUrl = L10n.tr("Localizable", "setting_terms_of_service_url", fallback: "https://appdev-room.com/app-terms-of-service")
   /// Localizable.strings
   ///   Stock
   /// 

@@ -31,7 +31,17 @@
 "setting_recommend_share_text" = "お出かけ前の忘れ物チェックにはこのアプリがおすすめ！";
 
 "setting_terms_of_service_title" = "利用規約とプライバシーポリシー";
-"setting_terms_of_service_url" = "https://tech.amefure.com/app-terms-of-service";
+"setting_terms_of_service_url" = "https://appdev-room.com/app-terms-of-service";
+
+"setting_in_app_purchase_title" = "広告削除 & 容量解放";
+"setting_in_app_purchase_message" = "購入後のキャンセルは致しかねますのでご了承ください。";
+"setting_in_app_purchase_error" = "アイテムの購入に失敗しました。\nこの取引では料金は徴収されません。\nしばらく時間をおいてから再度お試しください。";
+"setting_in_app_purchase_fetch_error" = "課金アイテムの取得に失敗しました。\nネットワークの接続を確認してください。";
+"setting_in_app_purchased" = "購入済み";
+"setting_in_app_purchase" = "購入する";
+"setting_in_app_purchase_restore_title" = "購入アイテムを復元する";
+"setting_in_app_purchase_restore_msg" = "・一度ご購入いただけますと、\nアプリ再インストール時に「復元する」ボタンから\n復元が可能となっています。";
+"setting_in_app_purchase_restore" = "復元する";
 
 // MARK: - How to Use The App
 "how_to_use_title" = "使い方";
