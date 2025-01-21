@@ -33,25 +33,30 @@ struct StockItemListView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                HeaderView(leadingIcon: "chevron.backward",
-                           trailingIcon: "plus.square",
-                           leadingAction: { dismiss() },
-                           trailingAction: {
-                    withAnimation() {
-                        // 明示的なアニメーション指定
-                        if rootEnvironment.currentMode != .add {
-                            rootEnvironment.onAddMode()
-                        } else {
-                            rootEnvironment.offSortMode()
+                HeaderView(
+                    leadingIcon: "chevron.backward",
+                    trailingIcon: "plus.square",
+                    leadingAction: { dismiss() },
+                    trailingAction: {
+                        withAnimation() {
+                            // 明示的なアニメーション指定
+                            if rootEnvironment.currentMode != .add {
+                                rootEnvironment.onAddMode()
+                            } else {
+                                rootEnvironment.offSortMode()
+                            }
                         }
                     }
-                })
+                )
                 
                 if rootEnvironment.currentMode == .add {
-                    InputView(name: $name, action: {
-                        repository.createStockItem(listId: repository.currentStock.id, name: name, order: Int(repository.currentStock.size))
-                        watchConnector.send(stocks: repository.stocks)
-                    }).transition(.scale)
+                    InputView(
+                        name: $name,
+                        action: {
+                            repository.createStockItem(listId: repository.currentStock.id, name: name, order: Int(repository.currentStock.size))
+                            watchConnector.send(stocks: repository.stocks)
+                        }     
+                    ).transition(.scale)
                 }
                 
                 VStack {
